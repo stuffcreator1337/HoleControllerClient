@@ -56,7 +56,7 @@ Servers["sever1_tranq"] = {
 	"client_id":"26463421869a4d34961b5f47a737da6b",
 	"login" : "login.",
 	"source" : "tranquility",
-	"serv" : "localhost",
+	"serv" : "185.155.18.75",
 	"port" : "3000",
 	"token" : "stokens",
 	"scopes" : scopes
