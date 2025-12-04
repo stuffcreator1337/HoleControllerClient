@@ -17,7 +17,7 @@ socket.on('connect', function(){
 	console.log("%c CONNECTED","background:red; color: white");
 	
 });
-
+socket.on('connection', (socket) => console.log('New connection:', socket.id));
 socket.on('auth_success_firstlogin', function(data){//получаем подтверждение перса data[0] - инфа, data[1] - пароль идентификации
 // console.log(data);
 	if(data[1] == unique_code){
