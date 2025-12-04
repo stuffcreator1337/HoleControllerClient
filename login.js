@@ -46,9 +46,8 @@ var timeToRefresh = new Date().getTime();
 
 
 function startApp(start){
-
-console.log("%c Starting app, going to recieve cookie tokens.",'background: #fff; color: green');
-// console.log('%c Oh my heavens! ', 'background: #222; color: #bada55');
+	console.log("%c Starting app, going to recieve cookie tokens.",'background: #fff; color: green');
+	// console.log('%c Oh my heavens! ', 'background: #222; color: #bada55');
 	getCookieJS('options', false, function (data) {
 		console.log("%c Getting options Cookies.", 'background: #fff; color: green');
 		// console.log(data);
