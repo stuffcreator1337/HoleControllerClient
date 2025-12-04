@@ -57,7 +57,7 @@ function startApp(start){
 	getCookieJS('map_access', false, function (data) {// ищем сохраненные куки про имеющихся персов с доступом
 		console.log("%c Getting map_access Cookies.", 'background: #fff; color: green');
 		 console.log("%c Data length is: "+data.length+" the value is below:","background: white; color: green");		
-		  console.log(JSON.parse(data.value));
+		  //console.log(JSON.parse(data.value));
 		// charTokens = JSON.parse(data.value);
 		 console.log(data);
 			connectToNode(data);
