@@ -57,7 +57,7 @@ Servers["sever1_tranq"] = {
 	"login" : "login.",
 	"source" : "tranquility",
 	"serv" : "185.155.18.75",
-	"port" : "8080",
+	"port" : "3000",
 	"token" : "stokens",
 	"scopes" : scopes
 };
