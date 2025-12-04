@@ -1,4 +1,6 @@
-var socket = io('http://'+currentServer["serv"]+':'+currentServer["port"]);
+var socket = io('http://' + currentServer["serv"] + ':' + currentServer["port"], {
+	withCredentials: true
+});
  // console.log(socket);
  
 function setactivetab(){
