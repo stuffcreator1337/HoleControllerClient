@@ -1,8 +1,10 @@
-var socket = io('http://' + currentServer["serv"] + ':' + currentServer["port"], {
-	withCredentials: true
-});
+//var socket = io('http://' + currentServer["serv"] + ':' + currentServer["port"], {
+//	withCredentials: true
+//});
  // console.log(socket);
- 
+const socket = io("http://185.155.18.75:3000", { withCredentials: true });
+
+
 function setactivetab(){
 	var allTabs = document.getElementById("top_tr");
 	var tdTabs = allTabs.getElementsByTagName("td");
