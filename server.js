@@ -11,14 +11,14 @@ function setactivetab(){
 	console.log("%c Setting active tab to: "+activeCharTab,"background: #fff; color: green");		
 }
 function connectToNode(cookie){
-	console.log('CONNECTED??');
+	console.log('Establishing connection on ' + currentServer["serv"] + ':' + currentServer["port"]);
 // var CurrentUser = activeCharTab; 
 socket.on('connect', function(){
 	console.log("%c CONNECTED","background:red; color: white");
 	
 });
 socket.on('connect_error', (err) => {
-	console.log("%cОшибка подключения:", "background:red; color: white", err.message);
+	console.log("%cConnection error:", "background:red; color: white", err.message);
 });
 socket.on('connection', (socket) => console.log('New connection:', socket.id));
 socket.on('auth_success_firstlogin', function(data){//получаем подтверждение перса data[0] - инфа, data[1] - пароль идентификации
