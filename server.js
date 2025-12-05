@@ -174,8 +174,8 @@ socket.on('privat_char_update', function(data){
 	// console.log(cookie,data[1]);
 	if(cookie == data[1]){
 		if (data[0].length == 0) {
-			//showLogin("login"); switchPage('login');
-			//return;
+			showLogin("login"); switchPage('login');
+			return;
 		}
 		// console.log(data,activeCharTab);
 		clientInfo.updData(data[0]);
