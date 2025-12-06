@@ -17532,7 +17532,7 @@ function whSysInfo1(data){return [{"wh_info" : {
 					"region" : "R01",
 					"sysclass" : "1",
 					"effect" : "",
-					"statics" : "N110hJ244l"
+					"statics": "N110hZ060n"
 			},
 "31002512" : { 	"name" : "J004791",
 					"const" : "C325", 
@@ -17658,7 +17658,7 @@ function whSysInfo1(data){return [{"wh_info" : {
 					"region" : "R09",
 					"sysclass" : "3",
 					"effect" : "Magnetar",
-					"statics" : "D845hU210l"
+					"statics": "K346nU210l"
 			},
 "31002530" : { 	"name" : "J001670",
 					"const" : "C327", 
