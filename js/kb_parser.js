@@ -3,7 +3,8 @@ function kbparse(data) {
 	// var a2 = 'kill_'+data1.killmail_id;	
 	// color = "red";
 	getCookieJS("lastKill", false, function(cok){
-		// console.log(cok);
+		console.log("lastKill");
+		console.log(cok);
 		if(cok){
 		var val = JSON.parse(cok);
 		console.log(val,data[0]);
