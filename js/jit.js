@@ -4378,26 +4378,26 @@ $jit.Graph = new Class({
 		// console.log(message);
 		if(state != 'rgraph'){
 			this.setMargins(g);
-			var json2 = spacetreeParse(data[0])
+            var json2 = spacetreeParse(data.message)
 			var arr = json2.children, len = arr.length;
 			this.arrangeDirection(arr,len,json);
 			this.redraw(g,json,json2,data,"fade:con");
 			this.setEmptyEdge(g);
 		}else{
-			json2 = parse(data[0]);
+            json2 = parse(data.message);
 			var type = '';
 			message == 'new_links_found' ? (type = "fade:con") : (type = "replot");
 			this.redraw(g,json,json2,data,type);
 		}
 	},
 	redraw: function(g,json,json2,data,type){
-		var user = data[1];
-		// console.log(data[0]);
+		var user = data.user;
+		// console.log(data.message);
 		// console.log(json2);
 		var that = this;
-		// that.setProps(g,data[0]);
+		// that.setProps(g,data.message);
 		if((user == "all")||(user == activeCharTab)){
-			g.op.morph(json2,data[0],{
+            g.op.morph(json2, data.message,{
 				type:type, 
 				duration:1500,
 				fps: 30,
@@ -4406,7 +4406,7 @@ $jit.Graph = new Class({
 				onComplete: function() {
 					isReady=true; 
 					// json = json2;
-					// that.setProps(g,data[0]);
+					// that.setProps(g,data.message);
 					that.setEmptyEdge(g);
 				} 
 			});
@@ -4521,15 +4521,15 @@ $jit.Graph = new Class({
 			// that.setProps(g,data[0]);
 		 });
 		socket.on('zkb_data', function(kbdata){
-      kbparse(kbdata);
-    });
+            kbparse(kbdata.message);
+        });
 		socket.on('new_chars_position', function(data_chars){
 			// console.log("%c New char location recieved","background:pink;color:black");
-			if(data_chars[1] == 'all'){				
+            if (data_chars.user == 'all'){				
 				var old_charLoc = clone(clientInfo.charData);
-				clientInfo.updData(data_chars[0]);
-				updPilotPos(data_chars[0]);
-				ligthLocation(g,data_chars[0]);
+                clientInfo.updData(data_chars.message);
+                updPilotPos(data_chars.message);
+                ligthLocation(g, data_chars.message);
 			}
 		});
 	},

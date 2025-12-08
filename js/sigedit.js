@@ -1,20 +1,20 @@
 ﻿socket.on('sending_sigs', function(data){
 	console.log(data);
-	var d = data[0].data;
+	var d = data.message;
 	if(d["user"] == activeCharTab){
 		// console.log("recieved");
 		// console.log(d["id"],d["name"],d["color"]);
-		openSysTable(d["id"],d["name"],d["color"],"",data[0].sigs);
+		openSysTable(d["id"],d["name"],d["color"],"",data.message.sigs);
 	};
 });
 
 socket.on('sending_names', function(data){
 	// console.log(data);
-	var d = data[0].data;
+	var d = data.message;
 	if(d["user"] == activeCharTab || d["user"] == 'all'){
 		console.log("recieved names for systems");
 		// console.log(data[0].names);
-		var names = data[0].names;
+		var names = data.message.names;
 		for(var i=0;i<names.length;i++){	
 			if(document.getElementById(names[i].id)){				
 				// console.log(document.getElementById(names[i].id).children);

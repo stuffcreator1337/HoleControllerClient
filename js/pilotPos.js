@@ -1,5 +1,5 @@
 socket.on('privat_char_update', function(data){
-	updPilotPos(data[0]);
+	updPilotPos(data.message);
 
 });
 function updPilotPos(data){

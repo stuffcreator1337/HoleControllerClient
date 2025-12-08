@@ -7,18 +7,18 @@ function kbparse(data) {
 		console.log(cok);
 		if(cok){
 		var val = JSON.parse(cok);
-		console.log(val,data[0]);
+		console.log(val,data);
 		// console.log(val);
-		for(var s in data[0]) {
+		for(var s in data) {
 			if(val[s]){
 				// console.log("system found");
 				var color = "white";
 				var namecont = document.getElementById(s.substring(4, 12));
 				// console.log(namecont.children["nodeDivID"].children["nameContId"].style);
-				console.log(s,data[0][s],val[s]);
-				if(data[0][s] == ''){
+				console.log(s,data[s],val[s]);
+				if(data[s] == ''){
 					color = "white";
-				}else if(data[0][s] == val[s]){
+				}else if(data[s] == val[s]){
 					// console.log("no new kills",prop,val[prop],result[0].killmail_id);
 					color = "orange";
 				}else{
@@ -28,7 +28,7 @@ function kbparse(data) {
 				}
 				namecont.children["nodeDivID"].children["nameContId"].style.color = color;
 			}else{
-				val[s] = data[0][s];
+				val[s] = data[s];
 			}			
 		}
 		console.log(val);
