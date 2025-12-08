@@ -4520,7 +4520,8 @@ $jit.Graph = new Class({
 			that.replot(json,g,data_link_edit,'map_replot',state);
 			// that.setProps(g,data[0]);
 		 });
-		socket.on('zkb_data', function(kbdata){
+        socket.on('zkb_data', function (kbdata) {
+            condole.log(kbdata);
             kbparse(kbdata.data);
         });
 		socket.on('new_chars_position', function(data_chars){
