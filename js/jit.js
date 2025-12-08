@@ -4378,13 +4378,13 @@ $jit.Graph = new Class({
 		// console.log(message);
 		if(state != 'rgraph'){
 			this.setMargins(g);
-            var json2 = spacetreeParse(data.message)
+            var json2 = spacetreeParse(data.data)
 			var arr = json2.children, len = arr.length;
 			this.arrangeDirection(arr,len,json);
 			this.redraw(g,json,json2,data,"fade:con");
 			this.setEmptyEdge(g);
 		}else{
-            json2 = parse(data.message);
+            json2 = parse(data.data);
 			var type = '';
 			message == 'new_links_found' ? (type = "fade:con") : (type = "replot");
 			this.redraw(g,json,json2,data,type);
@@ -4392,12 +4392,12 @@ $jit.Graph = new Class({
 	},
 	redraw: function(g,json,json2,data,type){
 		var user = data.user;
-		// console.log(data.message);
+		// console.log(data.data);
 		// console.log(json2);
 		var that = this;
-		// that.setProps(g,data.message);
+		// that.setProps(g,data.data);
 		if((user == "all")||(user == activeCharTab)){
-            g.op.morph(json2, data.message,{
+            g.op.morph(json2, data.data,{
 				type:type, 
 				duration:1500,
 				fps: 30,
@@ -4406,7 +4406,7 @@ $jit.Graph = new Class({
 				onComplete: function() {
 					isReady=true; 
 					// json = json2;
-					// that.setProps(g,data.message);
+					// that.setProps(g,data.data);
 					that.setEmptyEdge(g);
 				} 
 			});
@@ -4521,15 +4521,15 @@ $jit.Graph = new Class({
 			// that.setProps(g,data[0]);
 		 });
 		socket.on('zkb_data', function(kbdata){
-            kbparse(kbdata.message);
+            kbparse(kbdata.data);
         });
 		socket.on('new_chars_position', function(data_chars){
 			// console.log("%c New char location recieved","background:pink;color:black");
             if (data_chars.user == 'all'){				
 				var old_charLoc = clone(clientInfo.charData);
-                clientInfo.updData(data_chars.message);
-                updPilotPos(data_chars.message);
-                ligthLocation(g, data_chars.message);
+                clientInfo.updData(data_chars.data);
+                updPilotPos(data_chars.data);
+                ligthLocation(g, data_chars.data);
 			}
 		});
 	},

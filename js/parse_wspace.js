@@ -1,7 +1,7 @@
 // socket.on('routes', function(data){
 	// // console.log(data); 
 	// if(data.user == activeCharTab){
-		// findExits(data.message);
+		// findExits(data.data);
 	// }
 // });
 function findExits(data){

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Socket.IO Test</title>
+	<script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+</head>
+<body>
+	<h1>Socket.IO Test Page</h1>
+
+	<input id="msgInput" type="text" placeholder="Message">
+	<button id="sendBtn">Send</button>
+
+<pre id="log"></pre>
+
+	<script>
+		const log = document.getElementById("log");
+
+		// подключение к backend
+		const socket = io("http://185.155.18.75:3000", { withCredentials: true });
+
+		socket.on("connect", () => {
+			log.innerText += `Connected! Socket ID: ${socket.id}\n`;
+		});
+
+		socket.on("msg", data => {
+			log.innerText += `Server: ${data}\n`;
+		});
+
+		document.getElementById("sendBtn").onclick = () => {
+			const val = document.getElementById("msgInput").value;
+			socket.emit("msg", val);
+		};
+	</script>
+</body>
+</html>

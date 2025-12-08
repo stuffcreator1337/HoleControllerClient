@@ -22,22 +22,22 @@ socket.on('connect', function(){
 	
 });
 socket.on('connect_error', (err) => {
-	console.log("%cConnection error:", "background:red; color: white", err.message);
+	console.log("%cConnection error:", "background:red; color: white", err.data);
 });
 socket.on('connection', (socket) => console.log('New connection:', socket.id));
-socket.on('auth_success_firstlogin', function(data){//получаем подтверждение перса data[0] - инфа, data[1] - пароль идентификации
+socket.on('auth_success_firstlogin', function(msg){//получаем подтверждение перса data[0] - инфа, data[1] - пароль идентификации
 // console.log(data);
-	if(data[1] == unique_code){
-		console.log(data);
+	if (msg.user == unique_code){
+		console.log(msg);
 		showLogin("loading");	
 		// showLogin("login");	
 		startingMap('initiate');
-		var codedata = data[0][0];
-		var mapdata = data[0][1];
-		var chardata = data[0][2];
+		var codedata = msg.data[0];
+		var mapdata = msg.data[1];
+		var chardata = msg.data[2];
 		console.log(codedata);
 		setCookie('map_access',codedata);//добавляем инфу в куки
-		clientInfo.updData(data[0][2]);
+		clientInfo.updData(msg.data[2]);
 		for(var i=0;i<chardata.length;i++){
 			// console.log(atob(chardata[i]['CharacterName']),chardata[i]['CharacterID'],i,cookie);
 			createTab(atob(chardata[i]['CharacterName']),chardata[i]['CharacterID'],i,cookie);	
@@ -67,21 +67,21 @@ socket.on('auth_success_firstlogin', function(data){//получаем подт�
 	}		
 	
 });
-	socket.on('auth_success_addcharacter', function (data) {//получаем подтверждение перса data.message - инфа, data.user - пароль идентификации
-		console.log(data);
-	var usercode = data.message[0];
-	var mapdata = data.message[1];
-	var chardata = data.message[2];
+socket.on('auth_success_addcharacter', function (msg) {//получаем подтверждение перса data.data - инфа, data.user - пароль идентификации
+	console.log(msg);
+	var usercode = msg.data[0];
+	var mapdata = msg.data[1];
+	var chardata = msg.data[2];
 	// console.log(locdata);
-	if(data.user == cookie){//сверяем пароль, чтоб лишние персы не залогинились
+	if (msg.user == cookie){//сверяем пароль, чтоб лишние персы не залогинились
 		// console.log("%c AUTH SUCCESS","background:green; color: white");
-		// console.log(data,[data.message]);
+		// console.log(msg,[msg.data]);
 		// addCookie('map_access',chardata);//добавляем инфу в куки
 		console.log("%c ADDING CHARACTER:"+chardata['CharacterID'],"background:green; color: white");
 		// showLogin("loading");	
 		// showLogin("login");	
 		// startingMap('initiate');
-		clientInfo.updData(data.message[2]);
+		clientInfo.updData(msg.data[2]);
 		for(var i=0;i<chardata.length;i++){
 			createTab(atob(chardata[i]['CharacterName']),chardata[i]['CharacterID'],i,cookie);	
 		}
@@ -96,12 +96,12 @@ socket.on('auth_success_firstlogin', function(data){//получаем подт�
 		}
 		// console.log("map_connections_for:"+activeCharTab);
 
-		// init(data.message.map,data.message.residents,"","initiate");
+		// init(data.data.map,data.data.residents,"","initiate");
 		// init(mapdata,[],"","initiate");
 	}
 });
 
-socket.on('start_char', function(data){
+socket.on('start_char', function(msg){
 	console.log("%c CHAR ADDING","background:green; color: white");
 	
 	
@@ -110,13 +110,13 @@ socket.on('start_char', function(data){
 	var cook = JSON.parse(cookie);
 	for(var i=0;i<cook.length;i++){
 		// console.log(cook);
-		if (cook[i]['CharacterID'] == data.message['CharacterID']){//ищем перса в кукисах
+		if (cook[i]['CharacterID'] == msg.data['CharacterID']){//ищем перса в кукисах
 			for(var p=0;p<cook[i]['password'].length;p++){//проверяем его пароль
-				if(cook[i]['password'][p] == data.user){
-					console.log("%c STARTING FOR: " + data.message['CharacterID'] + ' - ' + atob(data.message['CharacterName'])+' - '+i+'password:'+data.user,"background:green; color: white");
+				if (cook[i]['password'][p] == msg.user){
+					console.log("%c STARTING FOR: " + msg.data['CharacterID'] + ' - ' + atob(msg.data['CharacterName']) + ' - ' + i + 'password:' + msg.user,"background:green; color: white");
 
 					// console.log("%c Going to add tabs for characters, currently we have "+r_token.length+" characters.","background: #fff; color: 660033");
-					createTab(atob(data.message['CharacterName']), data.message['CharacterID'],i,cookie);	
+					createTab(atob(msg.data['CharacterName']), msg.data['CharacterID'],i,cookie);	
 					var tdTabs = allTabs.getElementsByTagName("td");
 					tdTabs[0].className = "active_top_selected";
 					tdTabs[1].className = "active_top_selected";
@@ -133,10 +133,10 @@ socket.on('start_char', function(data){
 	
 // startTrack(task);
 });
-socket.on('token_error', function(data){
-	// console.log(data);
-	if(data.user == cookie){
-		var charID = data.message;
+socket.on('token_error', function (msg){
+// console.log(data);
+	if (msg.user == cookie){
+		var charID = msg.data;
 		// console.log(charID);
 		console.log("%c CHARACTER TOKEN ERROR: "+charID,"background:red;color:white");
 		var allTabs = document.getElementById("top_tr");
@@ -158,7 +158,7 @@ socket.on('token_error', function(data){
 
 
 
-// socket.on('event', function(data){});
+// socket.on('event', function(msg){});
 // socket.on('reconnect_error', function () {
     // console.log('attempt to reconnect has failed');
   // });
@@ -169,42 +169,42 @@ socket.on('token_error', function(data){
 	// socket.emit('map_request', activeCharTab);
 	// //console.log("electron tried to send message");
 
-socket.on('privat_char_update', function(data){
+socket.on('privat_char_update', function(msg){
 	cookie = cookie.replace(/"/g,'');
 	// console.log(cookie,data[1]);
-	if(cookie == data[1]){
-		if (data[0].length == 0) {
+	if (cookie == msg.user){
+		if (msg.data.length == 0) {
 			showLogin("login"); switchPage('login');
 			return;
 		}
 		// console.log(data,activeCharTab);
-		clientInfo.updData(data[0]);
+		clientInfo.updData(msg.data);
 
 		// console.log(data[0].length);
 		showLogin("loading");	
 		startingMap('initiate');
-		var chardata = data[0];
+		var chardata = msg.data;
 		
 		for(var i=0;i<chardata.length;i++){
 		createTab(atob(chardata[i]['CharacterName']),chardata[i]['CharacterID'],i,cookie);	
 		}
 		setactivetab();	
 
-		for(let s=0;s<data[0].length;s++){
-		if(data[0][s]['CharacterID'] == activeCharTab){
-		updatePanel(data[0][s]["solar_system_id"],data[0][s]['CharacterID'], 'charname_holder');
+		for (let s = 0; s < msg.data.length;s++){
+			if (msg.data[s]['CharacterID'] == activeCharTab){
+				updatePanel(msg.data[s]["solar_system_id"], msg.data[s]['CharacterID'], 'charname_holder');
 		}
-		clientInfo.charSys(data[0][s]["solar_system_id"],data[0][s]['CharacterID']);
+			clientInfo.charSys(msg.data[s]["solar_system_id"], msg.data[s]['CharacterID']);
 		}
 	}
 });
-socket.on('map_connections', function(data){
+socket.on('map_connections', function (msg){
 	// console.log(data[0].custom_sys_names);
 	cookie = cookie.replace(/"/g,'');
 	// console.log(cookie);
-	if(data[1].replace(/"/g,'') == cookie){
-			clientInfo.map = data[0].map;
-			init(data[0].map,[],"","initiate",data[0].custom_sys_names);
+		if (msg.user.replace(/"/g,'') == cookie){
+			clientInfo.map = msg.data.map;
+			init(msg.data.map, [], "", "initiate", msg.data.custom_sys_names);
 			
 
 		// getCookieJS('canvasoffsetX', false, function(dataX){
