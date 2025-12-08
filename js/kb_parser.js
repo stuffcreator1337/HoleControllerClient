@@ -10,11 +10,13 @@ function kbparse(new_kills) {
 		console.log("new_kills", new_kills);
 		for (var system in new_kills) {
 			var color = "white";
-			var namecont = document.getElementById(s.substring(4, 12));
+			var namecont = document.getElementById(system.substring(4, 12));
 			if (isRecentKill(new_kills[system].time)) {
 				if (new_kills[system] == old_kills[system]) {
+                    console.log("no new kills in system", system);
 					color = "orange";
 				} else {
+                    console.log("new kills in system", system);
 					color = "red";
 				}
 			}
