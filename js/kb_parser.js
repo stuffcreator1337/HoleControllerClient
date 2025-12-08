@@ -21,7 +21,7 @@ function kbparse(new_kills) {
 				}
 			}
 			old_kills[system] = new_kills[system];
-			namecont.children["nodeDivID"].children["nameContId"].style.color = color;
+			if (namecont)namecont.children["nodeDivID"].children["nameContId"].style.color = color;
 		}
 		setCookie('lastKill', old_kills);
 	});
