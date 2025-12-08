@@ -1,44 +1,36 @@
-function kbparse(data) {
-	// var a1 = 'sys_'+data1.solar_system_id;
-	// var a2 = 'kill_'+data1.killmail_id;	
-	// color = "red";
-	getCookieJS("lastKill", false, function(cok){
-		console.log("lastKill");
-		console.log(cok);
-		if(cok){
-		var val = JSON.parse(cok);
-		console.log(val,data);
-		// console.log(val);
-		for(var s in data) {
-			if(val[s]){
-				// console.log("system found");
-				var color = "white";
-				var namecont = document.getElementById(s.substring(4, 12));
-				// console.log(namecont.children["nodeDivID"].children["nameContId"].style);
-				console.log(s,data[s],val[s]);
-				if(data[s] == ''){
-					color = "white";
-				}else if(data[s] == val[s]){
-					// console.log("no new kills",prop,val[prop],result[0].killmail_id);
+function kbparse(new_kills) {
+	getCookieJS("lastKill", false, function(saved_cokie){
+		//console.log(cok);
+		var old_kills = {};
+		if (saved_cokie) {
+			old_kills = JSON.parse(saved_cokie);
+		}
+		//console.log(old_kills, new_kills);
+		console.log("savedKills", old_kills);
+		console.log("new_kills", new_kills);
+		for (var system in new_kills) {
+			var color = "white";
+			var namecont = document.getElementById(s.substring(4, 12));
+			if (isRecentKill(new_kills[system].time)) {
+				if (new_kills[s] == old_kills[system]) {
 					color = "orange";
-				}else{
-					// console.log("yes new kills",prop,val[prop],result[0].killmail_id);
+				} else {
 					color = "red";
-					// val[prop] = result[0].killmail_id;
 				}
-				namecont.children["nodeDivID"].children["nameContId"].style.color = color;
-			}else{
-				val[s] = data[s];
-			}			
+			}
+			old_kills[system] = new_kills[system];
+			namecont.children["nodeDivID"].children["nameContId"].style.color = color;
 		}
-		console.log(val);
-		setCookie('lastKill',val);
-		// console.log(val);
-		
-		}
-		// callback(result,color);
+		setCookie('lastKill', old_kills);
 	});
 }		
+function isRecentKill(killmail_time, hours = 12) {
+	const kill = new Date(killmail_time);
+	const now = new Date();
+	const diffMs = now - kill; // разница в миллисекундах
+
+	return diffMs <= hours * 60 * 60 * 1000;
+}
 function callAjaxfunc(sysid,callback) {		
 		return;
 $.ajax({
