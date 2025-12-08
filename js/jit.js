@@ -4521,7 +4521,7 @@ $jit.Graph = new Class({
 			// that.setProps(g,data[0]);
 		 });
         socket.on('zkb_data', function (kbdata) {
-            condole.log(kbdata);
+            console.log(kbdata);
             kbparse(kbdata.data);
         });
 		socket.on('new_chars_position', function(data_chars){
