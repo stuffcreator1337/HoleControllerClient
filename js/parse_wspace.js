@@ -245,11 +245,12 @@ function 	getAjax(url,token,task,name){
 	//if(charTokens[char_index[name]])	token = charTokens[char_index[name]].access_token;
 	// console.log(token.substring(0, 10));
 	return $.ajax({
-		type: 'GET',
+		method: 'GET',
 		url: url,   
 		crossDomain: true,
 		headers: {
-		   'Authorization': 'Bearer ' + token
+			//'Authorization': 'Bearer ' + token
+			"User-Agent": "Hole Controller"
 		},
 		success: function (result) {
 			// console.log(errorCount[name]);
