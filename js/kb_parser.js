@@ -6,17 +6,17 @@ function kbparse(new_kills) {
 			old_kills = JSON.parse(saved_cokie);
 		}
 		//console.log(old_kills, new_kills);
-		console.log("savedKills", old_kills);
-		console.log("new_kills", new_kills);
+		//console.log("savedKills", old_kills);
+		//console.log("new_kills", new_kills);
 		for (var system in new_kills) {
 			var color = "white";
 			var namecont = document.getElementById(system.substring(4, 12));
 			if (isRecentKill(new_kills[system].time)) {
 				if (new_kills[system] == old_kills[system]) {
-                    console.log("no new kills in system", system);
+                    //console.log("no new kills in system", system);
 					color = "orange";
 				} else {
-                    console.log("new kills in system", system);
+					console.log("%c new kills in system " + system, "background:orange;color:white");
 					color = "red";
 				}
 			}
