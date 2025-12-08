@@ -12,7 +12,7 @@ function kbparse(new_kills) {
 			var color = "white";
 			var namecont = document.getElementById(s.substring(4, 12));
 			if (isRecentKill(new_kills[system].time)) {
-				if (new_kills[s] == old_kills[system]) {
+				if (new_kills[system] == old_kills[system]) {
 					color = "orange";
 				} else {
 					color = "red";
