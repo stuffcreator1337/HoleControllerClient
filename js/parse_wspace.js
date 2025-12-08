@@ -258,11 +258,7 @@ function 	getAjax(url,token,task,name){
 		error: function (req, status, error) {
 			var tokenStatus = $("text[class^='tdText'][id^='status']");
 			console.log(
-				"e:" + req.status +
-				"; task: " + task +
-				"; char: " + name +
-				"; token: " + (token ? token.substring(0, 10) : "none") +
-				"; error number: " + errorCount[name]
+				`e:${req.status}; task:${task}; char:${name}; token:${token?.substring(0, 10) || "none"}; error:${errorCount[name]}`
 			);
 			// startTrack();
 		}
