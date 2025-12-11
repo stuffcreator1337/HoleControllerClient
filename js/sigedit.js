@@ -1,12 +1,12 @@
 ﻿socket.on('sending_sigs', function(msg){
-	console.log(msg);
+	console.log(msg.data.sigs);
 	var d = msg.data;
-	console.log(d,d.user,d.data,d["user"], activeCharTab);
-	console.log(d.data["id"], d.data["name"], d.data["color"]);
-	if(d["user"] == activeCharTab){
+	//console.log(d,d.user,d.data,d["user"], activeCharTab);
+	//console.log(d.data["id"], d.data["name"], d.data["color"]);
+	if (d.data["user"] == activeCharTab){
 		// console.log("recieved");
 		// console.log(d["id"],d["name"],d["color"]);
-		openSysTable(d["id"],d["name"],d["color"],"",msg.data.sigs);
+		openSysTable(d.data["id"], d.data["name"], d.data["color"],"",msg.data.sigs);
 	};
 });
 
