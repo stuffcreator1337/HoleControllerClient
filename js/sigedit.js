@@ -1,6 +1,8 @@
 ﻿socket.on('sending_sigs', function(msg){
 	console.log(msg);
 	var d = msg.data;
+	console.log(d["user"], activeCharTab);
+	console.log(d["id"], d["name"], d["color"]);
 	if(d["user"] == activeCharTab){
 		// console.log("recieved");
 		// console.log(d["id"],d["name"],d["color"]);
