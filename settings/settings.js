@@ -73,5 +73,5 @@ Servers["server1_sisi"] = {
 
 const currentServer = Servers["sever1_tranq"];	
 
-const homesystemID = "31001834";
+const homesystemID = "31000753";
 // const homesystemID = 31002248;		//	J111518

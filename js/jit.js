@@ -4412,16 +4412,18 @@ $jit.Graph = new Class({
 			});
 		}
 	},
-	setHoleNames: function(g,names){
-    for(var i=0;i<names.length;i++){
-      if(names[i].id == homesystemID){
-        var dom_item = document.getElementById(homesystemID);
-        if(dom_item){
-          dom_item.children[0].children["sys_custom_name"].value = names[i].name;
-          dom_item.children[0].children["sys_custom_name"].innerHTML = names[i].name;
+    setHoleNames: function (g, names) {
+        if (names) {
+            for(var i=0;i<names.length;i++){
+                if(names[i].id == homesystemID){
+                    var dom_item = document.getElementById(homesystemID);
+                    if(dom_item){
+                        dom_item.children[0].children["sys_custom_name"].value = names[i].name;
+                        dom_item.children[0].children["sys_custom_name"].innerHTML = names[i].name;
+                    }
+                }
+            }
         }
-      }
-    }
 		g.graph.eachNode(function(node){
 			if(names){
 				for(var i=0;i<names.length;i++){
@@ -4540,7 +4542,7 @@ $jit.Graph = new Class({
 				var nodeExists = viz.graph.hasNode(elem.id); 
 				var adjExists = !!viz.graph.getAdjacence(adj.nodeFrom.id, adj.nodeTo.id);
 				if(!adjExists) {						
-					console.log(adjExists);
+                    console.log("adjExists=",adjExists);
 					viz.graph.addAdjacence(adj.nodeFrom, adj.nodeTo, adj.data);
 					var addedAdj = viz.graph.getAdjacence(adj.nodeFrom.id, adj.nodeTo.id);
 					console.log(addedAdj.nodeFrom.id,addedAdj.nodeTo.id,addedAdj.data.$type);
