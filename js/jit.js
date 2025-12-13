@@ -4533,7 +4533,22 @@ $jit.Graph = new Class({
                 clientInfo.updData(data_chars.data);
                 updPilotPos(data_chars.data);
                 ligthLocation(g, data_chars.data);
-			}
+            }
+            for (let i = 0; i < data.length; i++) {
+                if (data_chars.data[i]['CharacterID'] == activeCharTab) {
+                    console.log("%c name:" + data_chars.data[i]['CharacterName'] + ', id:' + activeCharTab, "background:green;color:black");
+                    // socket.emit('routes_request',{'user':activeCharTab});//<<---раблочить позже
+                    updateLocTab(data_chars.data[i]['solar_system_id'], data_chars.data[i]['CharacterID']);
+                    if (!isWh(data_chars.data[i]['solar_system_id'])) {
+                        console.log(data_chars.data[i]['solar_system_id'] + ' - NEED TO FIND ENTER TO HOME');
+                        // if (typeof map !== 'undefined'){
+                        // console.log('GOING TO FIND ENTER TO HOME');
+                        // console.log(clientInfo.map);
+                        findExits(clientInfo.map);
+                    }	// }
+                }
+
+            }
 		});
 	},
 	checkNewEdges: function(g,viz,j2){
