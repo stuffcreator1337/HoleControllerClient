@@ -4534,7 +4534,7 @@ $jit.Graph = new Class({
                 updPilotPos(data_chars.data);
                 ligthLocation(g, data_chars.data);
             }
-            for (let i = 0; i < data.length; i++) {
+            for (let i = 0; i < data_chars.data.length; i++) {
                 if (data_chars.data[i]['CharacterID'] == activeCharTab) {
                     console.log("%c name:" + data_chars.data[i]['CharacterName'] + ', id:' + activeCharTab, "background:green;color:black");
                     // socket.emit('routes_request',{'user':activeCharTab});//<<---раблочить позже
