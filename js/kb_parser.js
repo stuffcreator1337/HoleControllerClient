@@ -15,7 +15,12 @@ function kbparse(new_kills) {
 			if (isRecentKill(new_kills[system].time)) {
 				console.log("is kill recent?", isRecentKill(new_kills[system].time), system);
 				console.log(new_kills[system], old_kills[system]);
-				console.log(new_kills[system].id, old_kills[system].id);
+				try {
+					console.log(new_kills[system].id, old_kills[system].id);
+				}
+				catch (e) {
+
+				}
 				if (new_kills[system] == old_kills[system]) {
                     //console.log("no new kills in system", system);
 					color = "orange";
