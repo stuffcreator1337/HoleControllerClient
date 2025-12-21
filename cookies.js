@@ -18,7 +18,11 @@ function setCookie(cname, cvalue) {
     console.log(cvalue);
     console.log("JSON str:", jsonString);
     //console.log("length JSON:", jsonString.length);
-    
+
+    console.log("len of JSON:", jsonString.length, "byte");
+    if (jsonString.length > 4000) {
+        console.warn("⚠️ too big");
+    }
     // Кодируем для куки
     const encodedValue = encodeURIComponent(jsonString);
     //console.log("encoded:", encodedValue);
@@ -38,7 +42,7 @@ function setCookie(cname, cvalue) {
     // Проверяем, что установилось
     //console.log("Кука установлена. Проверяем...");
     console.log("document.cookie has lastKill?", document.cookie.includes('lastKill='));
-    
+
     // Немедленно читаем обратно для проверки
     getCookieJS(cname, false, function(readBack) {
         console.log("Прочитано обратно:", readBack);
