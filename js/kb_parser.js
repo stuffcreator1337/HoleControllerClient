@@ -8,8 +8,8 @@ function kbparse(new_kills) {
 		console.log(old_kills);
 		//console.log(old_kills, new_kills);
 		//console.log("savedKills", old_kills);
-		//console.log("new_kills", new_kills);
-        actual_kills = new_kills;
+		actual_kills = new_kills;
+		console.log("actual_kills", actual_kills);
 		for (var system in new_kills) {
 			var color = "white";
 			var namecont = document.getElementById(system.substring(4, 12));

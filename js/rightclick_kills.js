@@ -151,7 +151,7 @@ if(!Label.length)
 
 			getCookieJS("lastKill", false, function (cok) {
 
-				var a1 = 'sys_' + nodeselected.data.$sysid;
+				var a1 = 's_' + nodeselected.data.$sysid;
 				var a2 = actual_kills[a1];	
 
 				//console.log("Полученная кука:", cok);
@@ -159,18 +159,10 @@ if(!Label.length)
 
 				// Инициализируем объект
 				var val = {};
-
-				// Пробуем распарсить куку, если она не пустая
-				if (cok && cok.trim() !== '') {
-					try {
-						val = JSON.parse(cok);
-						//console.log("Успешно распарсено, ключей:", Object.keys(val).length);
-					} catch (e) {
-						//console.error("Ошибка парсинга JSON:", e);
-						// Оставляем пустой объект
-					}
-				} else {
-					//console.log("Кука пустая или не существует");
+				val = JSON.parse(cok);
+				for (var sys in val) {
+					if (val[sys] == null || val[sys] === undefined || val[sys] == "") {
+                        delete val[sys];
 				}
 				//console.log("До добавления - val[a1]:", val[a1]);
 				if (a1 in val) {
