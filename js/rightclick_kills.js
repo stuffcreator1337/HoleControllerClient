@@ -183,7 +183,8 @@ if(!Label.length)
 				console.log("После добавления - val[a1]:", val[a1]);
 
 				// Сохраняем
-				console.log('lastKill перед сохранением:', val);
+				console.log('stringify lastKill перед сохранением:', JSON.stringify(val));
+				console.log('JSON lastKill перед сохранением:', val);
 				console.log('Количество ключей:', Object.keys(val).length);
 
 				setCookie('lastKill', val);
