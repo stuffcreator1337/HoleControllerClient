@@ -17,7 +17,12 @@ function kbparse(new_kills) {
 				console.log("is kill recent?", isRecentKill(new_kills[system][1]), system);
 				console.log(old_kills[system], new_kills[system]);
 				//console.log("old_kills", typeof (old_kills), old_kills);
-
+				if (old_kills[system] != "undefined") {
+					if (new_kills[system][1] == old_kills[system][1]) {
+						console.log("1 no new kills in system", system);
+						color = "orange";
+					} 
+				}
 				//console.log("=== 1. Object.keys() ===");
 				//const keys1 = Object.keys(old_kills);
 				//console.log("Количество ключей:", keys1.length);
@@ -51,7 +56,7 @@ function kbparse(new_kills) {
 				//console.log(typeof(realKey));
 				//console.log(old_kills[realKey]);
 				if (new_kills[system] == old_kills[system]) {
-                    //console.log("no new kills in system", system);
+                    console.log("2 no new kills in system", system);
 					color = "orange";
 				} else {
 					console.log("%c new kills in system " + system, "background:orange;color:white");
