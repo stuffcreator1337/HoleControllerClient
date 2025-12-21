@@ -45,17 +45,11 @@ function kbparse(new_kills) {
 				//console.log("[" + Object.keys(old_kills).find(k => k.includes("30000142")) + "]");
 
 				//console.log(typeof (new_kills[system]));
-				const realKey = Object.keys(old_kills).find(k => k.includes(system.substring(4)));
-				console.log(typeof(old_kills[system]));
-				console.log(realKey);
-				console.log(typeof(realKey));
-				console.log(old_kills[realKey]);
-				try {
-					console.log(new_kills[system].id, old_kills[system].id);
-				}
-				catch (e) {
-
-				}
+				//const realKey = Object.keys(old_kills).find(k => k.includes(system.substring(4)));
+				//console.log(typeof(old_kills[system]));
+				//console.log(realKey);
+				//console.log(typeof(realKey));
+				//console.log(old_kills[realKey]);
 				if (new_kills[system] == old_kills[system]) {
                     //console.log("no new kills in system", system);
 					color = "orange";

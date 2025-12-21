@@ -153,17 +153,36 @@ if(!Label.length)
 			var a2 = actual_kills[a1];	
 
 			getCookieJS("lastKill", false, function (cok) {
-				// console.log(cok);
-				 console.log(a1,a2);
-				// console.log(JSON.parse(cok));
+				console.log("Полученная кука:", cok);
+				console.log("Данные для сохранения:", a1, a2);
+
+				// Инициализируем объект
 				var val = {};
-				if (cok) {
-					var val = JSON.parse(cok);
+
+				// Пробуем распарсить куку, если она не пустая
+				if (cok && cok.trim() !== '') {
+					try {
+						val = JSON.parse(cok);
+						console.log("Успешно распарсено, ключей:", Object.keys(val).length);
+					} catch (e) {
+						console.error("Ошибка парсинга JSON:", e);
+						// Оставляем пустой объект
+					}
+				} else {
+					console.log("Кука пустая или не существует");
 				}
+
+				// Добавляем/обновляем значение
+				console.log("До добавления - val[a1]:", val[a1]);
 				val[a1] = a2;
-				console.log('lastKill', val);
+				console.log("После добавления - val[a1]:", val[a1]);
+
+				// Сохраняем
+				console.log('lastKill перед сохранением:', val);
+				console.log('Количество ключей:', Object.keys(val).length);
+
 				setCookie('lastKill', val);
-			});		
+			});	
 
 			var starthtml = '<ul class="kills-menu__items">';
 			menu.innerHTML = starthtml;
