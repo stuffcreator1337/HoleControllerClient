@@ -4,23 +4,21 @@ function kbparse(new_kills) {
 		if (saved_cokie) {
 			old_kills = JSON.parse(saved_cokie);
 		}
-		console.log(saved_cokie);
-		console.log("old_kills", old_kills);
-		//console.log(old_kills, new_kills);
-		//console.log("savedKills", old_kills);
+		//console.log(saved_cokie);
+		//console.log("old_kills", old_kills);
 		actual_kills = new_kills;
-		console.log("actual_kills", actual_kills);
+		//console.log("actual_kills", actual_kills);
 		for (var system in new_kills) {
 			var color = "white";
 			var namecont = document.getElementById(system.substring(2, 10));
 			if (isRecentKill(new_kills[system][1])) {
-				console.log("is kill recent?", isRecentKill(new_kills[system][1]), system);
-				console.log(old_kills[system], new_kills[system]);
+				//console.log("is kill recent?", isRecentKill(new_kills[system][1]), system);
+				//console.log(old_kills[system], new_kills[system]);
 				//console.log("old_kills", typeof (old_kills), old_kills);
 				try {
-					console.log(new_kills[system][1], old_kills[system][1]);
+					//console.log(new_kills[system][1], old_kills[system][1]);
 					if (new_kills[system][1] == old_kills[system][1]) {
-						console.log("1 no new kills in system", system);
+						//console.log("1 no new kills in system", system);
 						color = "orange";
 					} else {
 						console.log("%c new kills in system " + system, "background:orange;color:white");
@@ -31,50 +29,9 @@ function kbparse(new_kills) {
 					console.log("%c new kills in system " + system, "background:orange;color:white");
 					color = "red";
 				}
-				//console.log("=== 1. Object.keys() ===");
-				//const keys1 = Object.keys(old_kills);
-				//console.log("Количество ключей:", keys1.length);
-				//console.log("Все ключи:", keys1);
-
-				//// Или построчно
-				//console.log("\nКлючи построчно:");
-				//keys1.forEach((key, index) => {
-				//	console.log(`${index}: ${key}`);
-				//});
-
-				//if (system == "sys_30000005") {
-				//	console.log(system, Object.keys(old_kills)[0]);
-				//	console.log(typeof (system), typeof (Object.keys(old_kills)[0]));
-				//	console.log(system.length, Object.keys(old_kills)[0].length);
-				//	console.log(system == Object.keys(old_kills)[0], system === Object.keys(old_kills)[0]);
-				//	console.log(old_kills[Object.keys(old_kills)[0]]);
-				//	console.log(typeof(old_kills[Object.keys(old_kills)[0]]));
-				//	console.log([...system].map(c => c.charCodeAt(0)));
-				//	console.log([...Object.keys(old_kills)[0]].map(c => c.charCodeAt(0)));
-				//	const cleanSystem = system.normalize("NFKC").replace(/[^\x20-\x7E]/g, "");
-				//	console.log(old_kills[cleanSystem]);
-				//}
-				//console.log("[" + system + "]", system.length);
-				//console.log("[" + Object.keys(old_kills).find(k => k.includes("30000142")) + "]");
-
-				//console.log(typeof (new_kills[system]));
-				//const realKey = Object.keys(old_kills).find(k => k.includes(system.substring(4)));
-				//console.log(typeof(old_kills[system]));
-				//console.log(realKey);
-				//console.log(typeof(realKey));
-				//console.log(old_kills[realKey]);
-				//if (new_kills[system] == old_kills[system]) {
-    //                console.log("2 no new kills in system", system);
-				//	color = "orange";
-				//} else {
-				//	console.log("%c new kills in system " + system, "background:orange;color:white");
-				//	color = "red";
-				//}
 			}
-			//old_kills[system] = new_kills[system] || {};
 			if (namecont)namecont.children["nodeDivID"].children["nameContId"].style.color = color;
 		}
-		//setCookie('lastKill', old_kills);
 	});
 }		
 function isRecentKill(killmail_time, hours = 12) {
