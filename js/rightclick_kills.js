@@ -163,7 +163,7 @@ if(!Label.length)
 					// console.log(myArr);
 					if(myArr){
 						var url1 = 'https://esi.evetech.net/latest/killmails/' + myArr[0].killmail_id + '/' + myArr[0]["zkb"].hash + '/?datasource=tranquility';
-						console.log(myArr[0].killmail_id);
+						console.log(myArr[0]);
 						console.log(actual_kills);
 						$.when(getAjax(url1)).done(function(data1){							
 							var a1 = 'sys_'+data1.solar_system_id;
