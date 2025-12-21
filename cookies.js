@@ -39,19 +39,20 @@ function setCookie(cname, cvalue) {
     console.log("document.cookie has lastKill?", document.cookie.includes('lastKill='));
     
     // Немедленно читаем обратно для проверки
-    //getCookieJS(cname, false, function(readBack) {
-    //    console.log("Прочитано обратно:", readBack);
-    //    if (readBack) {
-    //        try {
-    //            const parsed = JSON.parse(readBack);
-    //            console.log("Проверка: успешно распарсено обратно");
-    //            console.log("Ключей:", Object.keys(parsed).length);
-    //            console.log("val[a1] == parsed[a1]?", parsed[a1] === a2);
-    //        } catch(e) {
-    //            console.error("Ошибка при проверке:", e);
-    //        }
-    //    }
-    //});
+    getCookieJS(cname, false, function(readBack) {
+        console.log("Прочитано обратно:", readBack);
+        if (readBack) {
+            try {
+                const parsed = JSON.parse(readBack);
+                console.log("Проверка: успешно распарсено обратно");
+                console.log("Ключей:", Object.keys(parsed).length);
+                console.log(parsed);
+                //console.log("val[a1] == parsed[a1]?", parsed[a1] === a2);
+            } catch(e) {
+                console.error("Ошибка при проверке:", e);
+            }
+        }
+    });
 }
 function addCookie(cname,cvalue){//добавляем инфу в куки
 	// cvalue = cvalue[0];
