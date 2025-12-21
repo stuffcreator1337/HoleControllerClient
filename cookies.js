@@ -8,10 +8,10 @@ function setCookie(cname, cvalue) {
     //console.log("cvalue значение:", cvalue);
     
     // Убедимся, что cvalue - объект
-    if (typeof cvalue !== 'object' || cvalue === null) {
-        console.error("cvalue must be an object!");
-        return;
-    }
+    //if (typeof cvalue !== 'object' || cvalue === null) {
+    //    console.error("cvalue must be an object!");
+    //    return;
+    //}
     
     // Преобразуем в JSON строку
     const jsonString = JSON.stringify(cvalue);
