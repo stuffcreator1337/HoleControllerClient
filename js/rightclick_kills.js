@@ -162,7 +162,8 @@ if(!Label.length)
 				val = JSON.parse(cok);
 				for (var sys in val) {
 					if (val[sys] == null || val[sys] === undefined || val[sys] == "") {
-                        delete val[sys];
+						delete val[sys];
+					}
 				}
 				//console.log("До добавления - val[a1]:", val[a1]);
 				if (a1 in val) {
