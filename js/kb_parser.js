@@ -15,8 +15,9 @@ function kbparse(new_kills) {
 			if (isRecentKill(new_kills[system].time)) {
 				console.log("is kill recent?", isRecentKill(new_kills[system].time), system);
 				console.log(new_kills[system]);
-				console.log(system);
-				console.log(old_kills);
+				console.log("[" + system + "]", system.length);
+				console.log("[" + Object.keys(old_kills).find(k => k.includes("30000142")) + "]");
+
 				console.log(old_kills[system]);
 				try {
 					console.log(new_kills[system].id, old_kills[system].id);
