@@ -47,7 +47,7 @@ function setCookie(cname, cvalue) {
                 const parsed = JSON.parse(readBack);
                 console.log("Проверка: успешно распарсено обратно");
                 console.log("Ключей:", Object.keys(parsed).length);
-                console.log(parsed);
+                console.log(JSON.stringify(parsed));
                 //console.log("val[a1] == parsed[a1]?", parsed[a1] === a2);
             } catch(e) {
                 console.error("Ошибка при проверке:", e);
