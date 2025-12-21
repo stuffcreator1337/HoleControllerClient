@@ -25,7 +25,8 @@ function kbparse(new_kills) {
 					console.log(system == Object.keys(old_kills)[8]);
 					console.log(system === Object.keys(old_kills)[8]);
 					console.log(old_kills[Object.keys(old_kills)[8]]);
-
+					const cleanSystem = system.trim();
+					console.log(old_kills[cleanSystem]);
 				}
 				//console.log("[" + system + "]", system.length);
 				//console.log("[" + Object.keys(old_kills).find(k => k.includes("30000142")) + "]");
