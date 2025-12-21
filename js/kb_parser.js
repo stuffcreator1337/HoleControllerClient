@@ -16,18 +16,30 @@ function kbparse(new_kills) {
 				console.log("is kill recent?", isRecentKill(new_kills[system].time), system);
 				console.log("new_kills", typeof(new_kills),new_kills);
 				console.log("old_kills", typeof (old_kills), old_kills);
-				if (system == "sys_30000005") {
-					console.log(system, Object.keys(old_kills)[0]);
-					console.log(typeof (system), typeof (Object.keys(old_kills)[0]));
-					console.log(system.length, Object.keys(old_kills)[0].length);
-					console.log(system == Object.keys(old_kills)[0], system === Object.keys(old_kills)[0]);
-					console.log(old_kills[Object.keys(old_kills)[0]]);
-					console.log(typeof(old_kills[Object.keys(old_kills)[0]]));
-					console.log([...system].map(c => c.charCodeAt(0)));
-					console.log([...Object.keys(old_kills)[0]].map(c => c.charCodeAt(0)));
-					const cleanSystem = system.normalize("NFKC").replace(/[^\x20-\x7E]/g, "");
-					console.log(old_kills[cleanSystem]);
+
+				for (let k in old_kills) {
+					if (k.includes("30000005")) {
+						console.log("Found similar key:");
+						console.log("Key:", JSON.stringify(k));
+						console.log("Key length:", k.length);
+						console.log("Char codes:", [...k].map(c => c.charCodeAt(0)));
+						console.log("Value:", old_kills[k]);
+					}
 				}
+
+
+				//if (system == "sys_30000005") {
+				//	console.log(system, Object.keys(old_kills)[0]);
+				//	console.log(typeof (system), typeof (Object.keys(old_kills)[0]));
+				//	console.log(system.length, Object.keys(old_kills)[0].length);
+				//	console.log(system == Object.keys(old_kills)[0], system === Object.keys(old_kills)[0]);
+				//	console.log(old_kills[Object.keys(old_kills)[0]]);
+				//	console.log(typeof(old_kills[Object.keys(old_kills)[0]]));
+				//	console.log([...system].map(c => c.charCodeAt(0)));
+				//	console.log([...Object.keys(old_kills)[0]].map(c => c.charCodeAt(0)));
+				//	const cleanSystem = system.normalize("NFKC").replace(/[^\x20-\x7E]/g, "");
+				//	console.log(old_kills[cleanSystem]);
+				//}
 				//console.log("[" + system + "]", system.length);
 				//console.log("[" + Object.keys(old_kills).find(k => k.includes("30000142")) + "]");
 
