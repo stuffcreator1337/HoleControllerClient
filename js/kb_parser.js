@@ -14,11 +14,12 @@ function kbparse(new_kills) {
 			var namecont = document.getElementById(system.substring(4, 12));
 			if (isRecentKill(new_kills[system].time)) {
 				console.log("is kill recent?", isRecentKill(new_kills[system].time), system);
-				console.log(new_kills[system]);
-				console.log("[" + system + "]", system.length);
-				console.log("[" + Object.keys(old_kills).find(k => k.includes("30000142")) + "]");
+				//console.log(new_kills[system]);
+				//console.log("[" + system + "]", system.length);
+				//console.log("[" + Object.keys(old_kills).find(k => k.includes("30000142")) + "]");
 
-				console.log(old_kills[system]);
+				console.log(typeof (new_kills[system]));
+				console.log(typeof(old_kills[system]));
 				try {
 					console.log(new_kills[system].id, old_kills[system].id);
 				}
