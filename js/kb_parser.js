@@ -22,11 +22,11 @@ function kbparse(new_kills) {
 					console.log(system.length, Object.keys(old_kills)[40].length);
 					console.log(system == Object.keys(old_kills)[40], system === Object.keys(old_kills)[40]);
 					console.log(old_kills[Object.keys(old_kills)[40]]);
+					console.log([...system].map(c => c.charCodeAt(0)));
+					console.log([...Object.keys(old_kills)[40]].map(c => c.charCodeAt(0)));
+					const cleanSystem = system.normalize("NFKC").replace(/[^\x20-\x7E]/g, "");
+					console.log(old_kills[cleanSystem]);
 				}
-				console.log([...system].map(c => c.charCodeAt(0)));
-				console.log([...Object.keys(old_kills)[i]].map(c => c.charCodeAt(0)));
-				const cleanSystem = system.normalize("NFKC").replace(/[^\x20-\x7E]/g, "");
-				console.log(old_kills[cleanSystem]);
 				//console.log("[" + system + "]", system.length);
 				//console.log("[" + Object.keys(old_kills).find(k => k.includes("30000142")) + "]");
 
