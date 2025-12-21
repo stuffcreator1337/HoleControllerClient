@@ -18,8 +18,9 @@ function kbparse(new_kills) {
 				//console.log("[" + system + "]", system.length);
 				//console.log("[" + Object.keys(old_kills).find(k => k.includes("30000142")) + "]");
 
-				console.log(typeof (new_kills[system]));
+				//console.log(typeof (new_kills[system]));
 				console.log(typeof(old_kills[system]));
+				console.log(old_kills[system]);
 				try {
 					console.log(new_kills[system].id, old_kills[system].id);
 				}
