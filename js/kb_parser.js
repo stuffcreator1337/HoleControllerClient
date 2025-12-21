@@ -63,10 +63,10 @@ function kbparse(new_kills) {
 					color = "red";
 				}
 			}
-			old_kills[system] = new_kills[system] || null;
+			old_kills[system] = new_kills[system] || {};
 			if (namecont)namecont.children["nodeDivID"].children["nameContId"].style.color = color;
 		}
-		setCookie('lastKill', old_kills);
+		//setCookie('lastKill', old_kills);
 	});
 }		
 function isRecentKill(killmail_time, hours = 12) {
