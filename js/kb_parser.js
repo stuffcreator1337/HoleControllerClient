@@ -16,40 +16,29 @@ function kbparse(new_kills) {
 				console.log("is kill recent?", isRecentKill(new_kills[system].time), system);
 				console.log("new_kills", typeof(new_kills),new_kills);
 				console.log("old_kills", typeof (old_kills), old_kills);
-				// Попробуйте получить напрямую - должно работать через прототипную цепь
-				console.log("Конструктор объекта:", old_kills.constructor.name);
-				console.log("Является ли Proxy?", old_kills.constructor.name === "Proxy" || (Proxy && old_kills instanceof Proxy));
 
-				// Проверьте, не переопределен ли геттер
-				console.log("Object.getPrototypeOf:", Object.getPrototypeOf(old_kills));
-				console.log("old_kills.toString:", old_kills.toString);
+				console.log("=== Сравнение ключей ===");
 
-				const proto = Object.getPrototypeOf(old_kills);
-				if (proto) {
-					console.log("Проверка прототипа:");
-					const descriptor = Object.getOwnPropertyDescriptor(proto, "sys_30000005");
-					console.log("Дескриптор в прототипе:", descriptor);
+				const targetKey = "sys_30000005";
+				console.log("Искомый ключ:", JSON.stringify(targetKey));
+				console.log("Длина искомого ключа:", targetKey.length);
+				console.log("Коды символов искомого ключа:",
+					[...targetKey].map(c => c.charCodeAt(0)));
 
-					if (descriptor && descriptor.get) {
-						console.log("Есть геттер!", descriptor.get);
+				// 1. Переберем ВСЕ собственные свойства
+				const allOwnProps = Object.getOwnPropertyNames(old_kills);
+				console.log("\n1. Все собственные свойства (", allOwnProps.length, "):");
+
+				allOwnProps.forEach((key, index) => {
+					if (key.includes("30000005") || key === targetKey) {
+						console.log(`  [${index}] Найден похожий ключ: "${key}"`);
+						console.log(`      Длина: ${key.length}`);
+						console.log(`      Равен targetKey? ${key === targetKey}`);
+						console.log(`      JSON: ${JSON.stringify(key)}`);
+						console.log(`      Коды символов: ${[...key].map(c => c.charCodeAt(0))}`);
+						console.log(`      Значение:`, old_kills[key]);
 					}
-				}
-
-				console.log("Reflect.ownKeys(old_kills):", Reflect.ownKeys(old_kills).length);
-				console.log("Reflect.get(old_kills, 'sys_30000005'):",
-					Reflect.get(old_kills, "sys_30000005"));
-				console.log("Reflect.has(old_kills, 'sys_30000005'):",
-					Reflect.has(old_kills, "sys_30000005"));
-
-				// Получите все ключи из всей цепочки прототипов
-				let allKeys = new Set();
-				let obj = old_kills;
-				while (obj && obj !== Object.prototype) {
-					const keys = Reflect.ownKeys(obj);
-					keys.forEach(k => allKeys.add(k));
-					obj = Object.getPrototypeOf(obj);
-				}
-				console.log("Все ключи из цепочки:", Array.from(allKeys).slice(0, 20));
+				});
 
 				//if (system == "sys_30000005") {
 				//	console.log(system, Object.keys(old_kills)[0]);
