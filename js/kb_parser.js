@@ -13,8 +13,8 @@ function kbparse(new_kills) {
 		for (var system in new_kills) {
 			var color = "white";
 			var namecont = document.getElementById(system.substring(2, 10));
-			if (isRecentKill(new_kills[system].time)) {
-				console.log("is kill recent?", isRecentKill(new_kills[system].time), system);
+			if (isRecentKill(new_kills[system][1])) {
+				console.log("is kill recent?", isRecentKill(new_kills[system][1]), system);
 				//console.log("new_kills", typeof(new_kills),new_kills);
 				//console.log("old_kills", typeof (old_kills), old_kills);
 
@@ -65,10 +65,24 @@ function kbparse(new_kills) {
 	});
 }		
 function isRecentKill(killmail_time, hours = 12) {
-	const kill = new Date(killmail_time);
+	let killDate;
+	// Определяем тип входных данных
+	if (typeof killmail_time === 'string') {
+		// Это ISO строка
+		killDate = new Date(killmail_time);
+	} else if (typeof killmail_time === 'number') {
+		// Это timestamp
+		killDate = new Date(killmail_time);
+	} else if (killmail_time instanceof Date) {
+		// Это уже объект Date
+		killDate = killmail_time;
+	} else {
+		// Неизвестный формат
+		console.error("Неизвестный формат времени:", killmail_time);
+		return false;
+	}
 	const now = new Date();
-	const diffMs = now - kill; // разница в миллисекундах
-
+	const diffMs = now - killDate;
 	return diffMs <= hours * 60 * 60 * 1000;
 }
 function callAjaxfunc(sysid,callback) {		
