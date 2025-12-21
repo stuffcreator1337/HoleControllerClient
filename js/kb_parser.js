@@ -18,9 +18,7 @@ function kbparse(new_kills) {
 				console.log("old_kills", typeof (old_kills), old_kills);
 				// Попробуйте получить напрямую - должно работать через прототипную цепь
 				console.log("Конструктор объекта:", old_kills.constructor.name);
-				console.log("Является ли Proxy?",
-					old_kills.constructor.name === "Proxy" ||
-					(Proxy && old_kills instanceof Proxy));
+				console.log("Является ли Proxy?", old_kills.constructor.name === "Proxy" || (Proxy && old_kills instanceof Proxy));
 
 				// Проверьте, не переопределен ли геттер
 				console.log("Object.getPrototypeOf:", Object.getPrototypeOf(old_kills));
