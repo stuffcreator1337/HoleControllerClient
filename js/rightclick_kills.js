@@ -161,7 +161,7 @@ if(!Label.length)
 				var val = {};
 				val = JSON.parse(cok);
 				for (var sys in val) {
-					if (val[sys] == null || val[sys] === undefined || val[sys] == "") {
+					if (val[sys] == null || val[sys] === undefined || val[sys] == "" || sys.length == 12) {
 						delete val[sys];
 					}
 				}
