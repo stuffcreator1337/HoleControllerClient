@@ -149,10 +149,11 @@ if(!Label.length)
 
 
 
-			var a1 = 'sys_' + nodeselected.data.$sysid;
-			var a2 = actual_kills[a1];	
-
 			getCookieJS("lastKill", false, function (cok) {
+
+				var a1 = 'sys_' + nodeselected.data.$sysid;
+				var a2 = actual_kills[a1];	
+
 				console.log("Полученная кука:", cok);
 				console.log("Данные для сохранения:", a1, a2);
 
@@ -171,10 +172,14 @@ if(!Label.length)
 				} else {
 					console.log("Кука пустая или не существует");
 				}
-
-				// Добавляем/обновляем значение
 				console.log("До добавления - val[a1]:", val[a1]);
-				val[a1] = a2;
+				if (a1 in val) {
+					val[a1] = a2;
+					console.log("Обновлён существующий ключ:", a1);
+				} else {
+					val[a1] = a2;
+					console.log("Ключ не существует, добавляем:", a1);
+				}
 				console.log("После добавления - val[a1]:", val[a1]);
 
 				// Сохраняем

@@ -15,6 +15,7 @@ function setCookie(cname, cvalue) {
     
     // Преобразуем в JSON строку
     const jsonString = JSON.stringify(cvalue);
+    console.log(cvalue);
     console.log("JSON str:", jsonString);
     //console.log("length JSON:", jsonString.length);
     
