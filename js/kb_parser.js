@@ -14,20 +14,20 @@ function kbparse(new_kills) {
 			var color = "white";
 			var namecont = document.getElementById(system.substring(4, 12));
 			if (isRecentKill(new_kills[system].time)) {
-				console.log("is kill recent?", isRecentKill(new_kills[system].time), system);
-				console.log("new_kills", typeof(new_kills),new_kills);
-				console.log("old_kills", typeof (old_kills), old_kills);
+				//console.log("is kill recent?", isRecentKill(new_kills[system].time), system);
+				//console.log("new_kills", typeof(new_kills),new_kills);
+				//console.log("old_kills", typeof (old_kills), old_kills);
 
-				console.log("=== 1. Object.keys() ===");
-				const keys1 = Object.keys(old_kills);
-				console.log("Количество ключей:", keys1.length);
-				console.log("Все ключи:", keys1);
+				//console.log("=== 1. Object.keys() ===");
+				//const keys1 = Object.keys(old_kills);
+				//console.log("Количество ключей:", keys1.length);
+				//console.log("Все ключи:", keys1);
 
-				// Или построчно
-				console.log("\nКлючи построчно:");
-				keys1.forEach((key, index) => {
-					console.log(`${index}: ${key}`);
-				});
+				//// Или построчно
+				//console.log("\nКлючи построчно:");
+				//keys1.forEach((key, index) => {
+				//	console.log(`${index}: ${key}`);
+				//});
 
 				//if (system == "sys_30000005") {
 				//	console.log(system, Object.keys(old_kills)[0]);
@@ -64,7 +64,7 @@ function kbparse(new_kills) {
 					color = "red";
 				}
 			}
-			old_kills[system] = new_kills[system] || {};
+			//old_kills[system] = new_kills[system] || {};
 			if (namecont)namecont.children["nodeDivID"].children["nameContId"].style.color = color;
 		}
 		//setCookie('lastKill', old_kills);
