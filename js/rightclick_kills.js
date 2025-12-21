@@ -163,11 +163,12 @@ if(!Label.length)
 					// console.log(myArr);
 					if(myArr){
 						var url1 = 'https://esi.evetech.net/latest/killmails/' + myArr[0].killmail_id + '/' + myArr[0]["zkb"].hash + '/?datasource=tranquility';
-						console.log(url1);
+						console.log(myArr[0].killmail_id);
+						console.log(actual_kills);
 						$.when(getAjax(url1)).done(function(data1){							
 							var a1 = 'sys_'+data1.solar_system_id;
 							var a2 = data1.killmail_id;	
-							// console.log(a1,a2);	
+							console.log(a1,a2);	
 							var d = new Date();
 							d.setTime(d.getTime() + (1*24*60*60*1000));
 							var expires = "expires="+d.toUTCString();		
