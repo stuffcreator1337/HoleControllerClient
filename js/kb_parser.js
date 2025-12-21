@@ -23,7 +23,7 @@ function kbparse(new_kills) {
 
 				// Получите все собственные свойства
 				const ownProps = Object.getOwnPropertyNames(old_kills);
-				console.log("Все собственные свойства (первые 20):", ownProps.slice(0, 20));
+				console.log("Все собственные свойства:", ownProps);
 				console.log("Есть ли sys_30000005?", ownProps.includes("sys_30000005"));
 
 				//if (system == "sys_30000005") {
