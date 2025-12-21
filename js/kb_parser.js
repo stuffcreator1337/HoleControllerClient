@@ -16,15 +16,15 @@ function kbparse(new_kills) {
 				console.log("is kill recent?", isRecentKill(new_kills[system].time), system);
 				console.log("new_kills", typeof(new_kills),new_kills);
 				console.log("old_kills", typeof (old_kills), old_kills);
+				// Попробуйте получить напрямую - должно работать через прототипную цепь
+				console.log("Прямой доступ:", old_kills["sys_30000005"]);
+				console.log("Прямой доступ через точку:", old_kills.sys_30000005);
 
-				console.log("Проверка sys_30000005:");
-				console.log("hasOwnProperty:", old_kills.hasOwnProperty("sys_30000005"));
-				console.log("'sys_30000005' in old_kills:", "sys_30000005" in old_kills);
-
-				// Получите все собственные свойства
-				const ownProps = Object.getOwnPropertyNames(old_kills);
-				console.log("Все собственные свойства:", ownProps);
-				console.log("Есть ли sys_30000005?", ownProps.includes("sys_30000005"));
+				// Если не работает, получите через прототип
+				const proto = Object.getPrototypeOf(old_kills);
+				if (proto && "sys_30000005" in proto) {
+					console.log("Через прототип:", proto["sys_30000005"]);
+				}
 
 				//if (system == "sys_30000005") {
 				//	console.log(system, Object.keys(old_kills)[0]);
