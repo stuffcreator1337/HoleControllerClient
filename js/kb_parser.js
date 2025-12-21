@@ -17,13 +17,10 @@ function kbparse(new_kills) {
 				if (system == "sys_30003522") {
 					console.log("new_kills", new_kills);
 					console.log("old_kills", old_kills);
-					console.log(Object.keys(old_kills)[8]);
-					console.log(typeof (Object.keys(old_kills)[8]));
-					console.log(typeof (system));
-					console.log(Object.keys(old_kills)[8].length);
-					console.log(system.length);
-					console.log(system == Object.keys(old_kills)[8]);
-					console.log(system === Object.keys(old_kills)[8]);
+					console.log(system, Object.keys(old_kills)[8]);
+					console.log(typeof (system), typeof (Object.keys(old_kills)[8]));
+					console.log(system.length,Object.keys(old_kills)[8].length);
+					console.log(system == Object.keys(old_kills)[8], system === Object.keys(old_kills)[8]);
 					console.log(old_kills[Object.keys(old_kills)[8]]);
 					console.log([...system].map(c => c.charCodeAt(0)));
 					console.log([...Object.keys(old_kills)[8]].map(c => c.charCodeAt(0)));
