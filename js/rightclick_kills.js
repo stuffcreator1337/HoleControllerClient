@@ -154,8 +154,8 @@ if(!Label.length)
 				var a1 = 'sys_' + nodeselected.data.$sysid;
 				var a2 = actual_kills[a1];	
 
-				console.log("Полученная кука:", cok);
-				console.log("Данные для сохранения:", a1, a2);
+				//console.log("Полученная кука:", cok);
+				//console.log("Данные для сохранения:", a1, a2);
 
 				// Инициализируем объект
 				var val = {};
@@ -164,28 +164,28 @@ if(!Label.length)
 				if (cok && cok.trim() !== '') {
 					try {
 						val = JSON.parse(cok);
-						console.log("Успешно распарсено, ключей:", Object.keys(val).length);
+						//console.log("Успешно распарсено, ключей:", Object.keys(val).length);
 					} catch (e) {
-						console.error("Ошибка парсинга JSON:", e);
+						//console.error("Ошибка парсинга JSON:", e);
 						// Оставляем пустой объект
 					}
 				} else {
-					console.log("Кука пустая или не существует");
+					//console.log("Кука пустая или не существует");
 				}
-				console.log("До добавления - val[a1]:", val[a1]);
+				//console.log("До добавления - val[a1]:", val[a1]);
 				if (a1 in val) {
 					val[a1] = a2;
-					console.log("Обновлён существующий ключ:", a1);
+					//console.log("Обновлён существующий ключ:", a1);
 				} else {
 					val[a1] = a2;
-					console.log("Ключ не существует, добавляем:", a1);
+					//console.log("Ключ не существует, добавляем:", a1);
 				}
-				console.log("После добавления - val[a1]:", val[a1]);
+				//console.log("После добавления - val[a1]:", val[a1]);
 
 				// Сохраняем
 				console.log('stringify lastKill перед сохранением:', JSON.stringify(val));
-				console.log('JSON lastKill перед сохранением:', val);
-				console.log('Количество ключей:', Object.keys(val).length);
+				//console.log('JSON lastKill перед сохранением:', val);
+				//console.log('Количество ключей:', Object.keys(val).length);
 
 				setCookie('lastKill', val);
 			});	

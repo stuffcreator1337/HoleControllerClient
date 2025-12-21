@@ -15,11 +15,11 @@ function setCookie(cname, cvalue) {
     
     // Преобразуем в JSON строку
     const jsonString = JSON.stringify(cvalue);
-    console.log(cvalue);
-    console.log("JSON str:", jsonString);
+    //console.log(cvalue);
+    //console.log("JSON str:", jsonString);
     //console.log("length JSON:", jsonString.length);
 
-    console.log("len of JSON:", jsonString.length, "byte");
+    //console.log("len of JSON:", jsonString.length, "byte");
     if (jsonString.length > 4000) {
         console.warn("⚠️ too big");
     }
@@ -38,14 +38,15 @@ function setCookie(cname, cvalue) {
     
     // Устанавливаем куку
     document.cookie = cookieString;
-    
+
+    console.log(document.cookie);
     // Проверяем, что установилось
     //console.log("Кука установлена. Проверяем...");
-    console.log("document.cookie has lastKill?", document.cookie.includes('lastKill='));
+    //console.log("document.cookie has lastKill?", document.cookie.includes('lastKill='));
 
     setTimeout(() => {
         getCookieJS(cname, false, function (readBack) {
-            console.log("Прочитано обратно:", readBack);
+            //console.log("Прочитано обратно:", readBack);
             if (readBack) {
                 try {
                     const parsed = JSON.parse(readBack);
