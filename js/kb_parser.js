@@ -1,32 +1,11 @@
 function kbparse(new_kills) {
 	getCookieJS("lastKill", false, function(saved_cokie){
-		//console.log(cok);
-		console.log("=== ДЕБАГ: saved_cokie ===");
-		console.log("Тип saved_cokie:", typeof saved_cokie);
-		console.log("Длина saved_cokie:", saved_cokie?.length);
-		console.log("Содержимое saved_cokie:", saved_cokie);
-		console.log("Пустая строка?", saved_cokie === '');
-
-		var old_kills = {};
-		if (saved_cokie && saved_cokie.trim() !== '') {
-			try {
-				old_kills = JSON.parse(saved_cokie);
-				console.log("Успешно распарсено!");
-				console.log("Тип old_kills:", typeof old_kills);
-				console.log("old_kills keys count:", Object.keys(old_kills).length);
-			} catch (e) {
-				console.error("Ошибка парсинга JSON:", e);
-				console.error("Проблемная строка:", saved_cokie);
-			}
-		} else {
-			console.log("Нет сохранённых данных в куке");
-		}
-
-
 		var old_kills = {};
 		if (saved_cokie) {
 			old_kills = JSON.parse(saved_cokie);
 		}
+		console.log(saved_cokie);
+		console.log(old_kills);
 		//console.log(old_kills, new_kills);
 		//console.log("savedKills", old_kills);
 		//console.log("new_kills", new_kills);
