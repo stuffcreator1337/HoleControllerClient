@@ -17,11 +17,19 @@ function kbparse(new_kills) {
 				console.log("is kill recent?", isRecentKill(new_kills[system][1]), system);
 				console.log(old_kills[system], new_kills[system]);
 				//console.log("old_kills", typeof (old_kills), old_kills);
-				if (old_kills[system] != "undefined") {
+				try {
+					console.log(new_kills[system][1], old_kills[system][1]);
 					if (new_kills[system][1] == old_kills[system][1]) {
 						console.log("1 no new kills in system", system);
 						color = "orange";
-					} 
+					} else {
+						console.log("%c new kills in system " + system, "background:orange;color:white");
+						color = "red";
+					}
+				}
+				catch (e) {
+					console.log("%c new kills in system " + system, "background:orange;color:white");
+					color = "red";
 				}
 				//console.log("=== 1. Object.keys() ===");
 				//const keys1 = Object.keys(old_kills);
@@ -55,13 +63,13 @@ function kbparse(new_kills) {
 				//console.log(realKey);
 				//console.log(typeof(realKey));
 				//console.log(old_kills[realKey]);
-				if (new_kills[system] == old_kills[system]) {
-                    console.log("2 no new kills in system", system);
-					color = "orange";
-				} else {
-					console.log("%c new kills in system " + system, "background:orange;color:white");
-					color = "red";
-				}
+				//if (new_kills[system] == old_kills[system]) {
+    //                console.log("2 no new kills in system", system);
+				//	color = "orange";
+				//} else {
+				//	console.log("%c new kills in system " + system, "background:orange;color:white");
+				//	color = "red";
+				//}
 			}
 			//old_kills[system] = new_kills[system] || {};
 			if (namecont)namecont.children["nodeDivID"].children["nameContId"].style.color = color;
