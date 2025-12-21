@@ -162,6 +162,7 @@ if(!Label.length)
 					var myArr = JSON.parse(xmlhttp.responseText);
 					// console.log(myArr);
 					if(myArr){
+						console.log(url1);
 						var url1 = 'https://esi.evetech.net/latest/killmails/'+myArr[0].killmail_id+'/'+myArr[0]["zkb"].hash+'/?datasource=tranquility';
 						$.when(getAjax(url1)).done(function(data1){							
 							var a1 = 'sys_'+data1.solar_system_id;
@@ -180,7 +181,7 @@ if(!Label.length)
 									var val = JSON.parse(cok);
 								}
 								val[a1] = a2;
-								// console.log(val);
+								console.log('lastKill', val);
 								setCookie('lastKill',val);								
 							});							
 						});
