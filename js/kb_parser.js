@@ -17,16 +17,14 @@ function kbparse(new_kills) {
 				console.log("new_kills", typeof(new_kills),new_kills);
 				console.log("old_kills", typeof (old_kills), old_kills);
 
-				for (let k in old_kills) {
-					if (k.includes("30000005")) {
-						console.log("Found similar key:");
-						console.log("Key:", JSON.stringify(k));
-						console.log("Key length:", k.length);
-						console.log("Char codes:", [...k].map(c => c.charCodeAt(0)));
-						console.log("Value:", old_kills[k]);
-					}
-				}
+				console.log("Проверка sys_30000005:");
+				console.log("hasOwnProperty:", old_kills.hasOwnProperty("sys_30000005"));
+				console.log("'sys_30000005' in old_kills:", "sys_30000005" in old_kills);
 
+				// Получите все собственные свойства
+				const ownProps = Object.getOwnPropertyNames(old_kills);
+				console.log("Все собственные свойства (первые 20):", ownProps.slice(0, 20));
+				console.log("Есть ли sys_30000005?", ownProps.includes("sys_30000005"));
 
 				//if (system == "sys_30000005") {
 				//	console.log(system, Object.keys(old_kills)[0]);
