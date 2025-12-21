@@ -43,21 +43,22 @@ function setCookie(cname, cvalue) {
     //console.log("Кука установлена. Проверяем...");
     console.log("document.cookie has lastKill?", document.cookie.includes('lastKill='));
 
-    // Немедленно читаем обратно для проверки
-    getCookieJS(cname, false, function(readBack) {
-        console.log("Прочитано обратно:", readBack);
-        if (readBack) {
-            try {
-                const parsed = JSON.parse(readBack);
-                console.log("Проверка: успешно распарсено обратно");
-                console.log("Ключей:", Object.keys(parsed).length);
-                console.log(JSON.stringify(parsed));
-                //console.log("val[a1] == parsed[a1]?", parsed[a1] === a2);
-            } catch(e) {
-                console.error("Ошибка при проверке:", e);
+    setTimeout(() => {
+        getCookieJS(cname, false, function (readBack) {
+            console.log("Прочитано обратно:", readBack);
+            if (readBack) {
+                try {
+                    const parsed = JSON.parse(readBack);
+                    console.log("Проверка: успешно распарсено обратно");
+                    console.log("Ключей:", Object.keys(parsed).length);
+                    console.log(JSON.stringify(parsed));
+                    //console.log("val[a1] == parsed[a1]?", parsed[a1] === a2);
+                } catch (e) {
+                    console.error("Ошибка при проверке:", e);
+                }
             }
-        }
-    });
+        });
+    }, 100);
 }
 function addCookie(cname,cvalue){//добавляем инфу в куки
 	// cvalue = cvalue[0];
