@@ -3,14 +3,55 @@
 
 
 function setCookie(cname, cvalue) {
-	// console.log(cvalue);
-	// console.log(JSON.stringify(cvalue));
-	cvalue = encodeURIComponent(JSON.stringify(cvalue));
+    console.log("setCookie вызвана с:", cname);
+    console.log("cvalue тип:", typeof cvalue);
+    console.log("cvalue значение:", cvalue);
+
+    // Убедимся, что cvalue - объект
+    if (typeof cvalue !== 'object' || cvalue === null) {
+        console.error("cvalue должен быть объектом!");
+        return;
+    }
+
+    // Преобразуем в JSON строку
+    const jsonString = JSON.stringify(cvalue);
+    console.log("JSON строка:", jsonString);
+    console.log("Длина JSON:", jsonString.length);
+
+    // Кодируем для куки
+    const encodedValue = encodeURIComponent(jsonString);
+    console.log("Закодированное значение:", encodedValue);
+
+    // Устанавливаем дату истечения
     var d = new Date();
-    d.setTime(d.getTime() + (365*24*60*60*1000));
-	// console.log(d);
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+
+    // Формируем куку
+    const cookieString = cname + "=" + encodedValue + ";" + expires + ";path=/";
+    console.log("Строка куки:", cookieString);
+
+    // Устанавливаем куку
+    document.cookie = cookieString;
+
+    // Проверяем, что установилось
+    console.log("Кука установлена. Проверяем...");
+    console.log("document.cookie содержит lastKill?", document.cookie.includes('lastKill='));
+
+    // Немедленно читаем обратно для проверки
+    getCookieJS(cname, false, function (readBack) {
+        console.log("Прочитано обратно:", readBack);
+        if (readBack) {
+            try {
+                const parsed = JSON.parse(readBack);
+                console.log("Проверка: успешно распарсено обратно");
+                console.log("Ключей:", Object.keys(parsed).length);
+                console.log("val[a1] == parsed[a1]?", parsed[a1] === a2);
+            } catch (e) {
+                console.error("Ошибка при проверке:", e);
+            }
+        }
+    });
 }
 function addCookie(cname,cvalue){//добавляем инфу в куки
 	// cvalue = cvalue[0];
