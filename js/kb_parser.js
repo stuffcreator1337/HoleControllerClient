@@ -20,7 +20,7 @@ function kbparse(new_kills) {
 					console.log(system, Object.keys(old_kills)[40]);
 					console.log(typeof (system), typeof (Object.keys(old_kills)[40]));
 					console.log(system.length, Object.keys(old_kills)[40].length);
-					console.log(system == Object.keys(old_kills)[40], system === Object.keys(old_kills)40]);
+					console.log(system == Object.keys(old_kills)[40], system === Object.keys(old_kills)[40]);
 					console.log(old_kills[Object.keys(old_kills)[40]]);
 				}
 				console.log([...system].map(c => c.charCodeAt(0)));
