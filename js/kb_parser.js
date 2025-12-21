@@ -14,16 +14,17 @@ function kbparse(new_kills) {
 			var namecont = document.getElementById(system.substring(4, 12));
 			if (isRecentKill(new_kills[system].time)) {
 				console.log("is kill recent?", isRecentKill(new_kills[system].time), system);
-				console.log("new_kills", new_kills);
-				console.log("old_kills", old_kills);
-				if (system == "sys_30003522") {
-					console.log(system, Object.keys(old_kills)[40]);
-					console.log(typeof (system), typeof (Object.keys(old_kills)[40]));
-					console.log(system.length, Object.keys(old_kills)[40].length);
-					console.log(system == Object.keys(old_kills)[40], system === Object.keys(old_kills)[40]);
-					console.log(old_kills[Object.keys(old_kills)[40]]);
+				console.log("new_kills", typeof(new_kills),new_kills);
+				console.log("old_kills", typeof (old_kills), old_kills);
+				if (system == "sys_30000005") {
+					console.log(system, Object.keys(old_kills)[0]);
+					console.log(typeof (system), typeof (Object.keys(old_kills)[0]));
+					console.log(system.length, Object.keys(old_kills)[0].length);
+					console.log(system == Object.keys(old_kills)[0], system === Object.keys(old_kills)[0]);
+					console.log(old_kills[Object.keys(old_kills)[0]]);
+					console.log(typeof(old_kills[Object.keys(old_kills)[0]]));
 					console.log([...system].map(c => c.charCodeAt(0)));
-					console.log([...Object.keys(old_kills)[40]].map(c => c.charCodeAt(0)));
+					console.log([...Object.keys(old_kills)[0]].map(c => c.charCodeAt(0)));
 					const cleanSystem = system.normalize("NFKC").replace(/[^\x20-\x7E]/g, "");
 					console.log(old_kills[cleanSystem]);
 				}
