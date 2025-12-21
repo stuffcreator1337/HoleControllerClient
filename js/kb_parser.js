@@ -17,27 +17,15 @@ function kbparse(new_kills) {
 				console.log("new_kills", typeof(new_kills),new_kills);
 				console.log("old_kills", typeof (old_kills), old_kills);
 
-				console.log("=== Сравнение ключей ===");
+				console.log("=== 1. Object.keys() ===");
+				const keys1 = Object.keys(old_kills);
+				console.log("Количество ключей:", keys1.length);
+				console.log("Все ключи:", keys1);
 
-				const targetKey = "sys_30000005";
-				console.log("Искомый ключ:", JSON.stringify(targetKey));
-				console.log("Длина искомого ключа:", targetKey.length);
-				console.log("Коды символов искомого ключа:",
-					[...targetKey].map(c => c.charCodeAt(0)));
-
-				// 1. Переберем ВСЕ собственные свойства
-				const allOwnProps = Object.getOwnPropertyNames(old_kills);
-				console.log("\n1. Все собственные свойства (", allOwnProps.length, "):");
-
-				allOwnProps.forEach((key, index) => {
-					if (key.includes("30000005") || key === targetKey) {
-						console.log(`  [${index}] Найден похожий ключ: "${key}"`);
-						console.log(`      Длина: ${key.length}`);
-						console.log(`      Равен targetKey? ${key === targetKey}`);
-						console.log(`      JSON: ${JSON.stringify(key)}`);
-						console.log(`      Коды символов: ${[...key].map(c => c.charCodeAt(0))}`);
-						console.log(`      Значение:`, old_kills[key]);
-					}
+				// Или построчно
+				console.log("\nКлючи построчно:");
+				keys1.forEach((key, index) => {
+					console.log(`${index}: ${key}`);
 				});
 
 				//if (system == "sys_30000005") {
