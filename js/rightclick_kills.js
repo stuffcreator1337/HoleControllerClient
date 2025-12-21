@@ -154,7 +154,7 @@ if(!Label.length)
 
 			getCookieJS("lastKill", false, function (cok) {
 				// console.log(cok);
-				// console.log(a1,a2);
+				 console.log(a1,a2);
 				// console.log(JSON.parse(cok));
 				var val = {};
 				if (cok) {
