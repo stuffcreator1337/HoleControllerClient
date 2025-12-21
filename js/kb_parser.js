@@ -15,7 +15,7 @@ function kbparse(new_kills) {
 			var namecont = document.getElementById(system.substring(2, 10));
 			if (isRecentKill(new_kills[system][1])) {
 				console.log("is kill recent?", isRecentKill(new_kills[system][1]), system);
-				//console.log("new_kills", typeof(new_kills),new_kills);
+				console.log(old_kills[system][1], new_kills[system][1]);
 				//console.log("old_kills", typeof (old_kills), old_kills);
 
 				//console.log("=== 1. Object.keys() ===");
