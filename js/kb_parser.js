@@ -38,7 +38,7 @@ function kbparse(new_kills) {
 					color = "red";
 				}
 			}
-			old_kills[system] = new_kills[system];
+			old_kills[system] = new_kills[system] || null;
 			if (namecont)namecont.children["nodeDivID"].children["nameContId"].style.color = color;
 		}
 		setCookie('lastKill', old_kills);
