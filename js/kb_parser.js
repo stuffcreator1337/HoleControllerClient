@@ -17,14 +17,41 @@ function kbparse(new_kills) {
 				console.log("new_kills", typeof(new_kills),new_kills);
 				console.log("old_kills", typeof (old_kills), old_kills);
 				// Попробуйте получить напрямую - должно работать через прототипную цепь
-				console.log("Прямой доступ:", old_kills["sys_30000005"]);
-				console.log("Прямой доступ через точку:", old_kills.sys_30000005);
+				console.log("Конструктор объекта:", old_kills.constructor.name);
+				console.log("Является ли Proxy?",
+					old_kills.constructor.name === "Proxy" ||
+					(Proxy && old_kills instanceof Proxy));
 
-				// Если не работает, получите через прототип
+				// Проверьте, не переопределен ли геттер
+				console.log("Object.getPrototypeOf:", Object.getPrototypeOf(old_kills));
+				console.log("old_kills.toString:", old_kills.toString);
+
 				const proto = Object.getPrototypeOf(old_kills);
-				if (proto && "sys_30000005" in proto) {
-					console.log("Через прототип:", proto["sys_30000005"]);
+				if (proto) {
+					console.log("Проверка прототипа:");
+					const descriptor = Object.getOwnPropertyDescriptor(proto, "sys_30000005");
+					console.log("Дескриптор в прототипе:", descriptor);
+
+					if (descriptor && descriptor.get) {
+						console.log("Есть геттер!", descriptor.get);
+					}
 				}
+
+				console.log("Reflect.ownKeys(old_kills):", Reflect.ownKeys(old_kills).length);
+				console.log("Reflect.get(old_kills, 'sys_30000005'):",
+					Reflect.get(old_kills, "sys_30000005"));
+				console.log("Reflect.has(old_kills, 'sys_30000005'):",
+					Reflect.has(old_kills, "sys_30000005"));
+
+				// Получите все ключи из всей цепочки прототипов
+				let allKeys = new Set();
+				let obj = old_kills;
+				while (obj && obj !== Object.prototype) {
+					const keys = Reflect.ownKeys(obj);
+					keys.forEach(k => allKeys.add(k));
+					obj = Object.getPrototypeOf(obj);
+				}
+				console.log("Все ключи из цепочки:", Array.from(allKeys).slice(0, 20));
 
 				//if (system == "sys_30000005") {
 				//	console.log(system, Object.keys(old_kills)[0]);
