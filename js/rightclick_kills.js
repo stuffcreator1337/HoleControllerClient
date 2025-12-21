@@ -146,6 +146,34 @@ if(!Label.length)
 			// console.log(graph);
 			//menu.classList.add( killsmenuActive );
 			document.getElementById("kills-menu").className = "kills-menu kills-menu--active";
+
+
+
+			var a1 = 'sys_' + nodeselected.data.$sysid;
+			var a2 = actual_kills[a1];	
+
+			getCookieJS("lastKill", false, function (cok) {
+				// console.log(cok);
+				// console.log(a1,a2);
+				// console.log(JSON.parse(cok));
+				var val = {};
+				if (cok) {
+					var val = JSON.parse(cok);
+				}
+				val[a1] = a2;
+				console.log('lastKill', val);
+				setCookie('lastKill', val);
+			});		
+
+			var starthtml = '<ul class="kills-menu__items">';
+			menu.innerHTML = starthtml;
+			// console.log(myArr[i]);	<img src="https://image.eveonline.com/Type/'+myArr[i].victim.ship_type_id+'_32.png" height="16" width="16" />
+			menu.innerHTML = menu.innerHTML + ' <li class="kills-menu__item"><a href="https://zkillboard.com/system/' + nodeselected.data.$sysid + '" target="_blank" class="killhref">Open system zkb page</a></li>';
+			var endhtml = '</ul>';
+			menu.innerHTML = menu.innerHTML + endhtml;
+			return;
+
+
 			var nameonly = graph.clearName(nodeselected.id);
 
 			var xmlhttp = new XMLHttpRequest();
