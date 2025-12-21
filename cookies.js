@@ -3,55 +3,55 @@
 
 
 function setCookie(cname, cvalue) {
-    console.log("setCookie вызвана с:", cname);
-    console.log("cvalue тип:", typeof cvalue);
-    console.log("cvalue значение:", cvalue);
-
+    //console.log("setCookie вызвана с:", cname);
+    //console.log("cvalue тип:", typeof cvalue);
+    //console.log("cvalue значение:", cvalue);
+    
     // Убедимся, что cvalue - объект
     if (typeof cvalue !== 'object' || cvalue === null) {
-        console.error("cvalue должен быть объектом!");
+        console.error("cvalue must be an object!");
         return;
     }
-
+    
     // Преобразуем в JSON строку
     const jsonString = JSON.stringify(cvalue);
-    console.log("JSON строка:", jsonString);
-    console.log("Длина JSON:", jsonString.length);
-
+    //console.log("JSON str:", jsonString);
+    //console.log("length JSON:", jsonString.length);
+    
     // Кодируем для куки
     const encodedValue = encodeURIComponent(jsonString);
-    console.log("Закодированное значение:", encodedValue);
-
+    //console.log("encoded:", encodedValue);
+    
     // Устанавливаем дату истечения
     var d = new Date();
-    d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+    d.setTime(d.getTime() + (365*24*60*60*1000));
     var expires = "expires=" + d.toUTCString();
-
+    
     // Формируем куку
     const cookieString = cname + "=" + encodedValue + ";" + expires + ";path=/";
-    console.log("Строка куки:", cookieString);
-
+    //console.log("cok str:", cookieString);
+    
     // Устанавливаем куку
     document.cookie = cookieString;
-
+    
     // Проверяем, что установилось
-    console.log("Кука установлена. Проверяем...");
-    console.log("document.cookie содержит lastKill?", document.cookie.includes('lastKill='));
-
+    //console.log("Кука установлена. Проверяем...");
+    console.log("document.cookie has lastKill?", document.cookie.includes('lastKill='));
+    
     // Немедленно читаем обратно для проверки
-    getCookieJS(cname, false, function (readBack) {
-        console.log("Прочитано обратно:", readBack);
-        if (readBack) {
-            try {
-                const parsed = JSON.parse(readBack);
-                console.log("Проверка: успешно распарсено обратно");
-                console.log("Ключей:", Object.keys(parsed).length);
-                console.log("val[a1] == parsed[a1]?", parsed[a1] === a2);
-            } catch (e) {
-                console.error("Ошибка при проверке:", e);
-            }
-        }
-    });
+    //getCookieJS(cname, false, function(readBack) {
+    //    console.log("Прочитано обратно:", readBack);
+    //    if (readBack) {
+    //        try {
+    //            const parsed = JSON.parse(readBack);
+    //            console.log("Проверка: успешно распарсено обратно");
+    //            console.log("Ключей:", Object.keys(parsed).length);
+    //            console.log("val[a1] == parsed[a1]?", parsed[a1] === a2);
+    //        } catch(e) {
+    //            console.error("Ошибка при проверке:", e);
+    //        }
+    //    }
+    //});
 }
 function addCookie(cname,cvalue){//добавляем инфу в куки
 	// cvalue = cvalue[0];
