@@ -738,10 +738,10 @@ function holeTypes1(data){return {"holes" : {
 	"C729": {
 		"from": "",
 		"to": 25,
-		"time": 720,
+		"time": 960,
 		"mass": 1000000000,
 		"regen": 0,
-		"jumpmass": 410000000
+		"jumpmass": 375000000
 	},
 	"X450": {
 		"from": "",
@@ -757,7 +757,7 @@ function holeTypes1(data){return {"holes" : {
 		"time": 960,
 		"mass": 1000000000,
 		"regen": 0,
-		"jumpmass": 375000000
+		"jumpmass": 450000000
 	},
 	"F216": {
 		"from": "",
