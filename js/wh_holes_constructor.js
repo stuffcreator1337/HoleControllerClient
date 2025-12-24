@@ -1,5 +1,5 @@
 function str10(m,imgName,str){
-	var str11 = createImg(imgName)+" "+str+"<font color=green>"+m+".000.000</font><br>";
+	var str11 = createImg(imgName)+" "+str+"<font color=green>"+m+"</font><br>";
 	return str11;
 }
 function str20(t,imgName,str){
