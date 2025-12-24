@@ -9,6 +9,8 @@ function str20(t,imgName,str){
 function setHole(type){
 	var eff;
 	console.log(holeTypes1().holes[type]);
+	eff = createHole(holeTypes1().holes[type].mass, holeTypes1().holes[type].jump, holeTypes1().holes[type].time / 60);
+	return;
 	//console.log(type,power);
 	switch (type) {
 		case "G024":        eff = createHole("2.000","300","16"); return eff;        break;
