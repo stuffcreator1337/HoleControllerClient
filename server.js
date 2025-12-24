@@ -39,8 +39,8 @@ socket.on('auth_success_firstlogin', function(msg){//получаем подтв
 		setCookie('map_access',codedata);//добавляем инфу в куки
 		clientInfo.updData(msg.data[2]);
 		for(var i=0;i<chardata.length;i++){
-			// console.log(atob(chardata[i]['CharacterName']),chardata[i]['CharacterID'],i,cookie);
-			createTab(atob(chardata[i]['CharacterName']),chardata[i]['CharacterID'],i,cookie);	
+			// console.log(chardata[i]['CharacterName'],chardata[i]['CharacterID'],i,cookie);
+			createTab(chardata[i]['CharacterName'],chardata[i]['CharacterID'],i,cookie);	
 		}
 		setTimeout(function(){
 			setactivetab();
@@ -83,7 +83,7 @@ socket.on('auth_success_addcharacter', function (msg) {//получаем под
 		// startingMap('initiate');
 		clientInfo.updData(msg.data[2]);
 		for(var i=0;i<chardata.length;i++){
-			createTab(atob(chardata[i]['CharacterName']),chardata[i]['CharacterID'],i,cookie);	
+			createTab(chardata[i]['CharacterName'],chardata[i]['CharacterID'],i,cookie);	
 		}
 		setactivetab();
 		
@@ -113,10 +113,10 @@ socket.on('start_char', function(msg){
 		if (cook[i]['CharacterID'] == msg.data['CharacterID']){//ищем перса в кукисах
 			for(var p=0;p<cook[i]['password'].length;p++){//проверяем его пароль
 				if (cook[i]['password'][p] == msg.user){
-					console.log("%c STARTING FOR: " + msg.data['CharacterID'] + ' - ' + atob(msg.data['CharacterName']) + ' - ' + i + 'password:' + msg.user,"background:green; color: white");
+					console.log("%c STARTING FOR: " + msg.data['CharacterID'] + ' - ' + msg.data['CharacterName'] + ' - ' + i + 'password:' + msg.user,"background:green; color: white");
 
 					// console.log("%c Going to add tabs for characters, currently we have "+r_token.length+" characters.","background: #fff; color: 660033");
-					createTab(atob(msg.data['CharacterName']), msg.data['CharacterID'],i,cookie);	
+					createTab(msg.data['CharacterName'], msg.data['CharacterID'],i,cookie);	
 					var tdTabs = allTabs.getElementsByTagName("td");
 					tdTabs[0].className = "active_top_selected";
 					tdTabs[1].className = "active_top_selected";
@@ -186,7 +186,7 @@ socket.on('privat_char_update', function(msg){
 		var chardata = msg.data;
 		
 		for(var i=0;i<chardata.length;i++){
-		createTab(atob(chardata[i]['CharacterName']),chardata[i]['CharacterID'],i,cookie);	
+		createTab(chardata[i]['CharacterName'],chardata[i]['CharacterID'],i,cookie);	
 		}
 		setactivetab();	
 

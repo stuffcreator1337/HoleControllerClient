@@ -17,7 +17,7 @@ function updPilotPos(data){
 	for(let i=0; i < data.length; i++){
 		// console.log(data[i]);
 		if(data[i]['CharacterName']){
-			var new_tr = createPilotTr(atob(data[i]['CharacterName']),
+			var new_tr = createPilotTr(data[i]['CharacterName'],
 			data[i]['solar_system_id'],
 			data[i]['ship_type_id'],
 			data[i]['last_login'],
