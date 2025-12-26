@@ -172,9 +172,11 @@ function getWhEffect(effect,statics,type){
 	//console.log((statics));
 	//console.log((statics1color.color));
 	//console.log((statics1color.type));
+	var statics11 = "<text></text>";
+	var statics12 = "<text></text>";
 	try {
-		var statics11 = "<text wh_color_check='" + colored + "' color_type=" + statics1color.type + " style=>" + statics1 + " " + statics1color.type + "</text>",
-			statics12 = "<text wh_color_check='" + colored + "' color_type=" + statics1color.type + " style=>" + correctHole(statics1class).substr(0, 1) + "</text>";
+		statics11 = "<text wh_color_check='" + colored + "' color_type=" + statics1color.type + " style=>" + statics1 + " " + statics1color.type + "</text>",
+		statics12 = "<text wh_color_check='" + colored + "' color_type=" + statics1color.type + " style=>" + correctHole(statics1class).substr(0, 1) + "</text>";
 
 	} catch (e) {
         console.log(e);
