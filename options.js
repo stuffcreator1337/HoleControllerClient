@@ -7,40 +7,47 @@ class OpenOptions{
 		function getColor(opt, colorName, defaultColor) {
 			return opt && opt[colorName] !== undefined ? opt[colorName] : defaultColor;
 		}
-        this.opt_compact = getDefault(opt ? opt.opt_compact : undefined, true);
+        this.opt_compact = getDefault(opt ? opt.opt_compact : undefined, false);
         this.Always_On_top = getDefault(opt ? opt.Always_On_top : undefined, false);
         this.Show_pilots = getDefault(opt ? opt.Show_pilots : undefined, false);
         this.Circles = getDefault(opt ? opt.Circles : undefined, false);
         this.Node_size = getDefault(opt ? opt.Node_size : undefined, 9);
         this.Angular_Widths = getDefault(opt ? opt.Angular_Widths : undefined, 0);
         this.frameBorder = getDefault(opt ? opt.frameBorder : undefined, true);
-        this.opt_colorStatics = getDefault(opt ? opt.opt_colorStatics : undefined, true);
-		this.colors = {
-			color_back: getColor(opt, 'color_back', "#1A1A1A"),
-			color_t1: getColor(opt, 'color_t1', "#FFFFFF"),
-			color_t2: getColor(opt, 'color_t2', "#bfbfbf"),
-			color_fr1: getColor(opt, 'color_fr1', "#262626"),
-			color_fr2: getColor(opt, 'color_fr2', "#1A1A1A"),
-			color_sys: getColor(opt, 'color_sys', "#FFFFFF"),
-			color_sys2: getColor(opt, 'color_sys2', "#000000"),
-			color_High: getColor(opt, 'color_High', "#00CCFF"),
-			color_Low: getColor(opt, 'color_Low', "#FFFF00"),
-			color_Null: getColor(opt, 'color_Null', "#6633CC"),
-			color_C1: getColor(opt, 'color_C1', "#00FF00"),
-			color_C2: getColor(opt, 'color_C2', "#33CC00"),
-			color_C3: getColor(opt, 'color_C3', "#55BB00"),
-			color_C4: getColor(opt, 'color_C4', "#BB5500"),
-			color_C5: getColor(opt, 'color_C5', "#CC2200"),
-			color_C6: getColor(opt, 'color_C6', "#CC0000"),
-			color_C13: getColor(opt, 'color_C13', "#CC6699"),
-			color_C14: getColor(opt, 'color_C14', "#999966"),
-			color_C15: getColor(opt, 'color_C15', "#999966"),
-			color_C16: getColor(opt, 'color_C16', "#999966"),
-			color_C17: getColor(opt, 'color_C17', "#999966"),
-			color_Abyss: getColor(opt, 'color_Abyss', "#996633"),
-			color_Thera: getColor(opt, 'color_Thera', "#660033"),
-			color_Pochven: getColor(opt, 'color_Pochven', "#660000")
-		};
+        this.opt_colorStatics = getDefault(opt ? opt.opt_colorStatics : undefined, false);
+		
+        this.colors = {};
+        for (let key in all_colors) {
+            if (all_colors.hasOwnProperty(key)) {
+                this.colors[key] = getColor(opt, key, all_colors[key]);
+            }
+        }
+		//this.colors = {
+		//	color_back: getColor(opt, 'color_back', "#1A1A1A"),
+		//	color_t1: getColor(opt, 'color_t1', "#FFFFFF"),
+		//	color_t2: getColor(opt, 'color_t2', "#bfbfbf"),
+		//	color_fr1: getColor(opt, 'color_fr1', "#262626"),
+		//	color_fr2: getColor(opt, 'color_fr2', "#1A1A1A"),
+		//	color_sys: getColor(opt, 'color_sys', "#FFFFFF"),
+		//	color_sys2: getColor(opt, 'color_sys2', "#000000"),
+		//	color_High: getColor(opt, 'color_High', "#00CCFF"),
+		//	color_Low: getColor(opt, 'color_Low', "#FFFF00"),
+		//	color_Null: getColor(opt, 'color_Null', "#6633CC"),
+		//	color_C1: getColor(opt, 'color_C1', "#00FF00"),
+		//	color_C2: getColor(opt, 'color_C2', "#33CC00"),
+		//	color_C3: getColor(opt, 'color_C3', "#55BB00"),
+		//	color_C4: getColor(opt, 'color_C4', "#BB5500"),
+		//	color_C5: getColor(opt, 'color_C5', "#CC2200"),
+		//	color_C6: getColor(opt, 'color_C6', "#CC0000"),
+		//	color_C13: getColor(opt, 'color_C13', "#CC6699"),
+		//	color_C14: getColor(opt, 'color_C14', "#999966"),
+		//	color_C15: getColor(opt, 'color_C15', "#999966"),
+		//	color_C16: getColor(opt, 'color_C16', "#999966"),
+		//	color_C17: getColor(opt, 'color_C17', "#999966"),
+		//	color_Abyss: getColor(opt, 'color_Abyss', "#996633"),
+		//	color_Thera: getColor(opt, 'color_Thera', "#660033"),
+		//	color_Pochven: getColor(opt, 'color_Pochven', "#660000")
+		//};
 
 	}
 	save(opt){//console.log(this);

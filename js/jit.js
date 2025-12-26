@@ -4201,9 +4201,6 @@ $jit.Graph = new Class({
 		obj.style.color = color;
 	},
 	setNodeDivFramesStyles: function(nodeDiv){
-        console.log(saved_options.colors.color_fr1);
-        console.log(saved_options.colors.color_fr2);
-        console.log(saved_options.colors);
 		nodeDiv.style.background = '-webkit-linear-gradient(top,'+saved_options.colors.color_fr1+' 0%,'+saved_options.colors.color_fr2+' 100%)';
 	},
 	opt_setSys2Color: function(that,color,obj){		
