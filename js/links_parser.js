@@ -188,15 +188,15 @@ function parse(json){
 	};
 	
 	var home_static_type = defineStaticType(fullmap[homesystemID]["sysclass"],homesystemID,fullmap[homesystemID]);
-	var homesystemSavedColor = saved_options.color_C5;
+	var homesystemSavedColor = saved_options.colors.color_C5;
 	switch(fullmap[homesystemID]["sysclass"]) {
-		case 'C1':homesystemSavedColor = saved_options.color_C1;break;
-		case 'C2':homesystemSavedColor = saved_options.color_C2;break;
-		case 'C3':homesystemSavedColor = saved_options.color_C3;break;
-		case 'C4':homesystemSavedColor = saved_options.color_C4;break;
-		case 'C5':homesystemSavedColor = saved_options.color_C5;break;
-		case 'C6':homesystemSavedColor = saved_options.color_C6;break;
-		default: homesystemSavedColor = saved_options.color_C5;
+		case 'C1':homesystemSavedColor = saved_options.colors.color_C1;break;
+		case 'C2':homesystemSavedColor = saved_options.colors.color_C2;break;
+		case 'C3':homesystemSavedColor = saved_options.colors.color_C3;break;
+		case 'C4':homesystemSavedColor = saved_options.colors.color_C4;break;
+		case 'C5':homesystemSavedColor = saved_options.colors.color_C5;break;
+		case 'C6':homesystemSavedColor = saved_options.colors.colors.color_C6;break;
+		default: homesystemSavedColor = saved_options.colors.color_C5;
 	}
 	var new_json,
 		homepart = {

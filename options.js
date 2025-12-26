@@ -1,40 +1,46 @@
 // // var fs = require('fs');
 class OpenOptions{
-	constructor(opt){
-		this.opt_compact = opt ? opt.opt_compact : true;
-		this.Always_On_top = opt ? opt.Always_On_top : false;
-		this.Show_pilots = opt ? opt.Show_pilots : false;
-		this.Circles = opt ? opt.Circles : false;
-		this.Node_size = opt ? opt.Node_size : 9;
-		this.Angular_Widths = opt ? opt.Angular_Widths : 0;
-		this.frameBorder = opt ? opt.frameBorder : true;
-		// this.opt_colorStatics = opt ? opt.opt_colorStatics : true;
-		this.opt_colorStatics = opt ? (opt.opt_colorStatics == 'undefined' ? true : opt.opt_colorStatics) : true;
-		
-		this.color_back 		= opt ? opt.color_back 		: "#1A1A1A";
-		this.color_t1 			= opt ? opt.color_t1 		: "#FFFFFF";
-		this.color_t2 			= opt ? opt.color_t2 		: "#bfbfbf";
-		this.color_fr1 			= opt ? opt.color_fr1 		: "#262626";
-		this.color_fr2 			= opt ? opt.color_fr2 		: "#1A1A1A";
-		this.color_sys 			= opt ? opt.color_sys 		: "#FFFFFF";
-		this.color_sys2 		= opt ? opt.color_sys2 		: "#000000";
-		this.color_High 		= opt ? opt.color_High 		: "#00CCFF";
-		this.color_Low 			= opt ? opt.color_Low 		: "#FFFF00";
-		this.color_Null 		= opt ? opt.color_Null 		: "#6633CC";
-		this.color_C1 			= opt ? opt.color_C1 		: "#00FF00";
-		this.color_C2 			= opt ? opt.color_C2 		: "#33CC00";
-		this.color_C3 			= opt ? opt.color_C3 		: "#55BB00";
-		this.color_C4 			= opt ? opt.color_C4 		: "#BB5500";
-		this.color_C5 			= opt ? opt.color_C5 		: "#CC2200";
-		this.color_C6 			= opt ? opt.color_C6 		: "#CC0000";
-		this.color_C13 			= opt ? opt.color_C13 		: "#CC6699";
-		this.color_C14 			= opt ? opt.color_C14 		: "#999966";
-		this.color_C15 			= opt ? opt.color_C15 		: "#999966";
-		this.color_C16 			= opt ? opt.color_C16 		: "#999966";
-		this.color_C17 			= opt ? opt.color_C17 		: "#999966";
-		this.color_Abyss 		= opt ? opt.color_Abyss 	: "#996633";
-		this.color_Thera 		= opt ? opt.color_Thera 	: "#660033";
-		this.color_Pochven 		= opt ? opt.color_Pochven 	: "#660000";
+	constructor(opt) {
+		function getDefault(value, defaultValue) {
+			return value === undefined ? defaultValue : value;
+		}
+		function getColor(opt, colorName, defaultColor) {
+			return opt && opt[colorName] !== undefined ? opt[colorName] : defaultColor;
+		}
+        this.opt_compact = getDefault(opt ? opt.opt_compact : undefined, true);
+        this.Always_On_top = getDefault(opt ? opt.Always_On_top : undefined, false);
+        this.Show_pilots = getDefault(opt ? opt.Show_pilots : undefined, false);
+        this.Circles = getDefault(opt ? opt.Circles : undefined, false);
+        this.Node_size = getDefault(opt ? opt.Node_size : undefined, 9);
+        this.Angular_Widths = getDefault(opt ? opt.Angular_Widths : undefined, 0);
+        this.frameBorder = getDefault(opt ? opt.frameBorder : undefined, true);
+        this.opt_colorStatics = getDefault(opt ? opt.opt_colorStatics : undefined, true);
+		this.colors = {
+			color_back: getColor(opt, 'color_back', "#1A1A1A"),
+			color_t1: getColor(opt, 'color_t1', "#FFFFFF"),
+			color_t2: getColor(opt, 'color_t2', "#bfbfbf"),
+			color_fr1: getColor(opt, 'color_fr1', "#262626"),
+			color_fr2: getColor(opt, 'color_fr2', "#1A1A1A"),
+			color_sys: getColor(opt, 'color_sys', "#FFFFFF"),
+			color_sys2: getColor(opt, 'color_sys2', "#000000"),
+			color_High: getColor(opt, 'color_High', "#00CCFF"),
+			color_Low: getColor(opt, 'color_Low', "#FFFF00"),
+			color_Null: getColor(opt, 'color_Null', "#6633CC"),
+			color_C1: getColor(opt, 'color_C1', "#00FF00"),
+			color_C2: getColor(opt, 'color_C2', "#33CC00"),
+			color_C3: getColor(opt, 'color_C3', "#55BB00"),
+			color_C4: getColor(opt, 'color_C4', "#BB5500"),
+			color_C5: getColor(opt, 'color_C5', "#CC2200"),
+			color_C6: getColor(opt, 'color_C6', "#CC0000"),
+			color_C13: getColor(opt, 'color_C13', "#CC6699"),
+			color_C14: getColor(opt, 'color_C14', "#999966"),
+			color_C15: getColor(opt, 'color_C15', "#999966"),
+			color_C16: getColor(opt, 'color_C16', "#999966"),
+			color_C17: getColor(opt, 'color_C17', "#999966"),
+			color_Abyss: getColor(opt, 'color_Abyss', "#996633"),
+			color_Thera: getColor(opt, 'color_Thera', "#660033"),
+			color_Pochven: getColor(opt, 'color_Pochven', "#660000")
+		};
 
 	}
 	save(opt){//console.log(this);
@@ -64,6 +70,59 @@ class OpenOptions{
 	// };
 
 }	
+const colortypes = [
+	"color_back",
+	"color_t1",
+	"color_t2",
+	"color_fr1",
+	"color_fr2",
+	"color_sys",
+	"color_sys2",
+	"color_High",
+	"color_Low",
+	"color_Null",
+	"color_C1",
+	"color_C2",
+	"color_C3",
+	"color_C4",
+	"color_C5",
+	"color_C6",
+	"color_C13",
+	"color_C14",
+	"color_C15",
+	"color_C16",
+	"color_C17",
+	"color_Abyss",
+	"color_Thera",
+	"color_Pochven"
+];
+const all_colors = {
+	"color_back": "#1A1A1A",
+	"color_t1": "#FFFFFF",
+	"color_t2": "#bfbfbf",
+	"color_fr1": "#262626",
+	"color_fr2": "#1A1A1A",
+	"color_sys": "#FFFFFF",
+	"color_sys2": "#000000",
+	"color_High": "#00CCFF",
+	"color_Low": "#FFFF00",
+	"color_Null": "#6633CC",
+	"color_C1": "#00FF00",
+	"color_C2": "#33CC00",
+	"color_C3": "#55BB00",	
+	"color_C4": "#BB5500",	
+	"color_C5": "#CC2200",	
+	"color_C6": "#CC0000",	
+	"color_C13": "#CC6699",	
+	"color_C14": "#999966",	
+	"color_C15": "#999966",	
+	"color_C16": "#999966",	
+	"color_C17": "#999966",	
+	"color_Abyss": "#996633",
+	"color_Thera": "#660033",
+	"color_Pochven": "#660000",
+};
+
 function loadOptions(data){
 	if(!data){data = '{}';}
 	// console.log(data);
@@ -85,33 +144,18 @@ function loadOptions(data){
 	document.getElementById("totalAngularWidths") ? document.getElementById("totalAngularWidths").value = saved_options.Angular_Widths : null;
 	document.getElementById("nodeSize") ? document.getElementById("nodeSize").value = saved_options.Node_size : null;
 	document.getElementById("noBorder") ? document.getElementById("noBorder").checked = !saved_options.frameBorder : null;
-	
-	saved_options.color_back 	= saved_options.color_back 	?	saved_options.color_back	: "#1A1A1A";	setJsColor("color_back",saved_options.color_back);opt_setNewColor(document.getElementById("color_back"),saved_options.color_back)
-	saved_options.color_t1 		= saved_options.color_t1 	?	saved_options.color_t1		: "#FFFFFF";	setJsColor("color_t1",saved_options.color_t1);opt_setNewColor(document.getElementById("color_t1"),saved_options.color_t1)
-	saved_options.color_t2 		= saved_options.color_t2 	?	saved_options.color_t2		: "#bfbfbf";	setJsColor("color_t2",saved_options.color_t2);opt_setNewColor(document.getElementById("color_t2"),saved_options.color_t2)
-	saved_options.color_fr1 	= saved_options.color_fr1	?	saved_options.color_fr1		: "#262626";	setJsColor("color_fr1",saved_options.color_fr1);opt_setNewColor(document.getElementById("color_fr1"),saved_options.color_fr1)
-	saved_options.color_fr2 	= saved_options.color_fr2 	?	saved_options.color_fr2		: "#1A1A1A";	setJsColor("color_fr2",saved_options.color_fr2);opt_setNewColor(document.getElementById("color_fr2"),saved_options.color_fr2)
-	saved_options.color_sys 	= saved_options.color_sys 	?	saved_options.color_sys		: "#FFFFFF";	setJsColor("color_sys",saved_options.color_sys);opt_setNewColor(document.getElementById("color_sys"),saved_options.color_sys)
-	saved_options.color_sys2 	= saved_options.color_sys2 	?	saved_options.color_sys2	: "#000000";	setJsColor("color_sys2",saved_options.color_sys2);opt_setNewColor(document.getElementById("color_sys2"),saved_options.color_sys2)
-	// saved_options.color_text 	= saved_options.color_text 	?	saved_options.color_text	: "#FFFFFF";	setJsColor("color_text",saved_options.color_text);opt_setNewColor(document.getElementById("color_text"),saved_options.color_text)
-	saved_options.color_High 	= saved_options.color_High 	?	saved_options.color_High	: "#00CCFF";	setJsColor("color_High",saved_options.color_High);
-	saved_options.color_Low 	= saved_options.color_Low 	?	saved_options.color_Low		: "#FFFF00";	setJsColor("color_Low",saved_options.color_Low);
-	saved_options.color_Null 	= saved_options.color_Null 	?	saved_options.color_Null	: "#6633CC";	setJsColor("color_Null",saved_options.color_Null);
-	saved_options.color_C1 		= saved_options.color_C1 	?	saved_options.color_C1		: "#00FF00";	setJsColor("color_C1",saved_options.color_C1);
-	saved_options.color_C2 		= saved_options.color_C2 	?	saved_options.color_C2		: "#33CC00";	setJsColor("color_C2",saved_options.color_C2);
-	saved_options.color_C3 		= saved_options.color_C3 	?	saved_options.color_C3		: "#55BB00";	setJsColor("color_C3",saved_options.color_C3);
-	saved_options.color_C4 		= saved_options.color_C4 	?	saved_options.color_C4		: "#BB5500";	setJsColor("color_C4",saved_options.color_C4);
-	saved_options.color_C5 		= saved_options.color_C5 	?	saved_options.color_C5		: "#CC2200";	setJsColor("color_C5",saved_options.color_C5);
-	saved_options.color_C6 		= saved_options.color_C6 	?	saved_options.color_C6		: "#CC0000";	setJsColor("color_C6",saved_options.color_C6);
-	saved_options.color_C13 	= saved_options.color_C13 	?	saved_options.color_C13		: "#CC6699";	setJsColor("color_C13",saved_options.color_C13);
-	saved_options.color_C14 	= saved_options.color_C14 	?	saved_options.color_C14		: "#999966";	setJsColor("color_C14",saved_options.color_C14);
-	saved_options.color_C15 	= saved_options.color_C15 	?	saved_options.color_C15		: "#999966";	setJsColor("color_C15",saved_options.color_C15);
-	saved_options.color_C16 	= saved_options.color_C16 	?	saved_options.color_C16		: "#999966";	setJsColor("color_C16",saved_options.color_C16);
-	saved_options.color_C17 	= saved_options.color_C17 	?	saved_options.color_C17		: "#999966";	setJsColor("color_C17",saved_options.color_C17);
-	saved_options.color_Abyss 	= saved_options.color_Abyss ?	saved_options.color_Abyss	: "#996633";	setJsColor("color_Abyss",saved_options.color_Abyss);
-	saved_options.color_Thera 	= saved_options.color_Thera ?	saved_options.color_Thera	: "#660033";	setJsColor("color_Thera",saved_options.color_Thera);
-	saved_options.color_Pochven = saved_options.color_Pochven ?	saved_options.color_Pochven	: "#660000";	setJsColor("color_Pochven",saved_options.color_Pochven);
-	
+
+
+	for (let colorKey in all_colors) {
+		// Если ключ существует в saved_options, используем его, иначе значение из all_colors
+		saved_options.colors[colorKey] = saved_options.colors[colorKey] || all_colors[colorKey];
+
+		// Применяем значение через setJsColor и opt_setNewColor
+		setJsColor(colorKey, saved_options.colors[colorKey]);
+		opt_setNewColor(document.getElementById(colorKey), saved_options.colors[colorKey]);
+	}
+
+
 	saved_options.save();
 // console.log(document.getElementById("color_High"));
 // console.log(saved_options.color_High);
@@ -128,32 +172,16 @@ whSysInfo = whSysInfo1(saved_options);
 function setJsColor(id,color){
 	document.getElementById(id) ? (document.getElementById(id).style.color = color, document.getElementById(id).style.backgroundColor = color, document.getElementById(id).value = color) : null;
 }
-function setColorDefault(){
-	setJsColor("color_back","#1A1A1A");	opt_setNewColor(document.getElementById("color_back"),"#1A1A1A")
-	setJsColor("color_t1","#FFFFFF");	opt_setNewColor(document.getElementById("color_t1"),"#FFFFFF")
-	setJsColor("color_t2","#bfbfbf");	opt_setNewColor(document.getElementById("color_t2"),"#bfbfbf")
-	setJsColor("color_fr1","#262626");opt_setNewColor(document.getElementById("color_fr1"),"#262626")
-	setJsColor("color_fr2","#1A1A1A");opt_setNewColor(document.getElementById("color_fr2"),"#1A1A1A")
-	setJsColor("color_sys","#FFFFFF");opt_setNewColor(document.getElementById("color_sys"),"#FFFFFF")
-	setJsColor("color_sys2","#000000");opt_setNewColor(document.getElementById("color_sys2"),"#000000")
-	// setJsColor("color_text","#FFFFFF");opt_setNewColor(document.getElementById("color_text"),"#FFFFFF")
-	setJsColor("color_High","#00CCFF");opt_setNewColor(document.getElementById("color_High"),"#00CCFF")
-	setJsColor("color_Low","#FFFF00");opt_setNewColor(document.getElementById("color_Low"),"#FFFF00")
-	setJsColor("color_Null","#6633CC");opt_setNewColor(document.getElementById("color_Null"),"#6633CC")
-	setJsColor("color_C1","#00FF00");opt_setNewColor(document.getElementById("color_C1"),"#00FF00")
-	setJsColor("color_C2","#33CC00");opt_setNewColor(document.getElementById("color_C2"),"#33CC00")
-	setJsColor("color_C3","#55BB00");opt_setNewColor(document.getElementById("color_C3"),"#55BB00")
-	setJsColor("color_C4","#BB5500");opt_setNewColor(document.getElementById("color_C4"),"#BB5500")
-	setJsColor("color_C5","#CC2200");opt_setNewColor(document.getElementById("color_C5"),"#CC2200")
-	setJsColor("color_C6","#CC0000");opt_setNewColor(document.getElementById("color_C6"),"#CC0000")
-	setJsColor("color_C13","#CC6699");opt_setNewColor(document.getElementById("color_C13"),"#CC6699")
-	setJsColor("color_C14","#999966");opt_setNewColor(document.getElementById("color_C14"),"#999966")
-	setJsColor("color_C15","#999966");opt_setNewColor(document.getElementById("color_C15"),"#999966")
-	setJsColor("color_C16","#999966");opt_setNewColor(document.getElementById("color_C16"),"#999966")
-	setJsColor("color_C17","#999966");opt_setNewColor(document.getElementById("color_C17"),"#999966")
-	setJsColor("color_Abyss","#996633");	opt_setNewColor(document.getElementById("color_Abyss"),"#996633")
-	setJsColor("color_Thera","#660033");	opt_setNewColor(document.getElementById("color_Thera"),"#660033")
-	setJsColor("color_Pochven","#660000");	opt_setNewColor(document.getElementById("color_Pochven"),"#660000")
+function setColorDefault() {
+    for (let colorKey in all_colors) {
+        if (all_colors.hasOwnProperty(colorKey)) {  // Проверка на собственное свойство
+            let colorValue = all_colors[colorKey];  // Получаем значение цвета по ключу
+
+            // Динамически вызываем setJsColor и opt_setNewColor с использованием colorKey
+            setJsColor(colorKey, colorValue);
+            opt_setNewColor(document.getElementById(colorKey), colorValue);
+        }
+    }
 }
 function check(that){
 	console.log(that.id);
@@ -250,7 +278,7 @@ function opt_setNewColor(that,color,nodeDiv){
 			// console.log(objects.length,objects);	
 			for(var i=0;i<objects.length;i++){
 							// console.log(objects[i]);
-				objects[i].style.background = '-webkit-linear-gradient(top,'+saved_options.color_fr1+' 0%,'+saved_options.color_fr2+' 100%)';	
+				objects[i].style.background = '-webkit-linear-gradient(top,'+saved_options.colors.color_fr1+' 0%,'+saved_options.colors.color_fr2+' 100%)';	
 			}	
 		
 		// background: -webkit-linear-gradient(top,#262626 0%,#1A1A1A 100%);	

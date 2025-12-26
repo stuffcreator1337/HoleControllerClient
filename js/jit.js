@@ -4201,7 +4201,7 @@ $jit.Graph = new Class({
 		obj.style.color = color;
 	},
 	setNodeDivFramesStyles: function(nodeDiv){
-		nodeDiv.style.background = '-webkit-linear-gradient(top,'+saved_options.color_fr1+' 0%,'+saved_options.color_fr2+' 100%)';
+		nodeDiv.style.background = '-webkit-linear-gradient(top,'+saved_options.colors.color_fr1+' 0%,'+saved_options.colors.color_fr2+' 100%)';
 	},
 	opt_setSys2Color: function(that,color,obj){		
 		that.style.color = color;
@@ -4214,7 +4214,7 @@ $jit.Graph = new Class({
 		obj.style.color = color;
 		var objects = document.querySelectorAll("text[color_type='"+type+"'][wh_color_check='false']");
 		for(var i=0;i<objects.length;i++){
-			objects[i].style.color= saved_options.color_t2;;
+			objects[i].style.color= saved_options.colors.color_t2;;
 		}
 	},
 	createNodeStyle: function(g,domElement, node,localsjs,socket){
@@ -4246,10 +4246,10 @@ $jit.Graph = new Class({
 		//switchVisible(что_показываем, на_что_наводим);
 		document.getElementById("opt_pilots") ? ((!document.getElementById("opt_pilots").checked)?	setVis(pilotsInfo_short, "-999em", false) :	setVis(pilotsInfo_short, "10px", true)):(setVis(pilotsInfo_short, "-999em", false));
 
-		this.setNodeDivEffStyles(effect,document.getElementById("color_t2"),saved_options.color_t2);		
+		this.setNodeDivEffStyles(effect,document.getElementById("color_t2"),saved_options.colors.color_t2);		
 		this.setNodeDivFramesStyles(nodeDiv);
-		this.opt_setSys1Color(document.getElementById("color_sys"),saved_options.color_sys,nameContainer);
-		this.opt_setSys2Color(document.getElementById("color_sys2"),saved_options.color_sys2,nameContainer);
+		this.opt_setSys1Color(document.getElementById("color_sys"),saved_options.colors.color_sys,nameContainer);
+		this.opt_setSys2Color(document.getElementById("color_sys2"),saved_options.colors.color_sys2,nameContainer);
 		
 		var style = nameContainer.style;
 		var effshort = node.data.$effect.substring(0, 3);

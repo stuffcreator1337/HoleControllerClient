@@ -29,7 +29,7 @@ function updPilotPos(data){
 		}
 		
 	}	
-	opt_setNewColor(document.getElementById("color_back"),saved_options.color_back);
+	opt_setNewColor(document.getElementById("color_back"),saved_options.colors.color_back);
 }
 function docCreateElem(type,id,cl,inner,disp,appendTo,charID,online){
 
