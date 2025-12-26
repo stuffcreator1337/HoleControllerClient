@@ -4264,7 +4264,10 @@ $jit.Graph = new Class({
 		g.fx.animate();
 		if (node.data.$class == "Null"){effect.innerHTML = node.data.$statics;}
 		else if ((node.data.$class == "High")||(node.data.$class == "Low")){effect.innerHTML = getKsHubs(node.data.$statics);}
-		else{	effect.innerHTML = getWhEffect(node.data.$effect,node.data.$statics,'');}
+        else {
+            console.log(node.data);
+            effect.innerHTML = getWhEffect(node.data.$effect, node.data.$statics, '');
+        }
 		this.closeButtonEvt(g,domElement,inside_elements,node,socket);	
 		this.nameContainerEvt(g,node,nameContainer,socket);
 

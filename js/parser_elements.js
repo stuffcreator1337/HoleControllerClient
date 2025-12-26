@@ -141,18 +141,18 @@ function getWhEffect(effect,statics,type){
 		switch(staticClass) {
 		case '': st.color = "FFFFFF"; st.type = "No info"; return st;		break;
 		case '0': st.color = "FFFFFF"; st.type = "No info"; return st;		break;
-		case '1': st.color = saved_options.color_C1; st.type = "C1"; return st;		break;
-		case '2': st.color = saved_options.color_C2; st.type = "C2"; return st;		break;
-		case '3': st.color = saved_options.color_C3; st.type = "C3"; return st;		break;
-		case '4': st.color = saved_options.color_C4; st.type = "C4"; return st;		break;
-		case '5': st.color = saved_options.color_C5; st.type = "C5"; return st;		break;
-		case '6': st.color = saved_options.color_C6; st.type = "C6"; return st;		break;
-		case 'l': st.color = saved_options.color_Low; st.type = "Low"; return st;		break;
-		case 'n': st.color = saved_options.color_Null; st.type = "Null"; return st;		break;
-		case 'h': st.color = saved_options.color_High; st.type = "High"; return st;		break;
-		case 's': st.color = saved_options.color_Abyss; st.type = ""; return st;		break;
-		case 't': st.color = saved_options.color_Thera; st.type = ""; return st;		break;
-		case 'p': st.color = saved_options.color_Pochven; st.type = ""; return st;		break;
+		case '1': st.color = saved_options.colors.color_C1; st.type = "C1"; return st;		break;
+		case '2': st.color = saved_options.colors.color_C2; st.type = "C2"; return st;		break;
+		case '3': st.color = saved_options.colors.color_C3; st.type = "C3"; return st;		break;
+		case '4': st.color = saved_options.colors.color_C4; st.type = "C4"; return st;		break;
+		case '5': st.color = saved_options.colors.color_C5; st.type = "C5"; return st;		break;
+		case '6': st.color = saved_options.colors.color_C6; st.type = "C6"; return st;		break;
+		case 'l': st.color = saved_options.colors.color_Low; st.type = "Low"; return st;		break;
+		case 'n': st.color = saved_options.colors.color_Null; st.type = "Null"; return st;		break;
+		case 'h': st.color = saved_options.colors.color_High; st.type = "High"; return st;		break;
+		case 's': st.color = saved_options.colors.color_Abyss; st.type = ""; return st;		break;
+		case 't': st.color = saved_options.colors.color_Thera; st.type = ""; return st;		break;
+		case 'p': st.color = saved_options.colors.color_Pochven; st.type = ""; return st;		break;
 		}
 	};
 	
