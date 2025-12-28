@@ -4540,8 +4540,8 @@ $jit.Graph = new Class({
                 var tr = docCreateElem('tr', fullmap[id1].solarSystemName + "_dest", 'activeLeft_table', '', '', tbody);
                 var td1 = docCreateElem('td', fullmap[id1].solarSystemName + "_destName", '', "<text style='color:" + fullmap[id1].color + "'>" + fullmap[id1].solarSystemName + "</text> ", '', tr);
 
-                var td2 = docCreateElem('td', "safeDest_" + id1, '', safeDest, '', tr);
-                var td3 = docCreateElem('td', '', '', " (" + shortDest + ") ", '', tr);
+                var td2 = docCreateElem('td', "safeDest_" + id1, '', secure, '', tr);
+                var td3 = docCreateElem('td', '', '', " (" + short + ") ", '', tr);
                 var td4 = docCreateElem('td', '', '', 'jumps', '', tr);
                 td1.style.color = fullmap[id1].color;
 
