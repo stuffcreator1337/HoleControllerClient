@@ -4529,6 +4529,11 @@ $jit.Graph = new Class({
             //console.log(kbdata);
             kbparse(kbdata.data);
         });
+        socket.on('sending_dest', function (destdata) {
+            if (destdata.user == activeCharTab) {
+                consol.log(destdata);
+            }
+        });
 		socket.on('new_chars_position', function(data_chars){
 			// console.log("%c New char location recieved","background:pink;color:black");
             if (data_chars.user == 'all'){				
@@ -4540,7 +4545,7 @@ $jit.Graph = new Class({
             for (let i = 0; i < data_chars.data.length; i++) {
                 if (data_chars.data[i]['CharacterID'] == activeCharTab) {
                     console.log("%c name:" + data_chars.data[i]['CharacterName'] + ', id:' + activeCharTab, "background:green;color:black");
-                    // socket.emit('routes_request',{'user':activeCharTab});//<<---раблочить позже
+                    //socket.emit('routes_request',{'user':activeCharTab});//<<---раблочить позже
                     updateLocTab(data_chars.data[i]['solar_system_id'], data_chars.data[i]['CharacterID']);
                     if (!isWh(data_chars.data[i]['solar_system_id'])) {
                         console.log(data_chars.data[i]['solar_system_id'] + ' - NEED TO FIND ENTER TO HOME');
