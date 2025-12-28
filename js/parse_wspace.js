@@ -24,48 +24,48 @@ function findExits(data){
 			// console.log("getting distance for: "+fullmap[destSys].solarSystemName);
 			socket.emit('dest_request', { 'user': activeCharTab, 'id1': parseInt($jit.id('current_id').innerHTML), 'id2': parseInt(destSys) });
 
-			return;
-			getDistance(parseInt($jit.id('current_id').innerHTML),parseInt(destSys),function(data1,data2){
-				// console.log(data1,data2);//data1 - safe путь, data2 - short путь
-				var tbody = $jit.id('destParsed').firstChild;
-				var searchName = fullmap[data1[data1.length-1]].solarSystemName+"_dest";
-				// console.log(searchName);
-				var searchSys = $jit.id(searchName);
-				// console.log(document.getElementById('current_system').innerHTML);
-				try{
-					var safeCount = document.getElementById("safeDest_"+data2[data2.length-1]).innerHTML;
-				}catch(e){
-					var safeCount = '';
-				}
-				// console.log(safeCount);
-				// var safeCount = document.getElementById("safeDest_"+data2[data2.length-1]).innerHTML;
-				if((!searchSys) && (data2.length-1 != safeCount)){
-				// var tr = document.createElement('tr');
-				var shortDest = data1.length-1;
-				var safeDest = data2.length-1;
-				var tr = docCreateElem('tr',fullmap[data1[data1.length-1]].solarSystemName+"_dest",'activeLeft_table','','',tbody);			
-				var td1 = docCreateElem('td',fullmap[data1[data1.length-1]].solarSystemName+"_destName",'',"<text style='color:"+fullmap[data1[data1.length-1]].color+"'>"+fullmap[data1[data1.length-1]].solarSystemName+"</text> ",'',tr);
+			//return;
+			//getDistance(parseInt($jit.id('current_id').innerHTML),parseInt(destSys),function(data1,data2){
+			//	// console.log(data1,data2);//data1 - safe путь, data2 - short путь
+			//	var tbody = $jit.id('destParsed').firstChild;
+			//	var searchName = fullmap[data1[data1.length-1]].solarSystemName+"_dest";
+			//	// console.log(searchName);
+			//	var searchSys = $jit.id(searchName);
+			//	// console.log(document.getElementById('current_system').innerHTML);
+			//	try{
+			//		var safeCount = document.getElementById("safeDest_"+data2[data2.length-1]).innerHTML;
+			//	}catch(e){
+			//		var safeCount = '';
+			//	}
+			//	// console.log(safeCount);
+			//	// var safeCount = document.getElementById("safeDest_"+data2[data2.length-1]).innerHTML;
+			//	if((!searchSys) && (data2.length-1 != safeCount)){
+			//	// var tr = document.createElement('tr');
+			//	var shortDest = data1.length-1;
+			//	var safeDest = data2.length-1;
+			//	var tr = docCreateElem('tr',fullmap[data1[data1.length-1]].solarSystemName+"_dest",'activeLeft_table','','',tbody);			
+			//	var td1 = docCreateElem('td',fullmap[data1[data1.length-1]].solarSystemName+"_destName",'',"<text style='color:"+fullmap[data1[data1.length-1]].color+"'>"+fullmap[data1[data1.length-1]].solarSystemName+"</text> ",'',tr);
 			
-				var td2 = docCreateElem('td',"safeDest_"+data1[data1.length-1],'',safeDest,'',tr);
-				var td3 = docCreateElem('td','',''," ("+shortDest+") ",'',tr);
-				var td4 = docCreateElem('td','','','jumps','',tr);
-					// td1.id = fullmap[data1[data1.length-1]].solarSystemName+"_destName";;
-					// td1.innerHTML = "<text style='color:"+fullmap[data1[data1.length-1]].color+"'>"+fullmap[data1[data1.length-1]].solarSystemName+"</text> ";
-					td1.style.color = fullmap[data1[data1.length-1]].color;
-					// td2.innerHTML = safeDest;
-					// td2.id = "safeDest_"+data1[data1.length-1];
-					// td3.innerHTML = " ("+shortDest+") ";
-					// td4.innerHTML = "jumps";
-					// tr.appendChild(td1);
-					// tr.appendChild(td2);
-					// tr.appendChild(td3);
-					// tr.appendChild(td4);
-				// tbody.appendChild(tr);	
-				}
-				else{
-					// console.log(fullmap[data1[0]].solarSystemName);
-				}
-			});
+			//	var td2 = docCreateElem('td',"safeDest_"+data1[data1.length-1],'',safeDest,'',tr);
+			//	var td3 = docCreateElem('td','',''," ("+shortDest+") ",'',tr);
+			//	var td4 = docCreateElem('td','','','jumps','',tr);
+			//		// td1.id = fullmap[data1[data1.length-1]].solarSystemName+"_destName";;
+			//		// td1.innerHTML = "<text style='color:"+fullmap[data1[data1.length-1]].color+"'>"+fullmap[data1[data1.length-1]].solarSystemName+"</text> ";
+			//		td1.style.color = fullmap[data1[data1.length-1]].color;
+			//		// td2.innerHTML = safeDest;
+			//		// td2.id = "safeDest_"+data1[data1.length-1];
+			//		// td3.innerHTML = " ("+shortDest+") ";
+			//		// td4.innerHTML = "jumps";
+			//		// tr.appendChild(td1);
+			//		// tr.appendChild(td2);
+			//		// tr.appendChild(td3);
+			//		// tr.appendChild(td4);
+			//	// tbody.appendChild(tr);	
+			//	}
+			//	else{
+			//		// console.log(fullmap[data1[0]].solarSystemName);
+			//	}
+			//});
 		}
 	}
 }
