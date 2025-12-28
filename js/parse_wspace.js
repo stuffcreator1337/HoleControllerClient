@@ -24,7 +24,7 @@ function findExits(data){
 			// console.log("getting distance for: "+fullmap[destSys].solarSystemName);
 			socket.emit('dest_request', { 'user': activeCharTab, 'id1': parseInt($jit.id('current_id').innerHTML), 'id2': parseInt(destSys) });
 
-
+			return;
 			getDistance(parseInt($jit.id('current_id').innerHTML),parseInt(destSys),function(data1,data2){
 				// console.log(data1,data2);//data1 - safe путь, data2 - short путь
 				var tbody = $jit.id('destParsed').firstChild;

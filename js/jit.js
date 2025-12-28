@@ -4532,6 +4532,19 @@ $jit.Graph = new Class({
         socket.on('sending_dest', function (destdata) {
             if (destdata.user == activeCharTab) {
                 console.log(destdata);
+                var tbody = $jit.id('destParsed').firstChild;
+                var id1 = destdata.data.id1;
+                var id2 = destdata.data.id2;
+                var short = destdata.data.short;
+                var secure = destdata.data.secure;
+                var tr = docCreateElem('tr', fullmap[id1].solarSystemName + "_dest", 'activeLeft_table', '', '', tbody);
+                var td1 = docCreateElem('td', fullmap[id1].solarSystemName + "_destName", '', "<text style='color:" + fullmap[id1].color + "'>" + fullmap[id1].solarSystemName + "</text> ", '', tr);
+
+                var td2 = docCreateElem('td', "safeDest_" + id1, '', safeDest, '', tr);
+                var td3 = docCreateElem('td', '', '', " (" + shortDest + ") ", '', tr);
+                var td4 = docCreateElem('td', '', '', 'jumps', '', tr);
+                td1.style.color = fullmap[id1].color;
+
             }
         });
 		socket.on('new_chars_position', function(data_chars){
