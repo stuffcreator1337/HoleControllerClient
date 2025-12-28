@@ -4531,7 +4531,7 @@ $jit.Graph = new Class({
         });
         socket.on('sending_dest', function (destdata) {
             if (destdata.user == activeCharTab) {
-                //console.log(destdata);
+                console.log(destdata);
                 var tbody = $jit.id('destParsed').firstChild;
                 var id1 = destdata.data.id1;
                 var id2 = destdata.data.id2;
