@@ -4531,7 +4531,7 @@ $jit.Graph = new Class({
         });
         socket.on('sending_dest', function (destdata) {
             if (destdata.user == activeCharTab) {
-                consol.log(destdata);
+                console.log(destdata);
             }
         });
 		socket.on('new_chars_position', function(data_chars){
