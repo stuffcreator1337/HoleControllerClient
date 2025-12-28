@@ -4531,7 +4531,7 @@ $jit.Graph = new Class({
         });
         socket.on('sending_dest', function (destdata) {
             if (destdata.user == activeCharTab) {
-                console.log(destdata);
+                //console.log(destdata);
                 var tbody = $jit.id('destParsed').firstChild;
                 var id1 = destdata.data.id1;
                 var id2 = destdata.data.id2;
@@ -4561,7 +4561,7 @@ $jit.Graph = new Class({
                     //socket.emit('routes_request',{'user':activeCharTab});//<<---раблочить позже
                     updateLocTab(data_chars.data[i]['solar_system_id'], data_chars.data[i]['CharacterID']);
                     if (!isWh(data_chars.data[i]['solar_system_id'])) {
-                        console.log(data_chars.data[i]['solar_system_id'] + ' - NEED TO FIND ENTER TO HOME');
+                        //console.log(data_chars.data[i]['solar_system_id'] + ' - NEED TO FIND ENTER TO HOME');
                         // if (typeof map !== 'undefined'){
                         // console.log('GOING TO FIND ENTER TO HOME');
                         // console.log(clientInfo.map);
