@@ -9463,7 +9463,8 @@ $jit.ST= (function() {
         var canvas = this.canvas, that = this, Geom = this.geom, config = this.config;
 		getCookieJS('canvasoffsetX', false, function(dataX){
 			getCookieJS('canvasoffsetY', false, function(dataY){
-				canvas.translate(dataX,dataY);
+                canvas.translate(dataX, dataY);
+                updateCanvasCoords(dataX, dataY);
 			},this);
 		},this);
         var innerController = {
