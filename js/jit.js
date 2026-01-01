@@ -2129,7 +2129,8 @@ Extras.Classes.Events = new Class({
 					// document.cookie=this.pressed.id+"X="+this.pressed.pos.x+"; " +expires;
 					// document.cookie=this.pressed.id+"Y="+this.pressed.pos.y+"; " +expires;	
 					setCookie("canvasoffsetX",this.canvas.translateOffsetX);
-					setCookie("canvasoffsetY",this.canvas.translateOffsetY);
+      setCookie("canvasoffsetY", this.canvas.translateOffsetY);
+      updateCanvasCoords(this.canvas.translateOffsetX, this.canvas.translateOffsetY);
 		// console.log(document.cookie);
 	if(morphBusy)return;
 	  // console.log('MAIN TEST');
