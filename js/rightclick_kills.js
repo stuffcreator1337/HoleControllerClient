@@ -153,6 +153,7 @@ if(!Label.length)
 
 				var a1 = 's_' + nodeselected.data.$sysid;
 				console.log(actual_kills);
+                if (actual_kills == {}) return;
 				var a2 = actual_kills[a1];	
 
 				//console.log("Полученная кука:", cok);
