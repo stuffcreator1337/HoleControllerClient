@@ -167,6 +167,7 @@ function loadOptions(data){
 
 		// Применяем значение через setJsColor и opt_setNewColor
 		setJsColor(colorKey, saved_options.colors[colorKey]);
+		console.log(colorKey);
 		opt_setNewColor(document.getElementById(colorKey), saved_options.colors[colorKey]);
 	}
 
