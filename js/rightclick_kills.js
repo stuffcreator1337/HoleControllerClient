@@ -152,7 +152,7 @@ if(!Label.length)
 			getCookieJS("lastKill", false, function (cok) {
 
 				var a1 = 's_' + nodeselected.data.$sysid;
-				console.log(actual_kills);
+				//console.log(actual_kills);
                 if (actual_kills == {}) return;
 				var a2 = actual_kills[a1];	
 
