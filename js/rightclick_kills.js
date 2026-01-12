@@ -152,6 +152,7 @@ if(!Label.length)
 			getCookieJS("lastKill", false, function (cok) {
 
 				var a1 = 's_' + nodeselected.data.$sysid;
+				console.log(actual_kills);
 				var a2 = actual_kills[a1];	
 
 				//console.log("Полученная кука:", cok);
