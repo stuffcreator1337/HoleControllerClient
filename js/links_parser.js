@@ -5,7 +5,14 @@ function defineStaticType(sys_class,id,sys){
 		//when in Null system return regin name instead
 		static_type = regions[0]["regions"][regId]["regionName"];
 	}
-	else if ((sys_class == "High") || (sys_class == "Low")) {static_type = "J"+sys["secur_j"]+"("+sys["short_j"]+")A"+sys["secur_a"]+"D"+sys["secur_d"]+"R"+sys["secur_r"]+"H"+sys["secur_h"];		}
+	else if ((sys_class == "High") || (sys_class == "Low")) {
+		static_type =
+			"J" + sys["secur_j"] + "(" + sys["short_j"] + ")" +
+			"A" + sys["secur_a"] + "(" + sys["short_a"] + ")" +
+			"D" + sys["secur_d"] + "(" + sys["short_d"] + ")" +
+			"R" + sys["secur_r"] + "(" + sys["short_r"] + ")" +
+			"H" + sys["secur_h"] + "(" + sys["short_h"] + ")";
+	}
 	else if(sys_class == "Abyss"){static_type = 'Abyss';}
 	else if(sys_class == "Thera"){static_type = 'Thera';}
 	else if(sys_class == "Pochven"){static_type = 'Pochven';}
