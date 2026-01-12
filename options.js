@@ -160,14 +160,12 @@ function loadOptions(data){
 	document.getElementById("nodeSize") ? document.getElementById("nodeSize").value = saved_options.Node_size : null;
 	document.getElementById("noBorder") ? document.getElementById("noBorder").checked = !saved_options.frameBorder : null;
 
-	console.log(saved_options.colors);
 	for (let colorKey in all_colors) {
 		// Если ключ существует в saved_options, используем его, иначе значение из all_colors
 		saved_options.colors[colorKey] = saved_options.colors[colorKey] || all_colors[colorKey];
 
 		// Применяем значение через setJsColor и opt_setNewColor
 		setJsColor(colorKey, saved_options.colors[colorKey]);
-		console.log(colorKey);
 		opt_setNewColor(document.getElementById(colorKey), saved_options.colors[colorKey]);
 	}
 
