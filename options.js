@@ -99,9 +99,13 @@ const colortypes = [
 	"color_C15",
 	"color_C16",
 	"color_C17",
+	"color_C18",
+	"color_C19",
 	"color_Abyss",
 	"color_Thera",
-	"color_Pochven"
+	"color_Pochven",
+	"color_Jove",
+	"color_GPMR"
 ];
 const all_colors = {
 	"color_back": "#1A1A1A",
@@ -125,9 +129,13 @@ const all_colors = {
 	"color_C15": "#999966",	
 	"color_C16": "#999966",	
 	"color_C17": "#999966",	
+	"color_C18": "#999966",	
+	"color_C19": "#CC99FF",	
 	"color_Abyss": "#996633",
 	"color_Thera": "#660033",
 	"color_Pochven": "#660000",
+	"color_Jove": "#004D00",
+	"color_GPMR": "#F2E6FF"
 };
 
 function loadOptions(data){
