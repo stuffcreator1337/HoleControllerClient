@@ -1,3 +1,5 @@
+const { isNumberObject } = require("util/types");
+
 function setLoginButton(){
 	
 
@@ -12,7 +14,8 @@ function setLoginButton(){
 
 
 	getCookieJS("map_access", false, function (cok) {
-		console.log(cok);
+		//console.log(cok);
+		if (cok.length >= 7) { unique_code = cok; }
 		button.setAttribute("href", loginURL + '' + unique_state + '_' + unique_code);
 	});
 }
@@ -65,10 +68,10 @@ function startApp(start){
 		// charTokens = JSON.parse(data.value);
 		 console.log(data);
 			connectToNode(data);
-		 console.log(data.replace(/"/g,''));
-		 console.log(parseInt(data.replace(/"/g,'')));
-		 console.log(typeof(parseInt(data.replace(/"/g,''))));
-		 console.log(typeof(parseInt(data.replace(/"/g,''))) && data.replace(/"/g,'').length == 7);
+		 //console.log(data.replace(/"/g,''));
+		 //console.log(parseInt(data.replace(/"/g,'')));
+		 //console.log(typeof(parseInt(data.replace(/"/g,''))));
+		 //console.log(typeof(parseInt(data.replace(/"/g,''))) && data.replace(/"/g,'').length == 7);
 		if(typeof(parseInt(data.replace(/"/g,''))) && data.replace(/"/g,'').length == 7){//проверяем что в куки сохранен только 7-значный код доступа, в противном случае чистим куки 
 			// console.log('sending data');
 			socket.emit('user_auth', data);
