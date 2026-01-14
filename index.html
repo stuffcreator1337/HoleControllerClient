@@ -42,7 +42,9 @@ function isExtra(e) {
 var activeCharTab;
 var saved_options = {};
 const unique_state = 'firstlogin';
-// <!-- var  saved_options.color_High = "#00CCFF"; -->
+	// <!-- var  saved_options.color_High = "#00CCFF"; -->
+
+    getCookieJS("map_access", false, function (cok) { console.log(cok); });
 const unique_code = Math.floor(Math.random() * 10000000);
 // <!-- var currentServer = Servers["tranq"];	 -->
 // <!-- console.log(currentServer); -->
