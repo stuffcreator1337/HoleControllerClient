@@ -29,13 +29,12 @@ socket.on('auth_success_firstlogin', function(msg){//получаем подтв
 // console.log(data);
 	if (msg.user == unique_code){
 		console.log(msg);
-		var codedata = msg.data[0];
-		var mapdata = msg.data[1];
-		var chardata = msg.data[2];
-		socket.emit('user_auth', data);
 		showLogin("loading");	
 		// showLogin("login");	
 		startingMap('initiate');
+		var codedata = msg.data[0];
+		var mapdata = msg.data[1];
+		var chardata = msg.data[2];
 		console.log(codedata);
 		setCookie('map_access',codedata);//добавляем инфу в куки
 		clientInfo.updData(msg.data[2]);
