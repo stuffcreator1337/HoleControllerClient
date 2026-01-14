@@ -2,107 +2,106 @@
 <meta charset="windows-1251">
 <html ng-app="plunker" lang="en" style="background-color:#1A1A1A" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link rel="icon" type="image/png" href="settings/favicon.ico" />
-<title>Hole Controller</title>
-<link type="text/css" href="css/login_page.css" rel="stylesheet" />
-<link type="text/css" href="css/main_left.css" rel="stylesheet" />
-<link type="text/css" href="css/main_top.css" rel="stylesheet" />
-<link type="text/css" href="css/main_right.css" rel="stylesheet" />
-<link type="text/css" href="css/tooltip_iFrame.css" rel="stylesheet" />
-<link type="text/css" href="css/tooltip_dataEffect.css" rel="stylesheet" /><!--  tooltips with number of jumps or effects&statics -->
-<link type="text/css" href="css/tooltip_localsInfo.css" rel="stylesheet" />
-<link type="text/css" href="css/tooltip_pilotsInfo.css" rel="stylesheet" />
-<link type="text/css" href="css/tooltip_pilotPos.css" rel="stylesheet" />
-<link type="text/css" href="css/menu_edges.css" rel="stylesheet" />
-<link type="text/css" href="css/menu_edgeLabels.css" rel="stylesheet" />
-<link type="text/css" href="css/menu_kills.css" rel="stylesheet" />
-<link type="text/css" href="css/systempanel_tabs.css" rel="stylesheet" />
+	<link rel="icon" type="image/png" href="settings/favicon.ico" />
+	<title>Hole Controller</title>
+	<link type="text/css" href="css/login_page.css" rel="stylesheet" />
+	<link type="text/css" href="css/main_left.css" rel="stylesheet" />
+	<link type="text/css" href="css/main_top.css" rel="stylesheet" />
+	<link type="text/css" href="css/main_right.css" rel="stylesheet" />
+	<link type="text/css" href="css/tooltip_iFrame.css" rel="stylesheet" />
+	<link type="text/css" href="css/tooltip_dataEffect.css" rel="stylesheet" /><!--  tooltips with number of jumps or effects&statics -->
+	<link type="text/css" href="css/tooltip_localsInfo.css" rel="stylesheet" />
+	<link type="text/css" href="css/tooltip_pilotsInfo.css" rel="stylesheet" />
+	<link type="text/css" href="css/tooltip_pilotPos.css" rel="stylesheet" />
+	<link type="text/css" href="css/menu_edges.css" rel="stylesheet" />
+	<link type="text/css" href="css/menu_edgeLabels.css" rel="stylesheet" />
+	<link type="text/css" href="css/menu_kills.css" rel="stylesheet" />
+	<link type="text/css" href="css/systempanel_tabs.css" rel="stylesheet" />
 
-<script language="javascript" type="text/javascript" src="settings/settings.js"></script>
-<!-- Insert this line above script imports  -->
-<script>
-	var actual_kills = {};
-var fullmap,
-// constellations,
-systemJumps,
-regions,
-// holeTypes,
-whSysInfo1,
-morphBusy = false;
-var _x;
-var _y;
-function isExtra(e) {
-  var bSame = e.clientX==_x && e.clientY==_y;  // WARNING: page zoom>100% will also cause 'extra'
-  _x = e.clientX;
-  _y = e.clientY;
-  return bSame;
-  }
-// <!-- require('electron').remote.getCurrentWindow().webContents.openDevTools(); -->
+	<script language="javascript" type="text/javascript" src="settings/settings.js"></script>
+	<script language="javascript" type="text/javascript" src="cookies.js"></script>
+	<!-- Insert this line above script imports  -->
+	<script>
+		var actual_kills = {};
+		var fullmap,
+			// constellations,
+			systemJumps,
+			regions,
+			// holeTypes,
+			whSysInfo1,
+			morphBusy = false;
+		var _x;
+		var _y;
+		function isExtra(e) {
+			var bSame = e.clientX == _x && e.clientY == _y;  // WARNING: page zoom>100% will also cause 'extra'
+			_x = e.clientX;
+			_y = e.clientY;
+			return bSame;
+		}
+		// <!-- require('electron').remote.getCurrentWindow().webContents.openDevTools(); -->
 
-var activeCharTab;
-var saved_options = {};
-const unique_state = 'firstlogin';
-	// <!-- var  saved_options.color_High = "#00CCFF"; -->
+		var activeCharTab;
+		var saved_options = {};
+		const unique_state = 'firstlogin';
+		// <!-- var  saved_options.color_High = "#00CCFF"; -->
 
-    getCookieJS("map_access", false, function (cok) { console.log(cok); });
-const unique_code = Math.floor(Math.random() * 10000000);
-// <!-- var currentServer = Servers["tranq"];	 -->
-// <!-- console.log(currentServer); -->
-    const loginURL = 'https://login.eveonline.com/v2/oauth/authorize?response_type=code&redirect_uri=http://'+currentServer["serv"]+':'+currentServer["port"]+'&client_id='+currentServer["client_id"]+'&scope='+currentServer["scopes"]+'&state=';
+		getCookieJS("map_access", false, function (cok) { console.log(cok); });
+		const unique_code = Math.floor(Math.random() * 10000000);
+		// <!-- var currentServer = Servers["tranq"];	 -->
+		// <!-- console.log(currentServer); -->
+		const loginURL = 'https://login.eveonline.com/v2/oauth/authorize?response_type=code&redirect_uri=http://' + currentServer["serv"] + ':' + currentServer["port"] + '&client_id=' + currentServer["client_id"] + '&scope=' + currentServer["scopes"] + '&state=';
 
-</script>
+	</script>
 
-<!-- normal script imports etc  -->
-  
- <!-- system scripts -->
-<script language="javascript" type="text/javascript" src="jquery.min.js"></script>
-<script language="javascript" type="text/javascript" src="jscolor.js"></script>
+	<!-- normal script imports etc  -->
+	<!-- system scripts -->
+	<script language="javascript" type="text/javascript" src="jquery.min.js"></script>
+	<script language="javascript" type="text/javascript" src="jscolor.js"></script>
 
-<script language="javascript" type="text/javascript" src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
-<script language="javascript" type="text/javascript" src="server.js"></script>
-<!-- instruments scripts -->
-<script language="javascript" type="text/javascript" src="cookies.js"></script>
-<script language="javascript" type="text/javascript" src="sso_auth.js"  charset="windows-1251"></script>
-<!-- main load scripts -->
-<script language="javascript" type="text/javascript" src="options.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="login.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="index.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+	<script language="javascript" type="text/javascript" src="server.js"></script>
+	<!-- instruments scripts -->
+	<script language="javascript" type="text/javascript" src="sso_auth.js" charset="windows-1251"></script>
+	<!-- main load scripts -->
+	<script language="javascript" type="text/javascript" src="options.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="login.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="index.js" charset="windows-1251"></script>
 
-<!-- RightClick events files -->
-<script language="javascript" type="text/javascript" src="js/rightclick_hole.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="js/rightclick_edge.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="js/rightclick_kills.js"  charset="windows-1251"></script>
+	<!-- RightClick events files -->
+	<script language="javascript" type="text/javascript" src="js/rightclick_hole.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/rightclick_edge.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/rightclick_kills.js" charset="windows-1251"></script>
 
-<script language="javascript" type="text/javascript" src="js/systempanel.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="js/systempanel_residents.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="js/sigedit.js" charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="js/links_parser.js"  charset="windows-1251"></script>
-<!-- PARSER scripts -->
-<script language="javascript" type="text/javascript" src="js/jit.js" charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="js/parser_elements.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="js/parser.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="js/kb_parser.js"  charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/systempanel.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/systempanel_residents.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/sigedit.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/links_parser.js" charset="windows-1251"></script>
+	<!-- PARSER scripts -->
+	<script language="javascript" type="text/javascript" src="js/jit.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/parser_elements.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/parser.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/kb_parser.js" charset="windows-1251"></script>
 
-<!-- Database Files -->
-<script language="javascript" type="text/javascript" src="db/mapofeden.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="db/wh_holes.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="db/wh_info.js"  charset="windows-1251"></script>
-<!-- <script language="javascript" type="text/javascript" src="db/constellations.js"  charset="windows-1251"></script> -->
-<script language="javascript" type="text/javascript" src="db/regions.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="db/jumps.js"  charset="windows-1251"></script>
+	<!-- Database Files -->
+	<script language="javascript" type="text/javascript" src="db/mapofeden.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="db/wh_holes.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="db/wh_info.js" charset="windows-1251"></script>
+	<!-- <script language="javascript" type="text/javascript" src="db/constellations.js"  charset="windows-1251"></script> -->
+	<script language="javascript" type="text/javascript" src="db/regions.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="db/jumps.js" charset="windows-1251"></script>
 
-<script language="javascript" type="text/javascript" src="js/updatePage.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="js/parse_wspace.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="js/parser_dest.js"  charset="windows-1251"></script>
-<!-- whinfo-tooltip scripts -->
-<script language="javascript" type="text/javascript" src="js/wh_effect_constructor.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="js/wh_holes_constructor.js"  charset="windows-1251"></script>
-<script language="javascript" type="text/javascript" src="js/pilotPos.js"  charset="windows-1251"></script>
-<!-- tooltip scripts -->
-<script language="javascript" type="text/javascript" src="js/domLib.js"></script>
-<script language="javascript" type="text/javascript" src="js/domTT.js"></script>
-<!-- Insert this line after script imports -->
-<script>if (window.module) module = window.module;</script>
+	<script language="javascript" type="text/javascript" src="js/updatePage.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/parse_wspace.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/parser_dest.js" charset="windows-1251"></script>
+	<!-- whinfo-tooltip scripts -->
+	<script language="javascript" type="text/javascript" src="js/wh_effect_constructor.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/wh_holes_constructor.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/pilotPos.js" charset="windows-1251"></script>
+	<!-- tooltip scripts -->
+	<script language="javascript" type="text/javascript" src="js/domLib.js"></script>
+	<script language="javascript" type="text/javascript" src="js/domTT.js"></script>
+	<!-- Insert this line after script imports -->
+	<script>if (window.module) module = window.module;</script>
 </head>
 
 <body color_type='back' onload="setLoginButton();startApp(true);">
