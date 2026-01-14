@@ -44,9 +44,7 @@
 		var saved_options = {};
 		const unique_state = 'firstlogin';
 		// <!-- var  saved_options.color_High = "#00CCFF"; -->
-
-		getCookieJS("map_access", false, function (cok) { console.log(cok); });
-		const unique_code = Math.floor(Math.random() * 10000000);
+		var unique_code = Math.floor(Math.random() * 10000000);
 		// <!-- var currentServer = Servers["tranq"];	 -->
 		// <!-- console.log(currentServer); -->
 		const loginURL = 'https://login.eveonline.com/v2/oauth/authorize?response_type=code&redirect_uri=http://' + currentServer["serv"] + ':' + currentServer["port"] + '&client_id=' + currentServer["client_id"] + '&scope=' + currentServer["scopes"] + '&state=';

@@ -10,7 +10,11 @@ function setLoginButton(){
 	
 	var button = document.getElementById("login_but");
 
-	button.setAttribute("href", loginURL+''+unique_state+'_'+unique_code);
+
+	getCookieJS("map_access", false, function (cok) {
+		console.log(cok);
+		button.setAttribute("href", loginURL + '' + unique_state + '_' + unique_code);
+	});
 }
 // var currentServer = Servers["sisi"];	
 
