@@ -21,8 +21,13 @@ socket.on('connect', function(){
 	console.log("%c CONNECTED", "background:red; color: white");
 	socket.emit('addr_request', local_code);	
 });
-socket.on('connect_error', (err) => {
-	console.log("%cConnection error:", "background:red; color: white", err.data);
+socket.on('connect_error', (error) => {
+	console.error("%cConnection error:", "background:red; color: white", error);
+	console.error("%cConnection error:", "background:red; color: white", {
+		description: error.description,
+		message: error.message,
+		type: error.type
+	});
 });
 socket.on('addr_response', function (msg) {
 	if (msg.user == local_code) {
