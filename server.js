@@ -2,11 +2,11 @@
 //	withCredentials: true
 //});
  // console.log(socket);
-const socket = io("http://127.0.0.1:3000", {
-	withCredentials: true,
-	transports: ['websocket', 'polling']
-});
+const { protocol, hostname } = location;
 
+const socket = io(`${protocol}//${hostname}:3000`, {
+	transports: ["websocket", "polling"]
+});
 
 function setactivetab(){
 	var allTabs = document.getElementById("top_tr");
