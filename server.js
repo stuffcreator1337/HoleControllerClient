@@ -1,7 +1,3 @@
-//var socket = io('http://' + currentServer["serv"] + ':' + currentServer["port"], {
-//	withCredentials: true
-//});
- // console.log(socket);
 const { protocol, hostname } = location;
 
 const socket = io(`${protocol}//${hostname}:3000`, {
@@ -18,7 +14,6 @@ function setactivetab(){
 	console.log("%c Setting active tab to: "+activeCharTab,"background: #fff; color: green");		
 }
 function connectToNode(cookie){
-	console.log('Establishing connection on ' + currentServer["serv"] + ':' + currentServer["port"]);
 // var CurrentUser = activeCharTab; 
 socket.on('connect', function(){
 	console.log("%c CONNECTED", "background:red; color: white");
