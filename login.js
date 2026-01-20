@@ -15,6 +15,7 @@ function setLoginButton(addr){
 		//console.log(cok);
 		if (cok.length >= 7) { unique_code = cok; }
 		button.setAttribute("href", loginURL + '' + unique_state + '_' + unique_code);
+		button.setAttribute("background", "-webkit - linear - gradient(top, #FF9933 0 %, #804C1A 100 %)");
 	});
 }
 // var currentServer = Servers["sisi"];	
