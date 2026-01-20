@@ -15,9 +15,9 @@ function setLoginButton(addr){
 	getCookieJS("map_access", false, function (cok) {
 		//console.log(cok);
 		if (cok.length >= 7) { unique_code = cok; }
-		loading.visibility = "hidden";
+		loading.style.visibility = "hidden";
 		button.setAttribute("href", loginURL + '' + unique_state + '_' + unique_code);
-		button.visibility = "visible";
+		button.style.visibility = "visible";
 	});
 }
 // var currentServer = Servers["sisi"];	
