@@ -29,8 +29,8 @@ html, body {
 	margin-left:2px;
 	margin-top:140px;
 	margin-bottom:1px;
-	background: #FF9933;
-/*	background: -moz-linear-gradient(top,#FF9933 0%,#804C1A 100%);
+/*	background: #FF9933;
+	background: -moz-linear-gradient(top,#FF9933 0%,#804C1A 100%);
 	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FF9933),color-stop(100%,#804C1A));
 	background: -webkit-linear-gradient(top,#FF9933 0%,#804C1A 100%);
 	background: -o-linear-gradient(top,#FF9933 0%,#804C1A 100%);
