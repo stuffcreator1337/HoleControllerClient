@@ -2,7 +2,7 @@
 //	withCredentials: true
 //});
  // console.log(socket);
-const socket = io("http://127.0.0.1:3000", {
+const socket = io("http://195.170.192.113:3000", {
 	withCredentials: true,
 	transports: ['websocket', 'polling']
 });
