@@ -9,22 +9,15 @@ function setLoginButton(addr){
 	setInterval("pilotHighlight('pilotsInfo_short',false)", 1000 );
 	
 	var button = document.getElementById("login_but");
+	var loading = document.getElementById("loading_txt");
     loginURL_p2 = addr;
     loginURL = loginURL_p1 + loginURL_p2 + loginURL_p3;
 	getCookieJS("map_access", false, function (cok) {
 		//console.log(cok);
 		if (cok.length >= 7) { unique_code = cok; }
-		button.innerHTML = "Login";
+		loading.visibility = "hidden";
 		button.setAttribute("href", loginURL + '' + unique_state + '_' + unique_code);
-		button.style.cursor = "pointer";
-		button.style.padding = "10px";
-		button.style.color = "#fff";
-		button.style.textShadow = "1px 1px rgba(0,0,0,0.85)";
-
-		button.style.borderRadius = "2px";
-		button.style.border = "0";
-
-		button.style.background = "linear-gradient(to bottom, #FF9933 0%, #804C1A 100%)";
+		button.visibility = "";
 	});
 }
 // var currentServer = Servers["sisi"];	
