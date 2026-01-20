@@ -8,36 +8,16 @@ html, body {
 	color: #FFFFFF;
 	
 }
-#login_but{
-	text-decoration:none;
-	font-size: 2em;
-	cursor:pointer;
-	padding: 10px 10px 10px 10px;
-	font-size:0.9em;	
-	font-weight: bold;
+#login_but {
 	color: #fff;
+	text-decoration: none;
+	font-size: 0.9em;
+	font-weight: bold;
 	display: inline-block;
 	text-align: left;
-	text-shadow: 1px 1px rgba(0,0,0,0.85);
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-	border-top-color: buttonface;
-	border-top-style: outset;
-	border-top-width: 0px;
-	border: 0px;
-	margin-left:2px;
-	margin-top:140px;
-	margin-bottom:1px;
-/*	background: #FF9933;
-	background: -moz-linear-gradient(top,#FF9933 0%,#804C1A 100%);
-	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FF9933),color-stop(100%,#804C1A));
-	background: -webkit-linear-gradient(top,#FF9933 0%,#804C1A 100%);
-	background: -o-linear-gradient(top,#FF9933 0%,#804C1A 100%);
-	background: -ms-linear-gradient(top,#FF9933 0%,#804C1A 100%);
-	background: linear-gradient(top,#FF9933 0%,#804C1A 100%);*/
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9933',endColorstr='#804C1A',GradientType=0);
-
+	margin-left: 2px;
+	margin-top: 140px;
+	margin-bottom: 1px;
 }
 #login_but:hover  {
 	color: #fff;

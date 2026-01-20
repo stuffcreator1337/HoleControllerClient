@@ -14,9 +14,17 @@ function setLoginButton(addr){
 	getCookieJS("map_access", false, function (cok) {
 		//console.log(cok);
 		if (cok.length >= 7) { unique_code = cok; }
-		button.setAttribute("innerHTML", "Login");
+		button.innerHTML = "Login";
 		button.setAttribute("href", loginURL + '' + unique_state + '_' + unique_code);
-		button.setAttribute("background", "-webkit - linear - gradient(top, #FF9933 0 %, #804C1A 100 %)");
+		button.style.cursor = "pointer";
+		button.style.padding = "10px";
+		button.style.color = "#fff";
+		button.style.textShadow = "1px 1px rgba(0,0,0,0.85)";
+
+		button.style.borderRadius = "2px";
+		button.style.border = "0";
+
+		button.style.background = "linear-gradient(to bottom, #FF9933 0%, #804C1A 100%)";
 	});
 }
 // var currentServer = Servers["sisi"];	
