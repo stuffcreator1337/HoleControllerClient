@@ -2,7 +2,7 @@
 //	withCredentials: true
 //});
  // console.log(socket);
-const socket = io("http://localhost:3000", { withCredentials: true });
+const socket = io("http://127.0.0.1:3000", { withCredentials: true });
 
 
 function setactivetab(){
