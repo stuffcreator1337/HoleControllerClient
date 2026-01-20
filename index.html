@@ -20,9 +20,16 @@
 
 	<script language="javascript" type="text/javascript" src="settings/settings.js"></script>
 	<script language="javascript" type="text/javascript" src="cookies.js"></script>
+	<script language="javascript" type="text/javascript" src="jquery.min.js"></script>
+	<script language="javascript" type="text/javascript" src="jscolor.js"></script>
+
+	<script language="javascript" type="text/javascript" src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+	<script language="javascript" type="text/javascript" src="server.js"></script>
 	<!-- Insert this line above script imports  -->
 	<script>
 		var actual_kills = {};
+		var server_addr = "";
+        var local_code = Math.floor(Math.random() * 10000000);
 		var fullmap,
 			// constellations,
 			systemJumps,
@@ -47,17 +54,15 @@
 		var unique_code = Math.floor(Math.random() * 10000000);
 		// <!-- var currentServer = Servers["tranq"];	 -->
 		// <!-- console.log(currentServer); -->
-		const loginURL = 'https://login.eveonline.com/v2/oauth/authorize?response_type=code&redirect_uri=http://' + currentServer["serv"] + ':' + currentServer["port"] + '&client_id=' + currentServer["client_id"] + '&scope=' + currentServer["scopes"] + '&state=';
+		var loginURL = '';
+		const loginURL_p1 = 'https://login.eveonline.com/v2/oauth/authorize?response_type=code&redirect_uri=http://';
+		var loginURL_p2 = '';// currentServer["serv"];
+		const loginURL_p3 = ':' + currentServer["port"] + '&client_id=' + currentServer["client_id"] + '&scope=' + currentServer["scopes"] + '&state=';
 
 	</script>
 
 	<!-- normal script imports etc  -->
 	<!-- system scripts -->
-	<script language="javascript" type="text/javascript" src="jquery.min.js"></script>
-	<script language="javascript" type="text/javascript" src="jscolor.js"></script>
-
-	<script language="javascript" type="text/javascript" src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
-	<script language="javascript" type="text/javascript" src="server.js"></script>
 	<!-- instruments scripts -->
 	<script language="javascript" type="text/javascript" src="sso_auth.js" charset="windows-1251"></script>
 	<!-- main load scripts -->
@@ -102,7 +107,7 @@
 	<script>if (window.module) module = window.module;</script>
 </head>
 
-<body color_type='back' onload="setLoginButton();startApp(true);">
+<body color_type='back' onload="startApp(true);">
 <div id='loginPage' style='visibility:'>
 	<!-- <a id='login_but' target='_blank' style='visibility:hidden' href='https://sisilogin.testeveonline.com/oauth/authorize/?response_type=code&redirect_uri=http://localhost:8080&client_id=26463421869a4d34961b5f47a737da6b&scope=esi-location.read_location.v1%20esi-location.read_ship_type.v1&state=uniquestate123'>Login</a> -->
 	<a id='login_but' target='_blank' style='visibility:hidden' >Login</a>

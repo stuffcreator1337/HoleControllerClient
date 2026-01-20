@@ -1,4 +1,4 @@
-function setLoginButton(){
+function setLoginButton(addr){
 	
 
 
@@ -9,8 +9,8 @@ function setLoginButton(){
 	setInterval("pilotHighlight('pilotsInfo_short',false)", 1000 );
 	
 	var button = document.getElementById("login_but");
-
-
+    loginURL_p2 = addr;
+    loginURL = loginURL_p1 + loginURL_p2 + loginURL_p3;
 	getCookieJS("map_access", false, function (cok) {
 		//console.log(cok);
 		if (cok.length >= 7) { unique_code = cok; }

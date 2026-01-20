@@ -2,7 +2,7 @@
 //	withCredentials: true
 //});
  // console.log(socket);
-const socket = io("http://185.155.18.75:3000", { withCredentials: true });
+const socket = io("http://localhost:3000", { withCredentials: true });
 
 
 function setactivetab(){
@@ -18,11 +18,17 @@ function connectToNode(cookie){
 	console.log('Establishing connection on ' + currentServer["serv"] + ':' + currentServer["port"]);
 // var CurrentUser = activeCharTab; 
 socket.on('connect', function(){
-	console.log("%c CONNECTED","background:red; color: white");
-	
+	console.log("%c CONNECTED", "background:red; color: white");
+	socket.emit('addr_request', local_code);	
 });
 socket.on('connect_error', (err) => {
 	console.log("%cConnection error:", "background:red; color: white", err.data);
+});
+socket.on('addr_response', function (msg) {
+	if (msg.user == local_code) {
+		console.log("%c SETTING LOGIN BUTTON...", "background:orange; color: white");
+		setLoginButton(msg.data);
+	}
 });
 socket.on('connection', (socket) => console.log('New connection:', socket.id));
 socket.on('auth_success_firstlogin', function(msg){//получаем подтверждение перса data[0] - инфа, data[1] - пароль идентификации
