@@ -14,7 +14,8 @@ function setactivetab(){
 	activeCharTab = tdTabs[0].getAttribute('buttoncharid');
 	console.log("%c Setting active tab to: "+activeCharTab,"background: #fff; color: green");		
 }
-function connectToNode(cookie){
+function connectToNode(cookie) {
+	console.log("%c Connecting...", "background:yellow; color: grey");
 	// var CurrentUser = activeCharTab; 
 	socket.on('connect', function(){
 		console.log("%c CONNECTED", "background:red; color: white");
