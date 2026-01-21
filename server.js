@@ -245,10 +245,3 @@ function connectToNode(cookie) {
 	// console.log("electron tried to send message");
 // }
 
-window.addEventListener('load', function () {
-	// Гарантируем однократный вызов
-	if (!window.socketInitialized) {
-		window.socketInitialized = true;
-		connectToNode();
-	}
-});
