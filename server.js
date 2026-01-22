@@ -238,12 +238,6 @@ function connectToNode(cookie) {
 			// }
 		// }
 	});
-				// console.log("map_connections_for:"+found.getAttribute('buttonCharID')); 
-				// // init(data[0].map,data[0].residents,"","initiate");
-				// return data;
-			// }
-		// }
-	});
 	/******************
 	 * SIGS EDIT
 	 ******************/
