@@ -94,7 +94,7 @@ function addCharId(){
 }
 
 function switchPage(page){
-	// console.log('LOADING: '+page);
+	console.log('LOADING: '+page);
 	var lPage = document.getElementById("loginPage");
 	var mPage = document.getElementById("mainPage");
 	if(page == "login"){
