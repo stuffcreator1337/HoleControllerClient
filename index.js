@@ -168,7 +168,7 @@ function openUrl(){
 
 function request_map(){
 	console.log("asked for map");
-socket.emit('map_request', activeCharTab);
+	socket.emit('map_request', activeCharTab);
 }
 
 function isWh(id){

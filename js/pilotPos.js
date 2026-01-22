@@ -1,7 +1,3 @@
-socket.on('privat_char_update', function(msg){
-	updPilotPos(msg.data);
-
-});
 function updPilotPos(data){
 	// console.log(data);
 	var pilotsTable = document.getElementById("pilotPos");

@@ -1,9 +1,3 @@
-// socket.on('routes', function(data){
-	// // console.log(data); 
-	// if(data.user == activeCharTab){
-		// findExits(data.data);
-	// }
-// });
 function findExits(data){
 	// $jit.id('destParsed').firstChild.innerHTML = '';
 	var exits = [];

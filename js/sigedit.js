@@ -1,33 +1,4 @@
-﻿socket.on('sending_sigs', function(msg){
-	console.log(msg.data.sigs);
-	var d = msg.data;
-	//console.log(d,d.user,d.data,d["user"], activeCharTab);
-	//console.log(d.data["id"], d.data["name"], d.data["color"]);
-	if (d.data["user"] == activeCharTab){
-		// console.log("recieved");
-		// console.log(d["id"],d["name"],d["color"]);
-		openSysTable(d.data["id"], d.data["name"], d.data["color"],"",msg.data.sigs);
-	};
-});
-
-socket.on('sending_names', function(msg){
-	// console.log(msg);
-	var d = msg.data;
-	if(d["user"] == activeCharTab || d["user"] == 'all'){
-		console.log("recieved names for systems");
-		// console.log(msg.data.names);
-		var names = msg.data.names;
-		for(var i=0;i<names.length;i++){	
-			if(document.getElementById(names[i].id)){				
-				// console.log(document.getElementById(names[i].id).children);
-				document.getElementById(names[i].id).children["nodeDivID"].children["sys_custom_name"].value = names[i].name;
-				document.getElementById(names[i].id).children["nodeDivID"].children["sys_custom_name"].innerHTML = names[i].name;
-			}
-		}
-	};
-});
-
-function openSysTable(id,name,color,display,sigs){
+﻿function openSysTable(id,name,color,display,sigs){
 	// var sigpage = document.getElementById("sigspanel");
 	console.log(id);
 	// console.log(sigpage.contentDocument );
