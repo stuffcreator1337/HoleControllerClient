@@ -14,14 +14,6 @@ table#right_panel{
 input#totalAngularWidths,input#nodeSize{
 	width: 3em;
 }
-html, body {
-/*     margin:0;
-    padding:0;
-    font-family: "Lucida Grande", Verdana;
-    font-size: 0.9em;
-    text-align: center;
-	height: 100%; */
-}
 
 input, select {
     font-size:0.9em;

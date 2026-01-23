@@ -1,16 +1,5 @@
-html, body {
-	height:100%;
-    margin:0;
-    padding:0;
-    font-family: "Lucida Grande", Verdana;
-    font-size: 1.5em;
-    text-align: center;
-	color: #FFFFFF;
-	
-}
 #login_but {
     text-decoration: none;
-    font-size: 2em;
     cursor: pointer;
     padding: 10px 10px 10px 10px;
     font-size: 0.9em;
@@ -22,34 +11,20 @@ html, body {
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
-    border-top-color: buttonface;
-    border-top-style: outset;
-    border-top-width: 0px;
     border: 0px;
     margin-left: 2px;
     margin-top: 140px;
     margin-bottom: 1px;
     background: #FF9933;
     visibility: hidden;
-    background: -moz-linear-gradient(top,#FF9933 0%,#804C1A 100%);
-    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FF9933),color-stop(100%,#804C1A));
-    background: -webkit-linear-gradient(top,#FF9933 0%,#804C1A 100%);
-    background: -o-linear-gradient(top,#FF9933 0%,#804C1A 100%);
-    background: -ms-linear-gradient(top,#FF9933 0%,#804C1A 100%);
-    background: linear-gradient(top,#FF9933 0%,#804C1A 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9933',endColorstr='#804C1A',GradientType=0);
+    background: #FF9933;
+    background: linear-gradient(to bottom, #FF9933 0%, #804C1A 100%);
 }
-#login_but:hover  {
-	color: #fff;
-	text-decoration:none;
-	background: #2cbbfd;
-	background: -moz-linear-gradient(top,#ffbbfd 0%,#006b9d 100%);
-	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#ffbbfd),color-stop(100%,#006b9d));
-	background: -webkit-linear-gradient(top,#ffbbfd 0%,#006b9d 100%);
-	background: -o-linear-gradient(top,#ffbbfd 0%,#006b9d 100%);
-	background: -ms-linear-gradient(top,#ffbbfd 0%,#006b9d 100%);
-	background: linear-gradient(top,#ffbbfd 0%,#006b9d 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbbfd',endColorstr='#006b9d',GradientType=0);
+#login_but:hover {
+    color: #fff;
+    text-decoration: none;
+    background: #2cbbfd;
+    background: linear-gradient(to bottom, #2cbbfd 0%, #006b9d 100%);
 }
 #loading_txt{
 	margin-top:-50px;
