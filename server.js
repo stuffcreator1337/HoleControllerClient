@@ -36,7 +36,19 @@ function connectToNode(cookie) {
 	});
 	socket.on('connect', function(){
 		console.log("%c CONNECTED", "background:GREEN; color: white");
-		socket.emit('addr_request', local_code);	
+		socket.emit('addr_request', local_code);
+		if (typeof (parseInt(cookie.replace(/"/g, ''))) && cookie.replace(/"/g, '').length == 7) {//проверяем что в куки сохранен только 7-значный код доступа, в противном случае чистим куки 
+			// console.log('sending data');
+			socket.emit('user_auth', cookie);
+			showLogin("loading");
+			// showLogin("login");	
+			startingMap('initiate');
+		} else {
+			clearAllCookies();
+			// showLogin("loading");	
+			// startingMap('initiate');
+			showLogin("login");
+		}
 	});
 	socket.on('connect_error', (error) => {
 		console.error("%cConnection error:", "background:red; color: white", error);

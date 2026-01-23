@@ -71,18 +71,6 @@ function startApp(start){
 		 //console.log(parseInt(data.replace(/"/g,'')));
 		 //console.log(typeof(parseInt(data.replace(/"/g,''))));
 		 //console.log(typeof(parseInt(data.replace(/"/g,''))) && data.replace(/"/g,'').length == 7);
-		if(typeof(parseInt(data.replace(/"/g,''))) && data.replace(/"/g,'').length == 7){//проверяем что в куки сохранен только 7-значный код доступа, в противном случае чистим куки 
-			// console.log('sending data');
-			socket.emit('user_auth', data);
-			showLogin("loading");	
-			// showLogin("login");	
-			startingMap('initiate');
-		}else{
-			clearAllCookies();
-			// showLogin("loading");	
-			// startingMap('initiate');
-			showLogin("login");	
-		}
 		console.log(data);
 		connectToNode(data);
 	});
