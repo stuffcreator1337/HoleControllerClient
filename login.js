@@ -134,13 +134,13 @@ function switchPage(page){
 function showLogin(status){
 	if (status == "loading") {
 		console.log("status == loading");
-		document.getElementById("loading_txt").style.visibility = '';
-		document.getElementById("login_but").style.visibility = 'hidden';
+		document.getElementById("loading_txt").style.display = 'normal';
+		document.getElementById("login_but").style.display = 'none';
 	}
 	else if (status == "login") {
 		console.log("status == login");
-		document.getElementById("loading_txt").style.visibility = '';
-		document.getElementById("login_but").style.visibility = '';
+		document.getElementById("loading_txt").style.display = 'normal';
+		document.getElementById("login_but").style.display = 'normal';
 	}
 	else {
 		console.log("status == none");

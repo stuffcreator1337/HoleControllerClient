@@ -16,7 +16,7 @@
     margin-top: 140px;
     margin-bottom: 1px;
     background: #FF9933;
-    visibility: hidden;
+    display: none;
     background: #FF9933;
     background: linear-gradient(to bottom, #FF9933 0%, #804C1A 100%);
 }
@@ -28,5 +28,5 @@
 }
 #loading_txt{
 	margin-top:-50px;
-    visibility: visible;
+    display: normal;
 }
