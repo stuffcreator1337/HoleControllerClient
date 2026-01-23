@@ -16,6 +16,7 @@
     margin-top: 140px;
     margin-bottom: 1px;
     background: #FF9933;
+    visibility: hidden;
     background: #FF9933;
     background: linear-gradient(to bottom, #FF9933 0%, #804C1A 100%);
 }
