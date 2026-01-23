@@ -1,15 +1,41 @@
-const { protocol, hostname } = location;
-
-const socket = io(`${protocol}//${hostname}:3000`, {
-	withCredentials: true,
-	transports: ["websocket", "polling"]
-});
+let socket = null;
+let socketInitialized = false;
 
 function connectToNode(cookie) {
-	console.log("%c Connecting...", "background:yellow; color: grey");
-	// var CurrentUser = activeCharTab; 
+	// Защита от многократного вызова
+	if (socketInitialized && socket && socket.connected) {
+		console.log("%c Socket уже подключен", "background:green; color: white");
+		return;
+	}
+
+	if (socketInitialized) {
+		console.log("%c Соединение уже инициализировано", "background:orange; color: white");
+		return;
+	}
+
+	console.log("%c Инициализация соединения...", "background:yellow; color: grey");
+	socketInitialized = true;
+
+	const { protocol, hostname } = location;
+	const socketUrl = `${protocol}//${hostname}:3000`;
+
+	// Закрываем старое соединение если есть
+	if (socket) {
+		socket.disconnect();
+		socket = null;
+	}
+
+	// Создаем новое соединение
+	socket = io(socketUrl, {
+		withCredentials: true,
+		transports: ["websocket", "polling"],
+		reconnection: true,
+		reconnectionAttempts: 5,
+		reconnectionDelay: 1000,
+		timeout: 20000
+	});
 	socket.on('connect', function(){
-		console.log("%c CONNECTED", "background:red; color: white");
+		console.log("%c CONNECTED", "background:GREEN; color: grey");
 		socket.emit('addr_request', local_code);	
 	});
 	socket.on('connect_error', (error) => {
