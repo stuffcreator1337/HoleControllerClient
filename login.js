@@ -123,6 +123,10 @@ function switchPage(page){
 		mPage.style.visibility = '';
 		mPage.style.height = '100%';
 		mPage.style.width = '100%';		
+		var button	= document.getElementById("login_but");
+		var loading = document.getElementById("loading_txt");
+		button.style.visibility = 'hidden';
+		loading.style.visibility = 'hidden';
 	}
 }
 
