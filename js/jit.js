@@ -3021,7 +3021,7 @@ var Canvas;
       $.addEvent(window, 'resize', function() {
           console.log("canvas resize");
           var infovis = document.getElementById('infovis');
-          console.log(infovis.style.width);
+          console.log(infovis.style);
         // console.log(document.getElementsByTagName('canvas')["infovis-canvas"].width);
       });
     },
