@@ -120,7 +120,9 @@ function switchPage(page){
 		lPage.style.display = 'none';
 		lPage.style.height = '0px';
 		lPage.style.width = '0px';
+	console.log(mPage.style);
 		mPage.style.display = 'block';
+	console.log(mPage.style);
 		mPage.style.height = '100%';
 		mPage.style.width = '100%';		
 		// var button	= document.getElementById("login_but");
