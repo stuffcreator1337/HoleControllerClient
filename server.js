@@ -5,15 +5,6 @@ const socket = io(`${protocol}//${hostname}:3000`, {
 	transports: ["websocket", "polling"]
 });
 
-function setactivetab(){
-	var allTabs = document.getElementById("top_tr");
-	var tdTabs = allTabs.getElementsByTagName("td");
-	// console.log(allTabs,tdTabs);
-	tdTabs[0].className = "active_top_selected";
-	tdTabs[1].className = "active_top_selected";
-	activeCharTab = tdTabs[0].getAttribute('buttoncharid');
-	console.log("%c Setting active tab to: "+activeCharTab,"background: #fff; color: green");		
-}
 function connectToNode(cookie) {
 	console.log("%c Connecting...", "background:yellow; color: grey");
 	// var CurrentUser = activeCharTab; 
@@ -278,7 +269,15 @@ function connectToNode(cookie) {
 	});
 
 }
-
+function setactivetab(){
+	var allTabs = document.getElementById("top_tr");
+	var tdTabs = allTabs.getElementsByTagName("td");
+	// console.log(allTabs,tdTabs);
+	tdTabs[0].className = "active_top_selected";
+	tdTabs[1].className = "active_top_selected";
+	activeCharTab = tdTabs[0].getAttribute('buttoncharid');
+	console.log("%c Setting active tab to: "+activeCharTab,"background: #fff; color: green");		
+}
 // function testClick(){
 	// socket.emit('map_request', "");
 	// console.log("electron tried to send message");
