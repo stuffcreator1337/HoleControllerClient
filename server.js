@@ -35,7 +35,7 @@ function connectToNode(cookie) {
 		timeout: 20000
 	});
 	socket.on('connect', function(){
-		console.log("%c CONNECTED", "background:GREEN; color: grey");
+		console.log("%c CONNECTED", "background:GREEN; color: white");
 		socket.emit('addr_request', local_code);	
 	});
 	socket.on('connect_error', (error) => {
