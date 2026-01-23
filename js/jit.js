@@ -3021,10 +3021,12 @@ var Canvas;
       $.addEvent(window, 'resize', function() {
           console.log("canvas resize");
           var infovis = document.getElementById('infovis');
-          console.log(infovis.offsetWidth);
-          console.log(infovis.clientWidth);
-          console.log(infovis.getBoundingClientRect());
-          console.log(infovis.scrollWidth);
+          document.getElementById('infovis-canvaswidget').style.width = infovis.offsetWidth;
+          document.getElementById('infovis-bkcanvas').style.width = infovis.offsetWidth;
+          //console.log(infovis.offsetWidth);
+          //console.log(infovis.clientWidth);
+          //console.log(infovis.getBoundingClientRect());
+          //console.log(infovis.scrollWidth);
         // console.log(document.getElementsByTagName('canvas')["infovis-canvas"].width);
       });
     },
