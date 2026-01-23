@@ -102,10 +102,10 @@ function switchPage(page){
 			// clearInterval(getLoc[i]);
 		// }
 		// clearInterval(refresh1000sec);		
-		lPage.style.visibility = '';
+		lPage.style.display = 'normal';
 		lPage.style.height = '100%';
 		lPage.style.width = '100%';
-		mPage.style.visibility = 'hidden';
+		mPage.style.visibility = 'none';
 		mPage.style.height = '0px';
 		mPage.style.width = '0px';	
 		showLogin("login");
@@ -117,16 +117,16 @@ function switchPage(page){
 	}
 	if(page == "map"){
 	// console.log('LOADING MAP');
-		lPage.style.visibility = 'hidden';
+		lPage.style.display = 'none';
 		lPage.style.height = '0px';
 		lPage.style.width = '0px';
-		mPage.style.visibility = '';
+		mPage.style.display = 'normal';
 		mPage.style.height = '100%';
 		mPage.style.width = '100%';		
-		var button	= document.getElementById("login_but");
-		var loading = document.getElementById("loading_txt");
-		button.style.visibility = 'hidden';
-		loading.style.visibility = 'hidden';
+		// var button	= document.getElementById("login_but");
+		// var loading = document.getElementById("loading_txt");
+		// button.style.display = 'none';
+		// loading.style.display = 'none';
 	}
 }
 
