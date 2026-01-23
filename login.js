@@ -67,8 +67,6 @@ function startApp(start){
 		 console.log("%c Data length is: "+data.length+" the value is below:","background: white; color: green");		
 		  //console.log(JSON.parse(data.value));
 		// charTokens = JSON.parse(data.value);
-		 console.log(data);
-			connectToNode(data);
 		 //console.log(data.replace(/"/g,''));
 		 //console.log(parseInt(data.replace(/"/g,'')));
 		 //console.log(typeof(parseInt(data.replace(/"/g,''))));
@@ -85,6 +83,8 @@ function startApp(start){
 			// startingMap('initiate');
 			showLogin("login");	
 		}
+		console.log(data);
+		connectToNode(data);
 	});
 }
 
@@ -105,7 +105,7 @@ function switchPage(page){
 		lPage.style.display = 'block';
 		lPage.style.height = '100%';
 		lPage.style.width = '100%';
-		mPage.style.visibility = 'none';
+		mPage.style.display = 'none';
 		mPage.style.height = '0px';
 		mPage.style.width = '0px';	
 		showLogin("login");
@@ -142,7 +142,7 @@ function showLogin(status){
 	else if (status == "login") {
 		console.log("status == login");
 		document.getElementById("loading_txt").style.visibility = 'visible';
-		document.getElementById("login_but").style.visibility = 'visible';
+		document.getElementById("login_but").style.visibility = 'hidden';
 	}
 	else {
 		console.log("status == none");
