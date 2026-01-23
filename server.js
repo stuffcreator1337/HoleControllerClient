@@ -4,16 +4,16 @@ let socketInitialized = false;
 function connectToNode(cookie) {
 	// Защита от многократного вызова
 	if (socketInitialized && socket && socket.connected) {
-		console.log("%c Socket уже подключен", "background:green; color: white");
+		console.log("%c Socket already running", "background:green; color: white");
 		return;
 	}
 
 	if (socketInitialized) {
-		console.log("%c Соединение уже инициализировано", "background:orange; color: white");
+		console.log("%c Connection already initialized", "background:orange; color: white");
 		return;
 	}
 
-	console.log("%c Инициализация соединения...", "background:yellow; color: grey");
+	console.log("%c Initialising", "background:yellow; color: grey");
 	socketInitialized = true;
 
 	const { protocol, hostname } = location;
