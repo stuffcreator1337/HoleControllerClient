@@ -26,7 +26,7 @@
     background: #2cbbfd;
     background: linear-gradient(to bottom, #2cbbfd 0%, #006b9d 100%);
 }
-#loading_txt{
-	margin-top:-50px;
-    display: normal;
+#loading_txt {
+    margin-top: -50px;
+    display: block;
 }

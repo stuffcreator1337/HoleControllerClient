@@ -102,7 +102,7 @@ function switchPage(page){
 			// clearInterval(getLoc[i]);
 		// }
 		// clearInterval(refresh1000sec);		
-		lPage.style.display = 'normal';
+		lPage.style.display = 'block';
 		lPage.style.height = '100%';
 		lPage.style.width = '100%';
 		mPage.style.visibility = 'none';
@@ -120,7 +120,7 @@ function switchPage(page){
 		lPage.style.display = 'none';
 		lPage.style.height = '0px';
 		lPage.style.width = '0px';
-		mPage.style.display = 'normal';
+		mPage.style.display = 'block';
 		mPage.style.height = '100%';
 		mPage.style.width = '100%';		
 		// var button	= document.getElementById("login_but");
@@ -134,13 +134,13 @@ function switchPage(page){
 function showLogin(status){
 	if (status == "loading") {
 		console.log("status == loading");
-		document.getElementById("loading_txt").style.display = 'normal';
-		document.getElementById("login_but").style.display = 'none';
+		document.getElementById("loading_txt").style.visibility = 'visible';
+		document.getElementById("login_but").style.visibility = 'hidden';
 	}
 	else if (status == "login") {
 		console.log("status == login");
-		document.getElementById("loading_txt").style.display = 'normal';
-		document.getElementById("login_but").style.display = 'normal';
+		document.getElementById("loading_txt").style.visibility = 'visible';
+		document.getElementById("login_but").style.visibility = 'visible';
 	}
 	else {
 		console.log("status == none");
