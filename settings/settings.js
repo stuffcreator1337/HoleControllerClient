@@ -45,18 +45,11 @@ const TestScopes = 'esi-location.read_ship_type.v1'+
 if (typeof module === 'object') {window.module = module; module = undefined;}
 
 
-//Callback URL should be "serv":"port"
-//e.g. Callback URL: http://localhost:3000
-//so there will be 
-//"serv" : "localhost"
-//"port" : "3000"
-
 var Servers = {};
 Servers["sever1_tranq"] = {
 	"client_id":"26463421869a4d34961b5f47a737da6b",
 	"login" : "login.",
 	"source" : "tranquility",
-	"serv" : "185.155.18.75",
 	"port" : "3000",
 	"token" : "stokens",
 	"scopes" : scopes
@@ -65,7 +58,6 @@ Servers["server1_sisi"] = {
 	"client_id":"26463421869a4d34961b5f47a737da6b",
 	"login" : "sisilogin.test",
 	"source" : "singularity",
-	"serv" : "localhost",
 	"port" : "8080",
 	"token" : "ttokens",
 	"scopes" : TestScopes

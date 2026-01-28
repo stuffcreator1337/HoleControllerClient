@@ -7,11 +7,11 @@ function defineStaticType(sys_class,id,sys){
 	}
 	else if ((sys_class == "High") || (sys_class == "Low")) {
 		static_type =
-			"J" + sys["secur_j"] + "(" + sys["short_j"] + ")" +
-			"A" + sys["secur_a"] + "(" + sys["short_a"] + ")" +
-			"D" + sys["secur_d"] + "(" + sys["short_d"] + ")" +
-			"R" + sys["secur_r"] + "(" + sys["short_r"] + ")" +
-			"H" + sys["secur_h"] + "(" + sys["short_h"] + ")";
+			"J" + (sys["secur_j"] - 1) + "(" + (sys["short_j"] - 1) + ")" +
+			"A" + (sys["secur_a"] - 1) + "(" + (sys["short_a"] - 1) + ")" +
+			"D" + (sys["secur_d"] - 1) + "(" + (sys["short_d"] - 1) + ")" +
+			"R" + (sys["secur_r"] - 1) + "(" + (sys["short_r"] - 1) + ")" +
+			"H" + (sys["secur_h"] - 1) + "(" + (sys["short_h"] - 1) + ")";
 	}
 	else if(sys_class == "Abyss"){static_type = 'Abyss';}
 	else if(sys_class == "Thera"){static_type = 'Thera';}
