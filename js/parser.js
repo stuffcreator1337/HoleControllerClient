@@ -50,7 +50,7 @@ function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
             injectInto: 'infovis',
             //set duration for the animation
             multitree: true,
-            duration: 0,
+            duration: 300,
             //set animation transition type
             transition: $jit.Trans.Quart.easeInOut,
             //set distance between node and its children
