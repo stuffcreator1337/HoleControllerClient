@@ -1,6 +1,6 @@
 # HoleController_Client
 EVE Online WH-Map client
-Last update 30.08.2020
+Last update: feb 2026
 
 Some of the functions:
 
@@ -14,3 +14,4 @@ Some of the functions:
 ![setdest](https://user-images.githubusercontent.com/63058217/165156819-b5d9ac6e-5992-4b45-b1bb-d31dd021af86.gif)
 ![types2](https://user-images.githubusercontent.com/63058217/165156843-d12803db-34a8-4aa7-9d8c-28cc90c62384.gif)
 ![sigs](https://user-images.githubusercontent.com/63058217/165156823-ae84552e-641b-41b8-8127-46f8a3a2d76d.gif)
+
