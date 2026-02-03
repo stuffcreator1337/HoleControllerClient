@@ -1,0 +1,648 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\sigedit.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\sigedit.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\links_parser.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\links_parser.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\login_page.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\login_page.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_iFrame.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\tooltip_iFrame.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\main_top.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\main_top.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\main_right.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\main_right.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\main_left.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\main_left.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\changes.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\changes.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_pilotsInfo.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\tooltip_pilotsInfo.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_pilotPos.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\tooltip_pilotPos.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_localsInfo.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\tooltip_localsInfo.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_dataEffect.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\tooltip_dataEffect.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\systempanel_tabs.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\systempanel_tabs.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\menu_kills.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\menu_kills.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\menu_edges.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\menu_edges.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\menu_edgeLabels.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\menu_edgeLabels.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\cookies.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cookies.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\settings\\corp_logo.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:settings\\corp_logo.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\jscolor-example.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:jscolor-example.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\server.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\jit.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\jit.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\pilotPos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\pilotPos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\parse_wspace.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\parse_wspace.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\options.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:options.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\rightclick_kills.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\rightclick_kills.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\kb_parser.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\kb_parser.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\db\\jumps.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:db\\jumps.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\wh_holes_constructor.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\wh_holes_constructor.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\parser_elements.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\parser_elements.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\updatePage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\updatePage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\wh_effect_constructor.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\wh_effect_constructor.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\db\\mapofeden.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:db\\mapofeden.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\db\\wh_holes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:db\\wh_holes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\db\\wh_info.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:db\\wh_info.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\rightclick_edge.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\rightclick_edge.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 27,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "tooltip_pilotsInfo.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_pilotsInfo.css",
+              "RelativeDocumentMoniker": "css\\tooltip_pilotsInfo.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_pilotsInfo.css",
+              "RelativeToolTip": "css\\tooltip_pilotsInfo.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:16:48.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "tooltip_pilotPos.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_pilotPos.css",
+              "RelativeDocumentMoniker": "css\\tooltip_pilotPos.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_pilotPos.css",
+              "RelativeToolTip": "css\\tooltip_pilotPos.css",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:16:44.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "tooltip_localsInfo.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_localsInfo.css",
+              "RelativeDocumentMoniker": "css\\tooltip_localsInfo.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_localsInfo.css",
+              "RelativeToolTip": "css\\tooltip_localsInfo.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:16:40.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "tooltip_iFrame.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_iFrame.css",
+              "RelativeDocumentMoniker": "css\\tooltip_iFrame.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_iFrame.css",
+              "RelativeToolTip": "css\\tooltip_iFrame.css",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:16:37.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "main.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\main.css",
+              "RelativeDocumentMoniker": "css\\main.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\main.css",
+              "RelativeToolTip": "css\\main.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:15:05.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "changes.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\changes.css",
+              "RelativeDocumentMoniker": "css\\changes.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\changes.css",
+              "RelativeToolTip": "css\\changes.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:06:29.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "login_page.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\login_page.css",
+              "RelativeDocumentMoniker": "css\\login_page.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\login_page.css",
+              "RelativeToolTip": "css\\login_page.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:07:27.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "main_left.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\main_left.css",
+              "RelativeDocumentMoniker": "css\\main_left.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\main_left.css",
+              "RelativeToolTip": "css\\main_left.css",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:08:26.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "main_right.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\main_right.css",
+              "RelativeDocumentMoniker": "css\\main_right.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\main_right.css",
+              "RelativeToolTip": "css\\main_right.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:09:36.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "tooltip_dataEffect.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_dataEffect.css",
+              "RelativeDocumentMoniker": "css\\tooltip_dataEffect.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\tooltip_dataEffect.css",
+              "RelativeToolTip": "css\\tooltip_dataEffect.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:16:34.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "systempanel_tabs.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\systempanel_tabs.css",
+              "RelativeDocumentMoniker": "css\\systempanel_tabs.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\systempanel_tabs.css",
+              "RelativeToolTip": "css\\systempanel_tabs.css",
+              "ViewState": "AgIAANIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:16:25.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "menu_kills.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\menu_kills.css",
+              "RelativeDocumentMoniker": "css\\menu_kills.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\menu_kills.css",
+              "RelativeToolTip": "css\\menu_kills.css",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:16:21.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "menu_edges.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\menu_edges.css",
+              "RelativeDocumentMoniker": "css\\menu_edges.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\menu_edges.css",
+              "RelativeToolTip": "css\\menu_edges.css",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:16:16.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "menu_edgeLabels.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\menu_edgeLabels.css",
+              "RelativeDocumentMoniker": "css\\menu_edgeLabels.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\menu_edgeLabels.css",
+              "RelativeToolTip": "css\\menu_edgeLabels.css",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:16:11.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "main_top.css",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\main_top.css",
+              "RelativeDocumentMoniker": "css\\main_top.css",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\css\\main_top.css",
+              "RelativeToolTip": "css\\main_top.css",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-23T14:16:05.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "corp_logo.png",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\settings\\corp_logo.png",
+              "RelativeDocumentMoniker": "settings\\corp_logo.png",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\settings\\corp_logo.png",
+              "RelativeToolTip": "settings\\corp_logo.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-01-23T14:05:32.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "login.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\login.js",
+              "RelativeDocumentMoniker": "login.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\login.js",
+              "RelativeToolTip": "login.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-14T12:07:37.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\index.html",
+              "RelativeDocumentMoniker": "index.html",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\index.html",
+              "RelativeToolTip": "index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-01-12T08:59:42.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "index.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\index.js",
+              "RelativeDocumentMoniker": "index.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\index.js",
+              "RelativeToolTip": "index.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-12T08:58:40.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "options.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\options.js",
+              "RelativeDocumentMoniker": "options.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\options.js",
+              "RelativeToolTip": "options.js",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwDAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-25T09:08:07.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "parser_elements.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\parser_elements.js",
+              "RelativeDocumentMoniker": "js\\parser_elements.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\parser_elements.js",
+              "RelativeToolTip": "js\\parser_elements.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-22T10:10:56.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "server.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\server.js",
+              "RelativeDocumentMoniker": "server.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\server.js",
+              "RelativeToolTip": "server.js",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwDMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-24T09:32:17.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "jit.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\jit.js",
+              "RelativeDocumentMoniker": "js\\jit.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\jit.js",
+              "RelativeToolTip": "js\\jit.js",
+              "ViewState": "AgIAABQRAAAAAAAAAAAwwJoRAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-22T10:10:38.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "links_parser.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\links_parser.js",
+              "RelativeDocumentMoniker": "js\\links_parser.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\links_parser.js",
+              "RelativeToolTip": "js\\links_parser.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-22T10:13:18.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "pilotPos.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\pilotPos.js",
+              "RelativeDocumentMoniker": "js\\pilotPos.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\pilotPos.js",
+              "RelativeToolTip": "js\\pilotPos.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-24T09:30:17.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "cookies.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\cookies.js",
+              "RelativeDocumentMoniker": "cookies.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\cookies.js",
+              "RelativeToolTip": "cookies.js",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAgwGgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-14T12:04:09.904Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "sigedit.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\sigedit.js",
+              "RelativeDocumentMoniker": "js\\sigedit.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\sigedit.js",
+              "RelativeToolTip": "js\\sigedit.js",
+              "ViewState": "AgIAAKQBAAAAAAAAAAAiwL4BAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-22T09:33:33.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "jscolor-example.html",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\jscolor-example.html",
+              "RelativeDocumentMoniker": "jscolor-example.html",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\jscolor-example.html",
+              "RelativeToolTip": "jscolor-example.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-01-12T09:59:40.678Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "parse_wspace.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\parse_wspace.js",
+              "RelativeDocumentMoniker": "js\\parse_wspace.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\parse_wspace.js",
+              "RelativeToolTip": "js\\parse_wspace.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-22T13:51:20.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "updatePage.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\updatePage.js",
+              "RelativeDocumentMoniker": "js\\updatePage.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\updatePage.js",
+              "RelativeToolTip": "js\\updatePage.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-24T09:30:14.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "rightclick_kills.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\rightclick_kills.js",
+              "RelativeDocumentMoniker": "js\\rightclick_kills.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\rightclick_kills.js",
+              "RelativeToolTip": "js\\rightclick_kills.js",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAiwJcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-22T08:59:11.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "wh_holes_constructor.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\wh_holes_constructor.js",
+              "RelativeDocumentMoniker": "js\\wh_holes_constructor.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\wh_holes_constructor.js",
+              "RelativeToolTip": "js\\wh_holes_constructor.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-24T15:03:32.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "kb_parser.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\kb_parser.js",
+              "RelativeDocumentMoniker": "js\\kb_parser.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\kb_parser.js",
+              "RelativeToolTip": "js\\kb_parser.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-22T11:47:55.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "wh_effect_constructor.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\wh_effect_constructor.js",
+              "RelativeDocumentMoniker": "js\\wh_effect_constructor.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\wh_effect_constructor.js",
+              "RelativeToolTip": "js\\wh_effect_constructor.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-24T15:03:33.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "jumps.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\db\\jumps.js",
+              "RelativeDocumentMoniker": "db\\jumps.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\db\\jumps.js",
+              "RelativeToolTip": "db\\jumps.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-25T05:40:03.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "mapofeden.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\db\\mapofeden.js",
+              "RelativeDocumentMoniker": "db\\mapofeden.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\db\\mapofeden.js",
+              "RelativeToolTip": "db\\mapofeden.js",
+              "ViewState": "AgIAAKiqAQAAAAAAAAAAAMeqAQAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-25T05:40:29.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "wh_holes.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\db\\wh_holes.js",
+              "RelativeDocumentMoniker": "db\\wh_holes.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\db\\wh_holes.js",
+              "RelativeToolTip": "db\\wh_holes.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-24T08:21:09.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "wh_info.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\db\\wh_info.js",
+              "RelativeDocumentMoniker": "db\\wh_info.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\db\\wh_info.js",
+              "RelativeToolTip": "db\\wh_info.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-24T08:21:03.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "rightclick_edge.js",
+              "DocumentMoniker": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\rightclick_edge.js",
+              "RelativeDocumentMoniker": "js\\rightclick_edge.js",
+              "ToolTip": "C:\\Users\\r.semenov\\source\\repos\\HoleControllerClient\\js\\rightclick_edge.js",
+              "RelativeToolTip": "js\\rightclick_edge.js",
+              "ViewState": "AgIAACwAAAAAAAAAAAAqwCoAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-22T10:20:24.95Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
