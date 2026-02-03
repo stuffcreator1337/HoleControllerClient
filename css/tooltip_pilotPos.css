@@ -1,0 +1,57 @@
+.shipImgSmall:hover{
+	cursor:hand;
+	border:1px solid yellow;
+}
+.systemName {
+	display: inline-block;
+	white-space: nowrap;
+	/* position: absolute; */
+	right: 0px;
+	/* background-color:#1A1A1A; */
+}
+.sysLoc {
+	display: inline-block;
+	white-space: nowrap;
+	position: absolute;
+	right: 60px;
+	/* background-color:#1A1A1A; */
+}
+text.pilotName{
+	padding-left:5px;
+	padding-right:5px;
+	/* background-color:#1A1A1A; */
+}
+.charLacation {
+	padding:0px;	
+}
+.whitespace {	
+	text-align: left;
+	/* background-color:#1A1A1A; */
+	display: inline-block;
+	position: absolute;
+	right: 112px;
+	white-space: nowrap;	
+}
+.pilotName {
+	padding:0px;
+	width: 300px;
+}
+.lastTime {
+	display: inline-block;
+	white-space: nowrap;
+	/* position: absolute;
+	right: 0px; */
+	/* background-color:#1A1A1A; */
+}
+.csstooltip {
+	text-decoration: none;
+	position: relative;
+}
+.csstooltip span {
+	margin-left: -999em;
+	position: absolute;
+}
+.csstooltip:hover span {	
+	position: absolute; left: 2em; top: 0px; z-index: 99;
+	margin-left: 0; 
+}

@@ -1,0 +1,32 @@
+#login_but {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 10px 10px 10px 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    text-align: left;
+    text-shadow: 1px 1px rgba(0,0,0,0.85);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    border: 0px;
+    margin-left: 2px;
+    margin-top: 140px;
+    margin-bottom: 1px;
+    background: #FF9933;
+    visibility: hidden;
+    background: #FF9933;
+    background: linear-gradient(to bottom, #FF9933 0%, #804C1A 100%);
+}
+#login_but:hover {
+    color: #fff;
+    text-decoration: none;
+    background: #2cbbfd;
+    background: linear-gradient(to bottom, #2cbbfd 0%, #006b9d 100%);
+}
+#loading_txt {
+    margin-top: -50px;
+    display: block;
+}

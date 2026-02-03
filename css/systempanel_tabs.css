@@ -1,0 +1,242 @@
+/* * {
+	margin: 0px;
+	margin-left:0px;
+	padding: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: left;
+} */
+/* 
+body {
+	text-align: left;
+	font-family: Lato;
+	color: #FFFFFF;
+} */
+
+#form1,#form2,#form3{
+	text-align: left;
+  margin: 1px 0px 0px 0px;
+	margin-right:0px;
+border-width: 0px 0px 0px 0px;
+border-style: solid;
+	border-color: #5C5C5C;
+ 
+	width: 250px;
+	background: -moz-linear-gradient(top,#333333 0%,#474747 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#333333),color-stop(100%,#474747));
+	background: -webkit-linear-gradient(top,#333333 0%,#474747 100%);
+	background: -o-linear-gradient(top,#333333 0%,#474747 100%);
+	background: -ms-linear-gradient(top,#333333 0%,#474747 100%);
+	background: linear-gradient(top,#333333 0%,#474747 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333',endColorstr='#474747',GradientType=0);
+	 border-radius: 2px 2px 0 0;
+	 -webkit-border-radius: 2px 2px 0 0;
+}
+
+#form2.tablediv {
+margin-top:0px;
+}
+#delsig:hover{
+	cursor: pointer;
+}
+#sigs{   
+	font-family: verdana,arial,sans-serif;
+    font-size: 13px;
+	float: left;
+	background-color:rgba(0, 0, 0, 0);
+	
+	
+	margin-right:5px;
+}
+
+.tabs {
+	padding-left:0px;
+	width: 100%;
+	float: none;
+	list-style: none;
+	position: relative;
+	margin: 0px 0 0 0px;
+	text-align: left;
+}
+
+.tabs a {
+	
+	text-decoration:none;
+    color:#FFFFFF;
+	font-family: verdana,arial,sans-serif;
+	font-size:13px;
+	padding:0;
+}
+
+.tabs li {
+ height: 1px;
+  float: left;
+  margin: 0px 0 20px 0px;
+}
+
+.tabs input[type="radio"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.tabs label, #setdest {
+	cursor: pointer;
+	margin:0px;
+	display: block;
+	font-size: 12px;
+	font-weight: normal;	 
+	color: #fff;	
+	-webkit-border-top-right-radius: 2px;
+	-webkit-border-top-left-radius: 2px;
+}
+.tabs label {	
+	padding: 3px 7px 0px 7px; 
+	text-transform: uppercase;	
+	position: relative; 
+	background: #5C5C5C;
+  	background: -moz-linear-gradient(top,#8c8c8c 0%,#5C5C5C 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#8c8c8c),color-stop(100%,#5C5C5C));
+	background: -webkit-linear-gradient(top,#8c8c8c 0%,#5C5C5C 100%);
+	background: -o-linear-gradient(top,#8c8c8c 0%,#5C5C5C 100%);
+	background: -ms-linear-gradient(top,#8c8c8c 0%,#5C5C5C 100%);
+	background: linear-gradient(top,#8c8c8c 0%,#5C5C5C 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8c8c8c',endColorstr='#5C5C5C',GradientType=0);
+}
+#setdest{	
+	padding: 3px 3px 0px 3px; 
+	border-top-color: buttonface;
+	border-top-style: outset;
+	border-top-width: 0px;
+	border: 0px;
+	background: #FF9933;
+	background: -moz-linear-gradient(top,#FF9933 0%,#804C1A 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FF9933),color-stop(100%,#804C1A));
+	background: -webkit-linear-gradient(top,#FF9933 0%,#804C1A 100%);
+	background: -o-linear-gradient(top,#FF9933 0%,#804C1A 100%);
+	background: -ms-linear-gradient(top,#FF9933 0%,#804C1A 100%);
+	background: linear-gradient(top,#FF9933 0%,#804C1A 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9933',endColorstr='#804C1A',GradientType=0);
+}
+#setdest:hover  {
+	color: #fff;
+	text-decoration:none;
+	background: #2cbbfd;
+	background: -moz-linear-gradient(top,#ffbbfd 0%,#006b9d 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#ffbbfd),color-stop(100%,#006b9d));
+	background: -webkit-linear-gradient(top,#ffbbfd 0%,#006b9d 100%);
+	background: -o-linear-gradient(top,#ffbbfd 0%,#006b9d 100%);
+	background: -ms-linear-gradient(top,#ffbbfd 0%,#006b9d 100%);
+	background: linear-gradient(top,#ffbbfd 0%,#006b9d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbbfd',endColorstr='#006b9d',GradientType=0);
+}
+#checkedyes{
+    background: -moz-linear-gradient(top,#474747 0%,#333333 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#474747),color-stop(100%,#333333));
+	background: -webkit-linear-gradient(top,#474747 0%,#333333 100%);
+	background: -o-linear-gradient(top,#474747 0%,#333333 100%);
+	background: -ms-linear-gradient(top,#474747 0%,#333333 100%);
+	background: linear-gradient(top,#474747 0%,#333333 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#474747',endColorstr='#333333',GradientType=0);
+}
+.tabs label:hover {
+	background: -moz-linear-gradient(top,#595959 0%,#333333 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#595959),color-stop(100%,#333333));
+	background: -webkit-linear-gradient(top,#595959 0%,#333333 100%);
+	background: -o-linear-gradient(top,#595959 0%,#333333 100%);
+	background: -ms-linear-gradient(top,#595959 0%,#333333 100%);
+	background: linear-gradient(top,#595959 0%,#333333 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#595959',endColorstr='#333333',GradientType=0);
+}
+
+.tabs .tab-content {
+	border-radius: 0px 3px 3px 0px;
+	-webkit-border-radius: 0px 3px 3px 0px;
+	z-index: 2;
+	display: none;
+	overflow: hidden;
+	width: 100%;
+	font-size: 12px;
+	line-height:0px;
+
+	position: absolute;
+
+	left: 0;
+	background: #333333;
+}
+
+.tabs [id^="tab"]:checked + label {
+  top: 0;
+ 
+  background: #333333;
+}
+
+.tabs [id^="tab"]:checked ~ [id^="tab-content"] {
+  display: block;
+    background: #333333;
+}
+
+p.link {
+  clear: both;
+  margin: 380px 0 0 15px;
+}
+
+p.link a {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+
+  background-color: #333333;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.shipImgSmall{
+	
+}
+p.link a:hover {
+  background-color: #474747;
+}
+
+.checkbox {
+	text-decoration: none;
+	position: relative;
+}
+.checkbox span {
+	margin-left: -999em;
+	position: absolute;
+}
+.checkbox:hover span {	
+	position: absolute; left: -15px; top: -60px; z-index: 99;
+	margin-left: 0; 
+}
+#destcheck.checkbox:hover span {	
+	position: absolute; left: -35px; top: 15px; z-index: 99;
+	margin-left: 0; 
+}
+.checkboxinfo, .destinfo{	
+	padding: 3px 3px 3px 3px;
+	position: absolute; left: -10px; top: -30px; z-index: 19;
+	margin-left: 0; 
+	text-transform: uppercase;
+	text-decoration: none;
+	display: inline-block;
+	color: #fff;
+	font-size: 12px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #5C5C5C;
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#595959),color-stop(100%,#333333));
+	
+}
+#checkboxInfoAli.checkboxinfo{
+	position: absolute; left: -50px; top: -60px; z-index: 19;
+}
+
+
+* html a:hover { background: transparent; }

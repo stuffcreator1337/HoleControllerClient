@@ -1,0 +1,34 @@
+/* Default DOM Tooltip Style */
+div.domTT:hover {
+	cursor: help;
+}
+div.domTT {
+	cursor: help;
+	text-align: left;
+	pointer-events: all;
+	border: 1px solid #333333;
+	background-color: #333333;
+}
+div.domTT .caption {
+	cursor: help;
+/* 	pointer-events: all;
+	font-family: serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 1px 2px;
+	color: #FFFFFF; */
+}
+div.domTT .contents {
+	cursor: help;
+	pointer-events: all;
+	font-size: 12px;
+	font-family: sans-serif;
+	padding: 3px 2px;
+	background: -moz-linear-gradient(top,#262626 0%,#1A1A1A 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#262626),color-stop(100%,#1A1A1A));
+	background: -webkit-linear-gradient(top,#262626 0%,#1A1A1A 100%);
+	background: -o-linear-gradient(top,#262626 0%,#1A1A1A 100%);
+	background: -ms-linear-gradient(top,#262626 0%,#1A1A1A 100%);
+	background: linear-gradient(top,#262626 0%,#1A1A1A 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#262626',endColorstr='#1A1A1A',GradientType=0);
+}

@@ -1,0 +1,63 @@
+
+
+/* kills menu */
+.killhref{
+text-decoration:none;
+color:#FFF;
+}
+.kills-menu {
+font-family: "Lucida Grande", Verdana;
+display: none;
+position: absolute;
+z-index: 95;
+padding: 0px 0;
+background-color: #333333;
+border: solid 1px #dfdfdf;
+box-shadow: 1px 1px 2px #cfcfcf;
+}
+
+.kills-menu--active {
+display: block;
+}
+
+.kills-menu__items {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.kills-menu__item,
+.kills-menu__item_friend,
+.kills-menu__item_enemy {
+padding-left: 5px;
+padding-right: 4px;
+padding-top: 2px;
+text-align: left;
+text-align: top;
+display: block;
+}
+.kills-menu__item_friend {
+background: -webkit-gradient(linear,left top,right bottom,color-stop(70%,#333333),color-stop(100%,#00ff00));
+}
+.kills-menu__item_enemy {
+background: -webkit-gradient(linear,left top,right bottom,color-stop(70%,#333333),color-stop(100%,#ff0000));
+}
+.kills-menu__item:hover, 
+.kills-menu__item_friend:hover, 
+.kills-menu__item_enemy:hover   {
+color: #fff;
+background: #0066aa;
+}
+
+.kills-menu__item:last-child, 
+.kills-menu__item_friend:last-child, 
+.kills-menu__item_enemy:last-child  {
+margin-bottom: 0;
+}
+
+.kills-menu__link {
+display: block;
+padding: 0px 0px;
+color: #FFF;
+text-decoration: none;
+}

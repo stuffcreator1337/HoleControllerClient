@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<meta charset="windows-1251">
+<html ng-app="plunker" lang="en" style="background-color:#1A1A1A" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="icon" type="image/png" href="settings/favicon.ico" />
+	<title>Hole Controller</title>
+	<link type="text/css" href="css/main.css" rel="stylesheet" />
+	<link type="text/css" href="css/login_page.css" rel="stylesheet" />
+	<link type="text/css" href="css/main_left.css" rel="stylesheet" />
+	<link type="text/css" href="css/main_top.css" rel="stylesheet" />
+	<link type="text/css" href="css/main_right.css" rel="stylesheet" />
+	<link type="text/css" href="css/tooltip_iFrame.css" rel="stylesheet" />
+	<link type="text/css" href="css/tooltip_dataEffect.css" rel="stylesheet" /><!--  tooltips with number of jumps or effects&statics -->
+	<link type="text/css" href="css/tooltip_localsInfo.css" rel="stylesheet" />
+	<link type="text/css" href="css/tooltip_pilotsInfo.css" rel="stylesheet" />
+	<link type="text/css" href="css/tooltip_pilotPos.css" rel="stylesheet" />
+	<link type="text/css" href="css/menu_edges.css" rel="stylesheet" />
+	<link type="text/css" href="css/menu_edgeLabels.css" rel="stylesheet" />
+	<link type="text/css" href="css/menu_kills.css" rel="stylesheet" />
+	<link type="text/css" href="css/systempanel_tabs.css" rel="stylesheet" />
+
+	<script language="javascript" type="text/javascript" src="settings/settings.js"></script>
+	<script language="javascript" type="text/javascript" src="cookies.js"></script>
+	<script language="javascript" type="text/javascript" src="jquery.min.js"></script>
+	<script language="javascript" type="text/javascript" src="jscolor.js"></script>
+
+	<script language="javascript" type="text/javascript" src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+	<script language="javascript" type="text/javascript" src="server.js"></script>
+	<!-- Insert this line above script imports  -->
+	<script>
+		var actual_kills = {};
+		var server_addr = "";
+        var local_code = Math.floor(Math.random() * 10000000);
+		var fullmap,
+			// constellations,
+			systemJumps,
+			regions,
+			// holeTypes,
+			whSysInfo1,
+			morphBusy = false;
+		var _x;
+		var _y;
+		function isExtra(e) {
+			var bSame = e.clientX == _x && e.clientY == _y;  // WARNING: page zoom>100% will also cause 'extra'
+			_x = e.clientX;
+			_y = e.clientY;
+			return bSame;
+		}
+		// <!-- require('electron').remote.getCurrentWindow().webContents.openDevTools(); -->
+
+		var activeCharTab;
+		var saved_options = {};
+		const unique_state = 'firstlogin';
+		// <!-- var  saved_options.color_High = "#00CCFF"; -->
+		var unique_code = Math.floor(Math.random() * 10000000);
+		// <!-- var currentServer = Servers["tranq"];	 -->
+		// <!-- console.log(currentServer); -->
+		var loginURL = '';
+		const loginURL_p1 = 'https://login.eveonline.com/v2/oauth/authorize?response_type=code&redirect_uri=http://';
+		var loginURL_p2 = '';
+		const loginURL_p3 = ':' + currentServer["port"] + '&client_id=' + currentServer["client_id"] + '&scope=' + currentServer["scopes"] + '&state=';
+
+	</script>
+
+	<!-- normal script imports etc  -->
+	<!-- system scripts -->
+	<!-- instruments scripts -->
+	<script language="javascript" type="text/javascript" src="sso_auth.js" charset="windows-1251"></script>
+	<!-- main load scripts -->
+	<script language="javascript" type="text/javascript" src="options.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="login.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="index.js" charset="windows-1251"></script>
+
+	<!-- RightClick events files -->
+	<script language="javascript" type="text/javascript" src="js/rightclick_hole.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/rightclick_edge.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/rightclick_kills.js" charset="windows-1251"></script>
+
+	<script language="javascript" type="text/javascript" src="js/systempanel.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/systempanel_residents.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/sigedit.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/links_parser.js" charset="windows-1251"></script>
+	<!-- PARSER scripts -->
+	<script language="javascript" type="text/javascript" src="js/jit.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/parser_elements.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/parser.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/kb_parser.js" charset="windows-1251"></script>
+
+	<!-- Database Files -->
+	<script language="javascript" type="text/javascript" src="db/mapofeden.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="db/wh_holes.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="db/wh_info.js" charset="windows-1251"></script>
+	<!-- <script language="javascript" type="text/javascript" src="db/constellations.js"  charset="windows-1251"></script> -->
+	<script language="javascript" type="text/javascript" src="db/regions.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="db/jumps.js" charset="windows-1251"></script>
+
+	<script language="javascript" type="text/javascript" src="js/updatePage.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/parse_wspace.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/parser_dest.js" charset="windows-1251"></script>
+	<!-- whinfo-tooltip scripts -->
+	<script language="javascript" type="text/javascript" src="js/wh_effect_constructor.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/wh_holes_constructor.js" charset="windows-1251"></script>
+	<script language="javascript" type="text/javascript" src="js/pilotPos.js" charset="windows-1251"></script>
+	<!-- tooltip scripts -->
+	<script language="javascript" type="text/javascript" src="js/domLib.js"></script>
+	<script language="javascript" type="text/javascript" src="js/domTT.js"></script>
+	<!-- Insert this line after script imports -->
+	<script>if (window.module) module = window.module;</script>
+</head>
+
+<body color_type='back' onload="startApp(true);">
+<div id='loginPage' style='display:block'>
+	<a id='login_but' target='_blank' style='visibility:hidden' >Login</a>
+	<h4 id='loading_txt'style='visibility:visible'>Loading...</h4>
+</div>
+<div id='mainPage' style='display:none'>
+	<div id='top_div'>
+		<table id='top_panel'>
+			<tr id='top_tr' style='padding: 0px; '>
+			</tr>
+		</table>
+	</div>
+	<table class='opt_settings' id='right_panel'>
+		<tbody>
+			<!-- <tr  ><td><input type="checkbox" onclick='check(this);noBorders(this)'id='noBorder' /></td><td>No Border (need restart)</td></tr> -->
+			<tr><td><input type="checkbox" onclick='check(this)' id='opt_compact' /></td><td>Compact view</td></tr>
+			<tr>
+				<td>
+					<table id='colors_table'>
+						<tr><td><input readonly id='color_back' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_t1' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_t2' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_fr1' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_fr2' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_sys' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_sys2' class="jscolor" /></td></tr>
+						<!-- <tr><td><input readonly id='color_text' class="jscolor" /></td></tr> -->
+						<tr><td><input readonly id='color_High' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_Low' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_Null' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_C1' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_C2' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_C3' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_C4' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_C5' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_C6' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_C13' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_C14' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_C15' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_C16' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_C17' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_C18' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_C19' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_Abyss' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_Thera' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_Pochven' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_Jove' class="jscolor" /></td></tr>
+						<tr><td><input readonly id='color_GPMR' class="jscolor" /></td></tr>
+						<tr><td><button onclick='setColorDefault();'>Default</button></td></tr>
+
+					</table>
+				</td>
+				<td>
+					<table id='colors_names'>
+						<tr><td>Background</td></tr>
+						<tr><td>Outer text</td></tr>
+						<tr><td>Frame text</td></tr>
+						<tr><td>Frame1</td></tr>
+						<tr><td>Frame2</td></tr>
+						<tr><td>Sys name</td></tr>
+						<tr><td>Sys back</td></tr>
+						<!-- <tr><td>Text</td></tr> -->
+						<tr><td>Highsec</td></tr>
+						<tr><td>Lowsec</td></tr>
+						<tr><td>Nullsec</td></tr>
+						<tr><td>C1</td></tr>
+						<tr><td>C2</td></tr>
+						<tr><td>C3</td></tr>
+						<tr><td>C4</td></tr>
+						<tr><td>C5</td></tr>
+						<tr><td>C6</td></tr>
+						<tr><td>C13</td></tr>
+						<tr><td>C14</td></tr>
+						<tr><td>C15</td></tr>
+						<tr><td>C16</td></tr>
+						<tr><td>C17</td></tr>
+						<tr><td>C18</td></tr>
+						<tr><td>C19</td></tr>
+						<tr><td>Abyss</td></tr>
+						<tr><td>Thera</td></tr>
+						<tr><td>Pochven</td></tr>
+						<tr><td>Jove</td></tr>
+						<tr><td>GPMR</td></tr>
+						<tr><td></td></tr>
+					</table>
+				</td>
+			</tr>
+			<!-- <tr  ><td> -->
+			<!-- <table> -->
+			<!-- <tr> -->
+			<!-- <td><input type="radio" id="r-left" name="orientation" value="left" /></td> -->
+			<!-- <td><label for="r-left">Left </label></td> -->
+			<!-- </tr> -->
+			<!-- <tr> -->
+			<!-- <td><input type="radio" id="r-top" name="orientation" checked="checked" value="top" /></td> -->
+			<!-- <td><label for="r-top">Top </label></td> -->
+			<!-- </tr> -->
+			<!-- <tr> -->
+			<!-- <td><input type="radio" id="r-bottom" name="orientation" value="bottom" /></td> -->
+			<!-- <td><label for="r-bottom">Bottom </label></td> -->
+			<!-- </tr> -->
+			<!-- <tr> -->
+			<!-- <td><input type="radio" id="r-right" name="orientation" value="right" /></td> -->
+			<!-- <td><label for="r-right">Right </label></td>  -->
+			<!-- </tr> -->
+			<!-- </table> -->
+			<!-- </td></tr> -->
+			<!-- <tr  ><td><input type="checkbox" onclick='check(this)'id='onTop' /></td><td>Always on top</td></tr> -->
+			<!-- <tr  ><td><input type="checkbox" onclick='check(this)'id='opt_pilots' /></td><td>Show pilots</td></tr> -->
+			<tr><td><input type="checkbox" onclick='check(this)' id='opt_circles' /></td><td>Show Circles</td></tr>
+			<!-- <tr  ><td><input type="checkbox" onclick='check(this)'id='opt_statics' /></td><td>Show Statics</td></tr> -->
+			<tr><td><input type="checkbox" onclick='check(this)' id='opt_colorStatics' /></td><td>Color Statics</td></tr>
+			<!-- <tr  ><td><input type="textarea" id='totalAngularWidths' value='0.15' /></td><td>Angular-Widths</td></tr> -->
+			<!-- <tr  ><td><input type="textarea" id='nodeSize' value='9' /></td><td>Node size</td></tr> -->
+		</tbody>
+	</table>
+	<div id="leftdiv">
+		<text class='activeLeft' id='current_system'>Loading...</text>
+		<text class='activeLeft' id='current_id' style='visibility:hidden'></text>
+		<text class='activeLeft' id='constellation_name' style='visibility:hidden'></text><br>
+
+		<table color_type='back' id='wh_info' style='visibility:hidden'>
+		</table>
+		<div class='effect_tooltip' style='visibility:hidden'>
+			<text id='effectTool'></text>
+			<text id='static0tool'></text>
+			<text id='static1tool'></text>
+		</div>
+		<!-- </tbody> -->
+		<!-- 	<button style="pointer-events: all;" onclick="testClick()" >send data</button><br>-->
+		<!-- <button id="update" style="pointer-events: all;" onclick="create_link(30002187,30003280);">new connect</button><br>  -->
+		<!-- <div class='activeLeft' id="tooltipPool" style="display: "></div> -->
+		<table id='destParsed' style='visibility:hidden'><tr><td></td></tr></table>
+		<table color_type='back' class='activeLeft' id='pilotPos'></table>
+		<div id='systemPanelID' class='activeLeft' style='display:none'>
+			<ul class="tabs">
+				<li><a id="tab-content1" onclick='reload();switchtab(0);'><label for="tab1" id="checkedyes">signatures</label></a></li>
+				<!--<li><a id="tab-content3" onclick='resizeSigs();' ><label for="tab3" >D-scan</label></a></li>-->
+				<li><a id="tab-content4" onclick='switchtab(1);resUpdateButton();'><label for="tab4">Locals</label></a></li>
+				<!-- <li id="dest" ><a id="dest" onclick='javascript:setdest("php_system");' ><span class='checkbox' id='destcheck'><label id="setdest" ><img class="ImgSmall" src="img/destCreate.png" height="14" width="14" /img><span class='destinfo'>Установить общий дест</span></label></span></a></li> -->
+				<!-- <li id="dest" ><a id="dest" onclick='javascript:setdest("none");' ><span class='checkbox' id='destcheck'><label id="setdest"><img class="ImgSmall" src="img/destDelete.png" height="14" width="14" /img><span class='destinfo'>Удалить дест</span></label></span></a></li> -->
+				<li><a id="tab-content5" onclick='switchtab(2);clear_area_content();'><label for="tab5">annotation</label></a></li>
+			</ul>
+			<br>
+			<text id='hiddenSigC' style='display:none'></text>
+			<text id='hiddenSigs' style='display:none'></text>
+			<text id='hiddenSyst' style='display:none'></text>
+			<text id='hiddenSyID' style='display:none'></text>
+			<text id='hiddenCoID' style='display:none'></text>
+			<form id='form1' class='leftform' name='form1' method='post' style='position: relative;z-index:11;display:'>
+				<br>
+				<div style='overflow-y: auto;height:auto;max-height: 151px;min-height: 25px;width:250px'>
+					<table class='sigos'></table>
+				</div>
+				<textarea class='textarea' style='resize: none;color:#ffffff;background-color:#332933;' rows='2' cols='28' id='sigsid' name='sigsname'></textarea>
+				<br>
+				<text id='sigs' style='text-align:center;'>
+					<a id='sigs_systemname'></a> Sigs:<text id='numberofsigs'></text>
+				</text>
+
+				<span class='checkbox'>
+					<input type="checkbox" name='delsigs[]' id='checkbox_sigs' value='delete_sigs' />
+					<span class='checkboxinfo'>Delete missing sigs</span>
+				</span>
+				<div class='submit_button'>
+					<input type='button' name='update_but' id='update_but' value='Update' onclick='updateButton()' />
+					<input type='button' name='clear_all' id='clear_all' value='Clear All' onclick='deleteAll()' />
+				</div>
+			</form>
+
+			<form id='form2' class='leftform' name='form2' method='post' style='display:none'>
+				<br>
+
+				<table class='residentsCommon'>
+
+
+
+					<tr>
+						<td><text cols='10'>Natives:</text></td>
+						<td>
+							<div class="select-editable">
+								<!-- <select onchange="this.nextElementSibling.value=this.value"> -->
+								<select list='corpList' onchange="changeOption(this.value);" name='corpList' id='corpList' style='resize: none;color:#ffffff;background-color:#001F1F;' rows='2' cols='18'>
+								</select>
+								<input id='corpInput' type="text" name="format" value="" oninput='searchCorp(this);' style='resize: none;color:#ffffff;background-color:#001F1F;' />
+							</div>
+						</td>
+					</tr>
+					<tr><td><text cols='10'>Other:</text></td><td><textarea id='resCommInput' style='resize: none;color:#ffffff;background-color:#001F1F;' rows='2' cols='21'></textarea></td></tr>
+				</table>
+				<!--<text>php //echo $res_post;</text>-->
+				<text id='sigs' style='text-align:center;'>
+
+				</text>
+
+				<input class='submit_button' type='button' name='button' id='button' value='Update' onclick='resUpdateButton()' />
+			</form>
+
+			<form id='form3' class='leftform' name='form3' method='post' style='display:none'>
+				<br>
+				<table>
+					<tr><td><textarea id='system_name' style='resize: none;color:#ffffff;background-color:#001F1F;' rows='2' cols='21'></textarea></td></tr>
+					<tr><td><a id='annotations_systemname'></a></td></tr>
+					<tr><td><input class='submit_button' type='button' name='button' id='button' value='Update' onclick='sendSysName(this);' /></td></tr>
+				</table>
+			</form>
+
+		</div>
+		<!-- <footer class="footer"><div ng-include="'systempanel.html'"></div></footer> -->
+		<div class='hidden'>
+			<text id='current_ship' style='visibility:hidden'>current_ship</text><br>
+			<text id='CurrentUser-active' style='visibility:hidden'>default</text><br>
+		</div>
+	</div>
+	<div id="infovis" onload='connectToNode();'></div>
+	<div id="rightpanel">
+		<div class='right_button_group' id="restore_but" style='top: 60px'>
+			<span class='rightTooltip' id='restorerTool' style='top: 0px'>
+				<a id="restorer" target="mapparser" onclick='rotateAnimation("restoreImg");restoreLast();'>
+					<img class="rightImg" id="restoreImg" src="img/restoreBut.png" height="32" width="32" />
+				</a>
+				<span class='rightTooltipInfo' id='restorerTool'>Restore last deleted connection</span>
+			</span>
+		</div>
+		<div class='right_button_group' id="remap_but" style='top: 30px'>
+			<span class='rightTooltip' id='remapTool' style='top: 0px'>
+				<a id="remaper" target="mapparser" onclick='rotateAnimation("remapImg");socket.emit("map_redraw", activeCharTab);'>
+					<img class="rightImg" id="remapImg" src="img/refresh_but.png" height="32" width="32" />
+				</a>
+				<span class='rightTooltipInfo' id='restorerTool'>Map redraw</span>
+			</span>
+		</div>
+		<div class='right_button_group' id="expand_button" style='top: 50%;right:0px'>
+			<span class='rightTooltip' id='remapTool' style='top: 0px'>
+				<a id="remaper" target="mapparser" onclick='openOptPanel();'>
+					<img class="rightImg" id="remapImg" src="img/Safety_Selection.png" height="24" width="16" />
+				</a>
+				<span class='rightTooltipInfo' id='restorerTool'>Options</span>
+			</span>
+		</div>
+	</div>
+	<nav id="context-menu" class="context-menu">
+		<ul class="context-menu__items">
+			<li class="context-menu__item">
+				<div class='lineMenu'>
+					<a href="#" class="context-menu__link" data-action="Time"><i class="fa fa-eye"></i><img src='img/Time.png' data-action="Time" class="menuimg" height='16' width='16' id='statimg'> Switch Time-Crit</a>
+				</div>
+			</li>
+			<li class="context-menu__item">
+				<div class='lineMenu'>
+					<a href="#" class="context-menu__link" data-action="Mass"><i class="fa fa-edit"></i><img src='img/Mass.png' data-action="Mass" class="menuimg" height='16' width='16' id='statimg'> Switch Mass-Crit</a>
+				</div>
+			</li>
+			<li class="context-menu__item">
+				<div class='lineMenu'>
+					<a href="#" class="context-menu__link" data-action="Frig"><i class="fa fa-frig"></i><img src='img/small.png' height='16' data-action="Frig" class="menuimg" width='16' id='statimg'> Switch Frigates Only</a>
+				</div>
+			</li>
+			<li class="context-menu__item">
+				<div class='lineMenu'>
+					<a href="#" class="context-menu__link" data-action="Delete"><i class="fa fa-times"></i><img src='img/Delete.png' data-action="Delete" class="menuimg" height='16' width='16' id='statimg'> Delete</a>
+				</div>
+			</li>
+		</ul>
+	</nav>
+	<nav id="labelline-menu" class="labelline-menu">
+		<ul class="labelline-menu__items">
+			<li class="labelline-menu__item">
+				<div class='lineMenu'>
+					<a href="#" class="labelline-menu__link" data-action="Delete"><i class="fa fa-times"></i><img src='img/Delete.png' data-action="Delete" class="menuimg" height='16' width='16' id='statimg'> Delete</a>
+				</div>
+			</li>
+		</ul>
+	</nav>
+	<div id="coordinates-overlay" style="
+		position: fixed;
+		bottom: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: rgba(255, 255, 255, 0.6);
+		font-size: 12px;
+		font-family: monospace;
+		z-index: 1000;
+		pointer-events: none;
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		background-color: rgba(0, 0, 0, 0.3);
+		padding: 2px 8px;
+		border-radius: 3px;
+		text-align: center;
+	">
+		X: <span id="coord-x">0</span> Y: <span id="coord-y">0</span>
+	</div>
+	<script>
+		function updateCanvasCoords(x, y) {
+			document.getElementById('coord-x').textContent = x;
+			document.getElementById('coord-y').textContent = y;
+		}
+	</script>
+</div>
+  </body>
+</html>
