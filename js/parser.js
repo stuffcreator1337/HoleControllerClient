@@ -108,7 +108,7 @@ function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
 					showEdgeTooltip(label, eventInfo.event.clientX, eventInfo.event.clientY);
                 },				
 				onMouseMove: function (eventInfo) {
-					if (!tooltip || tooltip.style.opacity == 0) return;
+					if (!edgetooltip || edgetooltip.style.opacity == 0) return;
 					moveTooltip(eventInfo.event.clientX, eventInfo.event.clientY);
 				},
                 onMouseLeave: function(eventInfo) {
