@@ -93,6 +93,8 @@ function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
                     st.fx.animate({modes: ['node-style:shadowBlur'], duration: 2000 });	
 									
 					var label = "SampleText";
+					// var adje = st.graph.getAdjacence(json[i].sys1,json[i].sys2);
+					console.log(e, win, event);
 					// console.log(e);
 						  // edge.data.label ||
 						  // (edge.nodeFrom.id + ' → ' + edge.nodeTo.id);
