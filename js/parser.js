@@ -92,20 +92,18 @@ function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
 
                     st.fx.animate({modes: ['node-style:shadowBlur'], duration: 2000 });	
 									
-					var label = "SampleText";
-					// var adje = st.graph.getAdjacence(json[i].sys1,json[i].sys2);
-					console.log(object);
-					// console.log(object);
-						  // object.data.label ||
-						  // (object.nodeFrom.id + ' → ' + object.nodeTo.id);
-
-					showEdgeTooltip(label, event.clientX, event.clientY);
+					if(object.what == 'edge'){
+						var label = "SampleText";
+						console.log(object);
+						showEdgeTooltip(label, event.clientX, event.clientY);
+					}
                 },				
-				onMouseMove: function (object, win, event) {
-					var edgetooltip = document.getElementById('edge-tooltip');
-					// console.log(event.clientX);
-					if (!edgetooltip || edgetooltip.style.opacity == 0) return;
-					moveEdgeTooltip(event.clientX, event.clientY);
+				onMouseMove: function (object, win, event) {				
+					if(object.what == 'edge'){
+						var edgetooltip = document.getElementById('edge-tooltip');
+						if (!edgetooltip || edgetooltip.style.opacity == 0) return;
+						moveEdgeTooltip(event.clientX, event.clientY);
+					}
 				},
                 onMouseLeave: function(object) {
                     if(morphBusy)return;
