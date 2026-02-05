@@ -82,47 +82,47 @@ function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
                 type: 'Native',
                 //Change cursor style when hovering a node
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                onMouseEnter: function(e, win, event) {
+                onMouseEnter: function(object, win, event) {
                     if(morphBusy)return;
-                    st.graph.saveOrgInfo(e,json);
+                    st.graph.saveOrgInfo(object,json);
                     st.canvas.getElement().style.cursor = 'move';
 					
-					e.data.$scolor = "#FFF";
-					e.data.$blur = 10; 
+					object.data.$scolor = "#FFF";
+					object.data.$blur = 10; 
 
                     st.fx.animate({modes: ['node-style:shadowBlur'], duration: 2000 });	
 									
 					var label = "SampleText";
 					// var adje = st.graph.getAdjacence(json[i].sys1,json[i].sys2);
-					console.log(e, win, event);
-					// console.log(e);
-						  // edge.data.label ||
-						  // (edge.nodeFrom.id + ' → ' + edge.nodeTo.id);
+					console.log(object.data);
+					// console.log(object);
+						  // object.data.label ||
+						  // (object.nodeFrom.id + ' → ' + object.nodeTo.id);
 
 					showEdgeTooltip(label, event.clientX, event.clientY);
                 },				
-				onMouseMove: function (e, win, event) {
+				onMouseMove: function (object, win, event) {
 					var edgetooltip = document.getElementById('edge-tooltip');
 					// console.log(event.clientX);
 					if (!edgetooltip || edgetooltip.style.opacity == 0) return;
 					moveEdgeTooltip(event.clientX, event.clientY);
 				},
-                onMouseLeave: function(eventInfo) {
+                onMouseLeave: function(object) {
                     if(morphBusy)return;
                     st.canvas.getElement().style.cursor = '';	
-                    st.graph.restoreOrgInfo(eventInfo.data);
+                    st.graph.restoreOrgInfo(object.data);
                     st.fx.animate({modes: ['node-style:shadowBlur'], duration: 2000 });	
 					hideEdgeTooltip();
                 },                
-                onDragMove: function(node, eventInfo, e){ 
+                onDragMove: function(object, eventInfo, e){ 
                     var pos = eventInfo.getPos();   
                     // console.log("onDragMove");
-                    // console.log("onDragMove",pos,node.pos);
-                    // node.pos.setc(pos.x-this.nodeClickedX, pos.y-this.nodeClickedY);  
-                    if(node.pos)node.pos.setc(pos.x, pos.y);  
+                    // console.log("onDragMove",pos,object.pos);
+                    // object.pos.setc(pos.x-this.nodeClickedX, pos.y-this.nodeClickedY);  
+                    if(object.pos)object.pos.setc(pos.x, pos.y);  
                     st.fx.plot();
                 },  
-                onDragEnd: function(node, eventInfo, e){  
+                onDragEnd: function(object, eventInfo, e){  
                     // console.log("onDragEnd");
                     st.compute('end');  
                     st.fx.animate( {  
@@ -134,21 +134,21 @@ function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
                   });  
                 },  
                 //touch events  
-                onTouchStart: function(node, eventInfo, e) {  
+                onTouchStart: function(object, eventInfo, e) {  
                     this.nodeClickedX = eventInfo.getPos().x;
                     this.nodeClickedY = eventInfo.getPos().y;
                   //stop the default event  
                   $jit.util.event.stop(e);  
                 },  
-                onTouchMove: function(node, eventInfo, e){  
+                onTouchMove: function(object, eventInfo, e){  
                     console.log("onTouchMove");
                   //stop the default event  
                   $jit.util.event.stop(e);  
                   var pos = eventInfo.getPos();  
-                  node.pos.setc(pos.x, pos.y);  
+                  object.pos.setc(pos.x, pos.y);  
                   st.fx.plot();  
                 },  
-                onTouchEnd: function(node, eventInfo, e){  
+                onTouchEnd: function(object, eventInfo, e){  
                     console.log("onTouchEnd");
                   //stop the default event  
                   $jit.util.event.stop(e);  
@@ -163,8 +163,8 @@ function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
                 } 
             },
             
-            onBeforeCompute: function(node){
-                // Log.write("loading " + node.name);
+            onBeforeCompute: function(object){
+                // Log.write("loading " + object.name);
             },
             
             onAfterCompute: function(){
