@@ -244,6 +244,7 @@ function connectToNode(cookie) {
 		// console.log(cookie);
 			if (msg.user.replace(/"/g,'') == cookie){
 				clientInfo.map = msg.data.map;
+				homesystemID = msg.data.home;
 				init(msg.data.map, [], "", "initiate", msg.data.custom_sys_names);
 			
 
