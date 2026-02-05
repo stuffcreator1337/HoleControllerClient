@@ -99,12 +99,24 @@ function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
                         eventInfo.data.$blur = 10; 
                     // }
                     st.fx.animate({modes: ['node-style:shadowBlur'], duration: 2000 });	
-                },
+									
+					var label = "SampleText";
+					console.log(eventInfo);
+						  // edge.data.label ||
+						  // (edge.nodeFrom.id + ' → ' + edge.nodeTo.id);
+
+					showEdgeTooltip(label, eventInfo.event.clientX, eventInfo.event.clientY);
+                },				
+				onMouseMove: function (eventInfo) {
+					if (!tooltip || tooltip.style.opacity == 0) return;
+					moveTooltip(eventInfo.event.clientX, eventInfo.event.clientY);
+				},
                 onMouseLeave: function(eventInfo) {
                     if(morphBusy)return;
                     st.canvas.getElement().style.cursor = '';	
                     st.graph.restoreOrgInfo(eventInfo.data);
                     st.fx.animate({modes: ['node-style:shadowBlur'], duration: 2000 });	
+					hideEdgeTooltip();
                 },                
                 onDragMove: function(node, eventInfo, e){ 
                     var pos = eventInfo.getPos();   
