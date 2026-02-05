@@ -4481,6 +4481,8 @@ $jit.Graph = new Class({
 		});
 	},
 	setProp: function(j,adj){
+		adj["data"].$wh_found = j.date;
+		adj["data"].$wh_passed = j.last_passed;
 		if(j.alive == 1){
 			if(j.status == "999"){
 				adj["data"].$type = 'none';
