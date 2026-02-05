@@ -45,14 +45,17 @@ function formatDuration(seconds) {
     );
 }
 
-function showLiveEdgeTooltip(epochSeconds) {
+function showLiveEdgeTooltip(epochSeconds_found,epochSeconds_lastpassed) {
 	var edgetooltip = document.getElementById('edge-tooltip');
-    edgetooltipEpoch = epochSeconds;
+    edgetooltipEpoch1 = epochSeconds_found;
+    edgetooltipEpoch2 = epochSeconds_lastpassed;
 
     function update() {
         var now = Date.now() / 1000;
-        var diff = now - edgetooltipEpoch;
-        edgetooltip.textContent = formatDuration(diff);
+        var diff1 = now - edgetooltipEpoch1;
+        var diff2 = now - edgetooltipEpoch2;
+        edgetooltip.textContent = "Found "+formatDuration(diff1)+" ago"+
+									"Last passed "+formatDuration(diff2)+" ago";
     }
 
     update(); // сразу показать
