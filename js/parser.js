@@ -109,7 +109,7 @@ function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
                 },				
 				onMouseMove: function (e, win, event) {
 					var edgetooltip = document.getElementById('edge-tooltip');
-					console.log(event.getPos());
+					console.log(event.clientX);
 					if (!edgetooltip || edgetooltip.style.opacity == 0) return;
 					// moveTooltip(e.event.clientX, e.event.clientY);
 				},
