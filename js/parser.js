@@ -93,9 +93,10 @@ function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
                     st.fx.animate({modes: ['node-style:shadowBlur'], duration: 2000 });	
 									
 					if(object.what == 'edge'){
-						var label = object.data.$wh_found+'\n'+object.data.$wh_passed;
+						// var label = object.data.$wh_found+'\n'+object.data.$wh_passed;
 						console.log(object);
-						showEdgeTooltip(label, event.clientX, event.clientY);
+						showEdgeTooltip('', event.clientX, event.clientY);
+						showLiveEdgeTooltip(object.data.$wh_found/1000);
 					}
                 },				
 				onMouseMove: function (object, win, event) {				
