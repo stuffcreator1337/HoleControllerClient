@@ -54,7 +54,7 @@ function showLiveEdgeTooltip(epochSeconds_found,epochSeconds_lastpassed) {
         var now = Date.now() / 1000;
         var diff1 = now - edgetooltipEpoch1;
         var diff2 = now - edgetooltipEpoch2;
-        edgetooltip.textContent = "Found "+formatDuration(diff1)+" ago\nLast passed "+formatDuration(diff2)+" ago";
+        edgetooltip.textContent = 'Found '+formatDuration(diff1)+' ago\nLast passed '+formatDuration(diff2)+' ago';
     }
 
     update(); // сразу показать
