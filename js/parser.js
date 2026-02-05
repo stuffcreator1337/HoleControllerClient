@@ -94,7 +94,7 @@ function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
 									
 					var label = "SampleText";
 					// var adje = st.graph.getAdjacence(json[i].sys1,json[i].sys2);
-					console.log(object.data);
+					console.log(object);
 					// console.log(object);
 						  // object.data.label ||
 						  // (object.nodeFrom.id + ' → ' + object.nodeTo.id);
