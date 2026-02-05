@@ -114,11 +114,10 @@ function parse(json){
 			labelCenter = edgeOpt["labelCenter"];
 			}
 
-		var CritTime = new Date(),
-			HoleTime = edgeOpt["date"];
+		var CritTime = new Date();
 
 		//если близится время смерти дыры - линия пунктиром
-		if (CritTime.getTime() > HoleTime + 1000*60*60*20)	
+		if (CritTime.getTime() > edgeOpt["date"] + 1000*60*60*20)	
 		{	edge_type="punktir";	}
 
 		if ((p1["class"] == 'C13') || (part2["class"] == 'C13')){edge_color="#CC6699";}
@@ -131,6 +130,8 @@ function parse(json){
 		ed["labelCenter"] = labelCenter;
 		ed["hole1"] = "";
 		ed["hole2"] = "";
+		ed["found"] = edgeOpt["date"];
+		ed["passed"] = edgeOpt["last_passed"];
 
 		return ed;
 	};
@@ -174,6 +175,8 @@ function parse(json){
 					"$Sys2": ""+ed["part2"]["system"]+"",
 					"$HoleSys1": ""+ed["edge"]["hole1"]+"",
 					"$HoleSys2": ""+ed["edge"]["hole1"]+"",
+					"$wh_found": ""+ed["edge"]["found"]+"",
+					"$wh_passed": ""+ed["edge"]["passed"]+"",
 					"$blur": "0",
 					"$scolor": "#fff"
 					}
