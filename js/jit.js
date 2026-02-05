@@ -5347,6 +5347,7 @@ Graph.Node = new Class({
     
   initialize: function(opt, klass, Node, Edge, Label) {
     var innerOptions = {
+	  'what': 'node',
       'id': '',
       'name': '',
       'data': {},
@@ -5486,6 +5487,7 @@ Graph.Node.implement(Accessors);
 Graph.Adjacence = new Class({
   
   initialize: function(nodeFrom, nodeTo, data, Edge, Label) {
+	this.what = 'edge';
     this.nodeFrom = nodeFrom;
     this.nodeTo = nodeTo;
 	//console.log(data);
