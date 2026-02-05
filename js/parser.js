@@ -83,35 +83,27 @@ function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
                 //Change cursor style when hovering a node
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 onMouseEnter: function(e, win, event) {
-                    // console.log(morphBusy);
-                    // console.log(st.busy);
                     if(morphBusy)return;
                     st.graph.saveOrgInfo(e,json);
                     st.canvas.getElement().style.cursor = 'move';
-                            
-                    // var syst_selected = 0;
-                    // if((e.Config.type == 'line')&&(e.data.$type!='labelline'))
-                    // {
-                        // syst_selected = rgraph.canvas.viz.graph.labelcovered(e);
-                    // }
-                    // if (syst_selected == 0){
-                        e.data.$scolor = "#FFF";
-                        e.data.$blur = 10; 
-                    // }
+					
+					e.data.$scolor = "#FFF";
+					e.data.$blur = 10; 
+
                     st.fx.animate({modes: ['node-style:shadowBlur'], duration: 2000 });	
 									
 					var label = "SampleText";
-					console.log(e);
+					// console.log(e);
 						  // edge.data.label ||
 						  // (edge.nodeFrom.id + ' → ' + edge.nodeTo.id);
 
-					// showEdgeTooltip(label, e.event.clientX, e.event.clientY);
+					showEdgeTooltip(label, event.clientX, event.clientY);
                 },				
 				onMouseMove: function (e, win, event) {
 					var edgetooltip = document.getElementById('edge-tooltip');
-					console.log(event.clientX);
+					// console.log(event.clientX);
 					if (!edgetooltip || edgetooltip.style.opacity == 0) return;
-					// moveTooltip(e.event.clientX, e.event.clientY);
+					moveTooltip(event.clientX, event.clientY);
 				},
                 onMouseLeave: function(eventInfo) {
                     if(morphBusy)return;
