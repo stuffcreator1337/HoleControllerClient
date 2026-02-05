@@ -82,36 +82,36 @@ function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
                 type: 'Native',
                 //Change cursor style when hovering a node
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                onMouseEnter: function(eventInfo) {
+                onMouseEnter: function(e, win, event) {
                     // console.log(morphBusy);
                     // console.log(st.busy);
                     if(morphBusy)return;
-                    st.graph.saveOrgInfo(eventInfo,json);
+                    st.graph.saveOrgInfo(e,json);
                     st.canvas.getElement().style.cursor = 'move';
                             
                     // var syst_selected = 0;
-                    // if((eventInfo.Config.type == 'line')&&(eventInfo.data.$type!='labelline'))
+                    // if((e.Config.type == 'line')&&(e.data.$type!='labelline'))
                     // {
-                        // syst_selected = rgraph.canvas.viz.graph.labelcovered(eventInfo);
+                        // syst_selected = rgraph.canvas.viz.graph.labelcovered(e);
                     // }
                     // if (syst_selected == 0){
-                        eventInfo.data.$scolor = "#FFF";
-                        eventInfo.data.$blur = 10; 
+                        e.data.$scolor = "#FFF";
+                        e.data.$blur = 10; 
                     // }
                     st.fx.animate({modes: ['node-style:shadowBlur'], duration: 2000 });	
 									
 					var label = "SampleText";
-					console.log(eventInfo);
+					console.log(e);
 						  // edge.data.label ||
 						  // (edge.nodeFrom.id + ' → ' + edge.nodeTo.id);
 
-					showEdgeTooltip(label, eventInfo.event.clientX, eventInfo.event.clientY);
+					// showEdgeTooltip(label, e.event.clientX, e.event.clientY);
                 },				
-				onMouseMove: function (eventInfo) {
+				onMouseMove: function (e, win, event) {
 					var edgetooltip = document.getElementById('edge-tooltip');
 					console.log(event.getPos());
 					if (!edgetooltip || edgetooltip.style.opacity == 0) return;
-					moveTooltip(eventInfo.event.clientX, eventInfo.event.clientY);
+					// moveTooltip(e.event.clientX, e.event.clientY);
 				},
                 onMouseLeave: function(eventInfo) {
                     if(morphBusy)return;
