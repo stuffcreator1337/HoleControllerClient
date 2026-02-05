@@ -28,9 +28,6 @@ var edgetooltip = document.getElementById('edge-tooltip');
 function formatDuration(seconds) {
     seconds = Math.max(0, Math.floor(seconds));
 
-    var days = Math.floor(seconds / 86400);
-    seconds %= 86400;
-
     var hours = Math.floor(seconds / 3600);
     seconds %= 3600;
 
@@ -42,8 +39,7 @@ function formatDuration(seconds) {
     }
 
     return (
-        pad(days) + ':' +
-        pad(hours) + ':' +
+        hours + ':' +
         pad(minutes) + ':' +
         pad(seconds)
     );
