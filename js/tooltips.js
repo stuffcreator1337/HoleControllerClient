@@ -16,6 +16,7 @@ var edgetooltip = document.getElementById('edge-tooltip');
 }
 
 function hideEdgeTooltip() {
+var edgetooltip = document.getElementById('edge-tooltip');
     if (edgetooltipTimer) {
         clearInterval(edgetooltipTimer);
         edgetooltipTimer = null;
@@ -49,6 +50,7 @@ function formatDuration(seconds) {
 }
 
 function showLiveEdgeTooltip(epochSeconds) {
+	var edgetooltip = document.getElementById('edge-tooltip');
     edgetooltipEpoch = epochSeconds;
 
     function update() {
