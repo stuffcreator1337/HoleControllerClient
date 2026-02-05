@@ -127,7 +127,7 @@ function clearAllCookies() {
 function clearCookies(charID) {
 	if(!charID){console.log("%c NO CHARID SPECIFIED","background: red; color: black");return;}
 	console.log("%c Going to delete the following entry: "+charID,"background: white;color:orange");
-	getCookieJS(currentServer["token"], false, function(cok){
+	getCookieJS(esi_scopes, false, function(cok){
 		var val = JSON.parse(cok.value);
 		console.log(val);
 		// console.log("%c CharID we need: "+charID,"background: white; color: orange");		
@@ -140,7 +140,7 @@ function clearCookies(charID) {
 			}
 		
 		
-		setCookie(currentServer["token"],JSON.stringify(val));
+		setCookie(esi_scopes,JSON.stringify(val));
 		}	
 		console.log(val);
 	});
@@ -163,7 +163,7 @@ function msToTime(duration,opt) {
 }
 function setCookieData(data,type,charID,name){
 	// console.log("%c Current charID: "+charID+", system: "+sys+", name: "+name,"background: #fff; color: green");
-	getCookieJS(currentServer["token"], false, function(cok){
+	getCookieJS(esi_scopes, false, function(cok){
 		var val = JSON.parse(cok.value);
 		// console.log(val);
 		for(var i=0; i<val.length; i++){
@@ -174,6 +174,6 @@ function setCookieData(data,type,charID,name){
 			}
 		}
 		// console.log(val);
-		setCookie(currentServer["token"],JSON.stringify(val));	
+		setCookie(esi_scopes,JSON.stringify(val));	
 	});
 }

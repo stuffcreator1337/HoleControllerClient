@@ -19,7 +19,7 @@
 	<link type="text/css" href="css/menu_kills.css" rel="stylesheet" />
 	<link type="text/css" href="css/systempanel_tabs.css" rel="stylesheet" />
 
-	<script language="javascript" type="text/javascript" src="settings/settings.js"></script>
+	<script language="javascript" type="text/javascript" src="settings/tokens.js"></script>
 	<script language="javascript" type="text/javascript" src="cookies.js"></script>
 	<script language="javascript" type="text/javascript" src="jquery.min.js"></script>
 	<script language="javascript" type="text/javascript" src="jscolor.js"></script>
@@ -53,12 +53,11 @@
 		const unique_state = 'firstlogin';
 		// <!-- var  saved_options.color_High = "#00CCFF"; -->
 		var unique_code = Math.floor(Math.random() * 10000000);
-		// <!-- var currentServer = Servers["tranq"];	 -->
-		// <!-- console.log(currentServer); -->
+
 		var loginURL = '';
 		const loginURL_p1 = 'https://login.eveonline.com/v2/oauth/authorize?response_type=code&redirect_uri=http://';
 		var loginURL_p2 = '';
-		const loginURL_p3 = ':' + currentServer["port"] + '&client_id=' + currentServer["client_id"] + '&scope=' + currentServer["scopes"] + '&state=';
+		var loginURL_p3 = '';
 
 	</script>
 

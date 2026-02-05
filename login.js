@@ -1,4 +1,4 @@
-function setLoginButton(addr){
+function setLoginButton(data){
 	
 
 
@@ -10,7 +10,8 @@ function setLoginButton(addr){
 	
 	var button = document.getElementById("login_but");
 	var loading = document.getElementById("loading_txt");
-    loginURL_p2 = addr;
+    loginURL_p2 = data.addr;
+    loginURL_p3 = ':' + data.port + '&client_id=' + data.client + '&scope=' + esi_scopes + '&state=';
     loginURL = loginURL_p1 + loginURL_p2 + loginURL_p3;
 	getCookieJS("map_access", false, function (cok) {
 		//console.log(cok);
@@ -20,7 +21,7 @@ function setLoginButton(addr){
 		button.style.visibility = "visible";
 	});
 }
-// var currentServer = Servers["sisi"];	
+
 
 //открывать ссылки во внешнем браузере
 // var shell = require('electron').shell;
