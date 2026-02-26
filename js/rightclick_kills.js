@@ -188,7 +188,7 @@ if(!Label.length)
 			var starthtml = '<ul class="kills-menu__items">';
 			menu.innerHTML = starthtml;
 			// console.log(myArr[i]);	<img src="https://image.eveonline.com/Type/'+myArr[i].victim.ship_type_id+'_32.png" height="16" width="16" />
-			menu.innerHTML = menu.innerHTML + ' <li class="kills-menu__item"><a href="https://zkillboard.com/system/' + nodeselected.data.$sysid + '" target="_blank" class="killhref">Open system zkb page</a></li>';
+			menu.innerHTML = menu.innerHTML + ' <li class="kills-menu__item"><a href="https://zkillboard.com/system/' + nodeselected.data.$sysid + '/" target="_blank" class="killhref">Open system zkb page</a></li>';
 			var endhtml = '</ul>';
 			menu.innerHTML = menu.innerHTML + endhtml;
 			return;
