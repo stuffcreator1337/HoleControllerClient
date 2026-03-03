@@ -15,10 +15,10 @@ function connectToNode(cookie) {
 
 	socketInitialized = true;
 
-	const { protocol, hostname } = location;
-	const socketUrl = `${protocol}//${hostname}:3000`;
+	//const { protocol, hostname } = location;
+	//const socketUrl = `${protocol}//${hostname}:3000`;
 
-	console.log("%c Initialising, location:", location, "socketUrl:",socketUrl, "background:yellow; color: grey");
+	console.log("%c Initialising, location:", "background:yellow; color: grey");
 
 	// Закрываем старое соединение если есть
 	if (socket) {
@@ -26,15 +26,7 @@ function connectToNode(cookie) {
 		socket = null;
 	}
 
-	// Создаем новое соединение
-	//socket = io(socketUrl, {
-	//	withCredentials: true,
-	//	transports: ["websocket", "polling"],
-	//	reconnection: true,
-	//	reconnectionAttempts: 5,
-	//	reconnectionDelay: 1000,
-	//	timeout: 20000
-	//});
+
 	socket = io({
 		withCredentials: true,
 		transports: ["websocket"], // можно оставить только websocket
