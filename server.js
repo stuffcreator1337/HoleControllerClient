@@ -27,14 +27,15 @@ function connectToNode(cookie) {
 	}
 
 	// Создаем новое соединение
-	socket = io(socketUrl, {
-		withCredentials: true,
-		transports: ["websocket", "polling"],
-		reconnection: true,
-		reconnectionAttempts: 5,
-		reconnectionDelay: 1000,
-		timeout: 20000
-	});
+	//socket = io(socketUrl, {
+	//	withCredentials: true,
+	//	transports: ["websocket", "polling"],
+	//	reconnection: true,
+	//	reconnectionAttempts: 5,
+	//	reconnectionDelay: 1000,
+	//	timeout: 20000
+	//});
+	const socket = io();
 	socket.on('connect', function(){
 		console.log("%c CONNECTED", "background:GREEN; color: white");
 		socket.emit('addr_request', local_code);
