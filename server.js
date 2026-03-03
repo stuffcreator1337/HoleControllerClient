@@ -13,11 +13,12 @@ function connectToNode(cookie) {
 		return;
 	}
 
-	console.log("%c Initialising", "background:yellow; color: grey");
 	socketInitialized = true;
 
 	const { protocol, hostname } = location;
 	const socketUrl = `${protocol}//${hostname}:3000`;
+
+	console.log("%c Initialising, location:", location, "socketUrl:",socketUrl, "background:yellow; color: grey");
 
 	// Закрываем старое соединение если есть
 	if (socket) {
