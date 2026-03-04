@@ -29,11 +29,12 @@ function connectToNode(cookie) {
 
 	socket = io({
 		withCredentials: true,
-		transports: ["polling", "websocket"], // можно оставить только websocket
+		transports: ["websocket"],
 		reconnection: true,
 		reconnectionAttempts: 5,
 		reconnectionDelay: 1000,
-		timeout: 20000
+		timeout: 20000,
+		secure: false  // Add this
 	});
 	socket.on('connect', function(){
 		console.log("%c CONNECTED", "background:GREEN; color: white");
