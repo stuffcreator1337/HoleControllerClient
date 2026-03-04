@@ -29,7 +29,7 @@ function connectToNode(cookie) {
 
 	socket = io({
 		withCredentials: true,
-		transports: ["websocket"], // можно оставить только websocket
+		transports: ["polling", "websocket"], // можно оставить только websocket
 		reconnection: true,
 		reconnectionAttempts: 5,
 		reconnectionDelay: 1000,
