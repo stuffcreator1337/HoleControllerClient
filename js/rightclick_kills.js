@@ -258,7 +258,7 @@ if(!Label.length)
 			var endhtml = '</ul>';
 			menu.innerHTML = starthtml;
 			menu.innerHTML = menu.innerHTML + ' <li class="kills-menu__item"><a href="https://zkillboard.com/system/' + nodeselected.data.$sysid + '/" target="_blank" class="killhref">Open system zkb page</a></li>';
-			menu.innerHTML = menu.innerHTML + ' <li class="kills-menu__item"><a href="#" class="killhref">Set #</a></li>';
+			menu.innerHTML = menu.innerHTML + ' <li class="kills-menu__item"><a href="#" class="set_designator" data-sysid=' + nodeselected.data.$sysid +'>Set #</a></li>';
 			menu.innerHTML = menu.innerHTML + endhtml;
 		}
 	}
