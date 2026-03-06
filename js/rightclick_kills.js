@@ -147,8 +147,6 @@ if(!Label.length)
 			//menu.classList.add( killsmenuActive );
 			document.getElementById("kills-menu").className = "kills-menu kills-menu--active";
 
-
-
 			getCookieJS("lastKill", false, function (cok) {
 
 				var a1 = 's_' + nodeselected.data.$sysid;
@@ -186,74 +184,11 @@ if(!Label.length)
 			});	
 
 			var starthtml = '<ul class="kills-menu__items">';
+			var endhtml = '</ul>';
 			menu.innerHTML = starthtml;
-			// console.log(myArr[i]);	<img src="https://image.eveonline.com/Type/'+myArr[i].victim.ship_type_id+'_32.png" height="16" width="16" />
 			menu.innerHTML = menu.innerHTML + ' <li class="kills-menu__item"><a href="https://zkillboard.com/system/' + nodeselected.data.$sysid + '/" target="_blank" class="killhref">Open system zkb page</a></li>';
 			menu.innerHTML = menu.innerHTML + ' <li class="kills-menu__item"><a href="#" >Set #</a></li>';
-			var endhtml = '</ul>';
 			menu.innerHTML = menu.innerHTML + endhtml;
-			return;
-
-
-			var nameonly = graph.clearName(nodeselected.id);
-
-			var xmlhttp = new XMLHttpRequest();
-			//var url = "toparse1.json";
-			var url = "https://zkillboard.com/api/systemID/"+nodeselected.data.$sysid+"/pastSeconds/43200/";
-			// setCookie('lastKill',{});
-			//var url = "https://zkillboard.com/api/system/30001398/pastSeconds/50000/";	
-			xmlhttp.onreadystatechange = function (link)
-			{				
-				//console.log("test");
-				if (xmlhttp.readyState == 4 && xmlhttp.status == 200 && xmlhttp.responseText != "[]") 
-				{
-					// console.log(xmlhttp.responseText);
-					var myArr = JSON.parse(xmlhttp.responseText);
-					// console.log(myArr);
-					if(myArr){
-						var url1 = 'https://esi.evetech.net/latest/killmails/' + myArr[0].killmail_id + '/' + myArr[0]["zkb"].hash + '/?datasource=tranquility';
-						console.log(myArr[0]);
-						console.log(actual_kills);
-						$.when(getAjax(url1)).done(function(data1){							
-							var a1 = 'sys_'+data1.solar_system_id;
-							var a2 = data1.killmail_id;	
-							console.log(a1, a2, nodeselected.data.$sysid);	
-							var d = new Date();
-							d.setTime(d.getTime() + (1*24*60*60*1000));
-							var expires = "expires="+d.toUTCString();		
-							//console.log("kill cookie updated");		
-							getCookieJS("lastKill", false, function(cok){
-								// console.log(cok);
-								// console.log(a1,a2);
-								// console.log(JSON.parse(cok));
-								var val = {};
-								if(cok){
-									var val = JSON.parse(cok);
-								}
-								val[a1] = a2;
-								console.log('lastKill', val);
-								setCookie('lastKill',val);								
-							});							
-						});
-					}
-					// document.cookie=myArr[0].solar_system_id+"LastKill="+myArr[0].killmail_id+"; " +expires;
-					
-					var starthtml = '<ul class="kills-menu__items">';
-					menu.innerHTML = starthtml;
-						// console.log(myArr[i]);	<img src="https://image.eveonline.com/Type/'+myArr[i].victim.ship_type_id+'_32.png" height="16" width="16" />
-					menu.innerHTML = menu.innerHTML + ' <li class="kills-menu__item"><a href="https://zkillboard.com/system/'+ nodeselected.data.$sysid +'" target="_blank" class="killhref">Open system zkb page</a></li>';
-					var endhtml = '</ul>';
-					menu.innerHTML = menu.innerHTML + endhtml;
-
-				}
-				else {
-					menu.innerHTML = "";
-					}
-			};
-			xmlhttp.open("GET", url, true);
-			xmlhttp.send();
-			//menu.innerHTML = menu.innerHTML + '<a href="#" class="kills-menu__link" data-action="Mass"><i class="fa fa-eye"></i> Test2</a>';
-			//console.log(menu.innerHTML);
 		}
 	}
 	function getKillJson(url,task,name,check){
