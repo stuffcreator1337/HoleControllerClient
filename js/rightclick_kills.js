@@ -53,7 +53,7 @@ function closePopup() {
 }
 document.addEventListener('click', function (e) {
 
-	const btn = e.target.closest('.killhref');
+	const btn = e.target.closest('.set_designator');
 	if (!btn) return;
 
 	e.preventDefault();
