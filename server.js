@@ -71,11 +71,14 @@ function connectToNode(cookie) {
 	// console.log(data);
 		if (msg.user == unique_code){
 			console.log(msg);
+			//clientInfo.map = msg.data.map;
+			//homesystemID = msg.data.home;
 			showLogin("loading");	
 			// showLogin("login");	
 			startingMap('initiate');
 			var codedata = msg.data[0];
-			var mapdata = msg.data[1];
+			var mapdata = msg.data[1].map;
+			homesystemID = msg.data[1].home;
 			var chardata = msg.data[2];
 			console.log(codedata);
 			setCookie('map_access',codedata);//добавляем инфу в куки
@@ -112,7 +115,7 @@ function connectToNode(cookie) {
 	socket.on('auth_success_addcharacter', function (msg) {//получаем подтверждение перса data.data - инфа, data.user - пароль идентификации
 		console.log(msg);
 		var usercode = msg.data[0];
-		var mapdata = msg.data[1];
+		var mapdata = msg.data[1].map;
 		var chardata = msg.data[2];
 		// console.log(locdata);
 		if (msg.user == cookie){//сверяем пароль, чтоб лишние персы не залогинились
