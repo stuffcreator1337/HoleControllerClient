@@ -200,6 +200,26 @@ function connectToNode(cookie) {
 			}
 		}
 	});
+	socket.on('token_refreshed', function (msg){
+	// console.log(data);
+		if (msg.user == cookie){
+			var charID = msg.data;
+			// console.log(charID);
+			var allTabs = document.getElementById("top_tr");
+			var tdTabs = allTabs.getElementsByTagName("td");
+			for(var i=0; i < tdTabs.length; i++){//tdTabs[0]
+				if(tdTabs[i].getAttribute('buttoncharid') == charID){				
+					var charName = tdTabs[i].firstChild.innerHTML;
+					var charStatus = document.getElementById("status-"+charName);
+					if(charStatus){
+						// console.log(charStatus);
+						charStatus.style.color = "orange";
+					}
+					// tdTabs[i].className = "active_top_selected";
+				}
+			}
+		}
+	});
 
 
 
