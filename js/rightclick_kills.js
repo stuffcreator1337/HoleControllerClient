@@ -253,7 +253,7 @@ if(!Label.length)
 
 				setCookie('lastKill', val);
 			});	
-
+			console.log(nodeselected);
 			var starthtml = '<ul class="kills-menu__items">';
 			var endhtml = '</ul>';
 			menu.innerHTML = starthtml;
