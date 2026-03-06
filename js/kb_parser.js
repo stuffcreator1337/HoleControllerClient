@@ -11,23 +11,25 @@ function kbparse(new_kills) {
 		for (var system in new_kills) {
 			var color = "white";
 			var namecont = document.getElementById(system.substring(2, 10));
-			if (isRecentKill(new_kills[system][1])) {
-				//console.log("is kill recent?", isRecentKill(new_kills[system][1]), system);
-				//console.log(old_kills[system], new_kills[system]);
-				//console.log("old_kills", typeof (old_kills), old_kills);
-				try {
-					//console.log(new_kills[system][1], old_kills[system][1]);
-					if (new_kills[system][1] == old_kills[system][1]) {
-						//console.log("1 no new kills in system", system);
-						color = "orange";
-					} else {
+			if (new_kills[system] != "") {
+				if (isRecentKill(new_kills[system][1])) {
+					//console.log("is kill recent?", isRecentKill(new_kills[system][1]), system);
+					//console.log(old_kills[system], new_kills[system]);
+					//console.log("old_kills", typeof (old_kills), old_kills);
+					try {
+						//console.log(new_kills[system][1], old_kills[system][1]);
+						if (new_kills[system][1] == old_kills[system][1]) {
+							//console.log("1 no new kills in system", system);
+							color = "orange";
+						} else {
+							console.log("%c new kills in system " + system, "background:orange;color:white");
+							color = "red";
+						}
+					}
+					catch (e) {
 						console.log("%c new kills in system " + system, "background:orange;color:white");
 						color = "red";
 					}
-				}
-				catch (e) {
-					console.log("%c new kills in system " + system, "background:orange;color:white");
-					color = "red";
 				}
 			}
 			if (namecont)namecont.children["nodeDivID"].children["nameContId"].style.color = color;
