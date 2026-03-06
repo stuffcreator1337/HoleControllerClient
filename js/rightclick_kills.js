@@ -1,7 +1,35 @@
-const popup = document.getElementById('numberInputPopup');
-const input = document.getElementById('numberInputField');
-const accept = document.getElementById('numberInputAccept');
+let popup;
+let input;
+let accept;
 
+document.addEventListener('DOMContentLoaded', function () {
+
+	popup = document.getElementById('numberInputPopup');
+	input = document.getElementById('numberInputField');
+	accept = document.getElementById('numberInputAccept');
+
+
+	input.addEventListener('input', function () {
+		this.value = this.value.replace(/\D/g, '');
+	});
+	input.addEventListener('keydown', function (e) {
+		if (e.key === 'Enter') {
+			accept.click();
+		}
+	});
+	accept.addEventListener('click', function (e) {
+		e.stopPropagation();
+
+		const value = input.value;
+
+		if (numberCallback) {
+			numberCallback(value);
+		}
+
+		closePopup();
+	});
+
+});
 let numberCallback = null;
 
 function openNumberInput(x, y, callback) {
@@ -14,25 +42,6 @@ function openNumberInput(x, y, callback) {
 	input.value = '';
 	input.focus();
 }
-input.addEventListener('input', function () {
-	this.value = this.value.replace(/\D/g, '');
-});
-input.addEventListener('keydown', function (e) {
-	if (e.key === 'Enter') {
-		accept.click();
-	}
-});
-accept.addEventListener('click', function (e) {
-	e.stopPropagation();
-
-	const value = input.value;
-
-	if (numberCallback) {
-		numberCallback(value);
-	}
-
-	closePopup();
-});
 document.addEventListener('click', function (e) {
 	if (!popup.contains(e.target)) {
 		closePopup();
