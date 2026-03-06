@@ -1,4 +1,66 @@
-function kill_rightclick(nodeselected, core, nodekills, graph) 					{	
+const popup = document.getElementById('numberInputPopup');
+const input = document.getElementById('numberInputField');
+const accept = document.getElementById('numberInputAccept');
+
+let numberCallback = null;
+
+function openNumberInput(x, y, callback) {
+	numberCallback = callback;
+
+	popup.style.left = x + 'px';
+	popup.style.top = y + 'px';
+	popup.style.display = 'block';
+
+	input.value = '';
+	input.focus();
+}
+input.addEventListener('input', function () {
+	this.value = this.value.replace(/\D/g, '');
+});
+input.addEventListener('keydown', function (e) {
+	if (e.key === 'Enter') {
+		accept.click();
+	}
+});
+accept.addEventListener('click', function (e) {
+	e.stopPropagation();
+
+	const value = input.value;
+
+	if (numberCallback) {
+		numberCallback(value);
+	}
+
+	closePopup();
+});
+document.addEventListener('click', function (e) {
+	if (!popup.contains(e.target)) {
+		closePopup();
+	}
+});
+
+function closePopup() {
+	popup.style.display = 'none';
+}
+document.addEventListener('click', function (e) {
+
+	const btn = e.target.closest('.killhref');
+	if (!btn) return;
+
+	e.preventDefault();
+
+	const pos = $jit.util.event.getPos(e);
+
+	openNumberInput(pos.x, pos.y, function (value) {
+
+		console.log("¬ведено число:", value);
+
+		handleNumber(value);
+
+	});
+
+});
+function kill_rightclick(nodeselected, core, nodekills, graph) {	
 Label = document.getElementsByClassName("edgeSig1_vis");
 if(!Label.length)
 {

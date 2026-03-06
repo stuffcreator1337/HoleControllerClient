@@ -61,3 +61,20 @@ padding: 0px 0px;
 color: #FFF;
 text-decoration: none;
 }
+
+.num-popup{
+    position: absolute;
+    background: #222;
+    border: 1px solid #555;
+    padding: 6px;
+    display: none;
+    z-index: 9999;
+}
+
+.num-popup input{
+    width: 80px;
+}
+
+.num-popup button{
+    margin-left: 5px;
+}
