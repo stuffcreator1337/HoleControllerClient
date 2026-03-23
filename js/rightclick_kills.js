@@ -69,6 +69,10 @@ document.addEventListener('click', function (e) {
 	});
 
 });
+function handleNumber(val)
+{
+
+}
 function kill_rightclick(nodeselected, core, nodekills, graph) {	
 Label = document.getElementsByClassName("edgeSig1_vis");
 if(!Label.length)
