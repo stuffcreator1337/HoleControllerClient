@@ -270,28 +270,8 @@ function connectToNode(cookie) {
 			if (msg.user.replace(/"/g,'') == cookie){
 				clientInfo.map = msg.data.map;
 				homesystemID = msg.data.home;
-				init(msg.data.map, [], "", "initiate", msg.data.custom_sys_names);
-			
-
-			// getCookieJS('canvasoffsetX', false, function(dataX){
-			// 	getCookieJS('canvasoffsetY', false, function(dataY){
-				// var dataX = 0, dataY = 0;
-				// 	init(data[0].map,[],"","initiate",data[0].custom_sys_names,{dataX,dataY});
-			// 	},this);
-			// },this);
+				init(msg.data.map, [], "", "initiate", msg.data);
 		}
-		// console.log('end of parse');
-		// var found = document.querySelector("[buttonCharID='"+data[1]+"']");//находим кнопку перса
-		// // console.log(found);
-		// if(found){
-			// if(data[1] == found.getAttribute('buttonCharID')){
-			// // console.log(data); 
-		
-				// console.log("map_connections_for:"+found.getAttribute('buttonCharID')); 
-				// // init(data[0].map,data[0].residents,"","initiate");
-				// return data;
-			// }
-		// }
 	});
 	/******************
 	 * SIGS EDIT

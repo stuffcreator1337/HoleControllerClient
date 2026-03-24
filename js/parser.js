@@ -16,7 +16,7 @@ const NodeOffset = -100;
   animate = !(iStuff || !nativeCanvasSupport);
 })();
 
-function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
+function init(json,localsjs,json2,task,custom_data){//,coord) {
     
         //end
         //init RGraph
@@ -257,7 +257,7 @@ function init(json,localsjs,json2,task,custom_sys_names){//,coord) {
 		// },this);
         //emulate a click on the root node.
         st.onClick(st.root);
-        st.graph.setHoleNames(st,custom_sys_names);
+        st.graph.setHoleNames(st,custom_data.custom_sys_names);
 
 
     }
