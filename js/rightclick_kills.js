@@ -68,9 +68,14 @@ document.addEventListener('click', function (e) {
 	});
 
 });
-function SetSysDesignator(val, sysid)
-{
-	document.getElementById(sysid).firstChild().getElementById("designator").innerHTML = val;
+function SetSysDesignator(val, sysid) {
+	const root = document.getElementById(sysid);
+	if (!root) return;
+
+	const el = root.querySelector('#designator');
+	if (!el) return;
+
+	el.textContent = val;
 }
 function kill_rightclick(nodeselected, core, nodekills, graph) {	
 Label = document.getElementsByClassName("edgeSig1_vis");
