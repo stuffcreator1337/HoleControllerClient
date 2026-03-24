@@ -55,7 +55,7 @@ document.addEventListener('click', function (e) {
 
 	const btn = e.target.closest('.set_designator');
 	if (!btn) return;
-	console.log(btn);
+	console.log(btn.getAttribute("data-sysid"));
 	e.preventDefault();
 
 	const pos = $jit.util.event.getPos(e);
