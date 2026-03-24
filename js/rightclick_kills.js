@@ -55,7 +55,6 @@ document.addEventListener('click', function (e) {
 
 	const btn = e.target.closest('.set_designator');
 	if (!btn) return;
-	console.log(btn.getAttribute("data-sysid"));
 	e.preventDefault();
 
 	const pos = $jit.util.event.getPos(e);
@@ -64,14 +63,14 @@ document.addEventListener('click', function (e) {
 
 		console.log("¬ведено число:", value);
 
-		handleNumber(value);
+		SetSysDesignator(value, btn.getAttribute("data-sysid"));
 
 	});
 
 });
-function handleNumber(val)
+function SetSysDesignator(val, sysid)
 {
-
+	document.getElementById(sysid).firstChild().getElementById("designator").innerHTML = val;
 }
 function kill_rightclick(nodeselected, core, nodekills, graph) {	
 Label = document.getElementsByClassName("edgeSig1_vis");
