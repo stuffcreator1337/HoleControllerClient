@@ -16,7 +16,7 @@ function nodeStyleDetails(nodeDiv,node,nodeInnerName){
 	elements.locals 			=	new Span('span','', 'locals', infoPNG);							//nodeDiv.appendChild(elements.locals);		
 	elements.nameContainer 		= 	new Span('span','system_label', 'nameContId', node.name);					//nodeDiv.appendChild(elements.nameContainer);
 	elements.systemClass 		= 	new Span('span','system_label', 'systemClass', " ("+node.data.$class+")");			//nodeDiv.appendChild(elements.nameContainer);
-	elements.designator 		= 	new Span('span','system_label', 'designator', "");			//nodeDiv.appendChild(elements.nameContainer);
+	elements.designator 		= 	new Span('span','system_label', 'designator', node.data.$designator);			//nodeDiv.appendChild(elements.nameContainer);
 	elements.statics_short 		= 	new Span('span','', 'statics_short',nodeInnerName);				//nodeDiv.appendChild(elements.statics_short);
 	elements.closeButton 		=	new Span('span','', 'closeBtnID', 'x');							//nodeDiv.appendChild(elements.closeButton);
 	elements.systemId 			= 	new Span('span','', 'sys_id', node.data.$sysid);				//	nodeDiv.appendChild(elements.systemId);
