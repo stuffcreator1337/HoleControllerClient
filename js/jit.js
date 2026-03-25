@@ -4454,22 +4454,28 @@ $jit.Graph = new Class({
 		});
 	},
     setHoleDesignators: function (g, designators) {
-        if (designators) {
-            for(var i=0;i<designators.length;i++){
-                if(designators[i].id == homesystemID){
-                    var dom_item = document.getElementById(homesystemID);
-                    if(dom_item){
-                        dom_item.children[0].children["designator"].value = designators[i].designator;
-                        dom_item.children[0].children["designator"].innerHTML = designators[i].designator;
-                    }
-                }
-            }
-        }
+        // if (designators) {
+            // for(var i=0;i<designators.length;i++){
+                // if(designators[i].id == homesystemID){
+                    // var dom_item = document.getElementById(homesystemID);
+                    // if(dom_item){
+                        // dom_item.children[0].children["designator"].value = designators[i].designator;
+                        // dom_item.children[0].children["designator"].innerHTML = designators[i].designator;
+                    // }
+                // }
+            // }
+        // }
 		g.graph.eachNode(function(node){
 			if(designators){
 				for(var i=0;i<designators.length;i++){
 					if(designators[i].id == node.id){
 						node.data.$designator = designators[i].designator;
+						var dom_item = document.getElementById(node.id);
+						if(dom_item){
+							dom_item.children[0].children["designator"].value = designators[i].designator;
+							dom_item.children[0].children["designator"].innerHTML = designators[i].designator;
+							dom_item.children[0].children["systemClass"].setAttribute('designator',node.data.$designator);
+						}
 					}
 				}
 			}
