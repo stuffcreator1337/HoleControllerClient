@@ -76,6 +76,9 @@ function SetSysDesignator(val, sysid) {
 	if (!el) return;
 
 	el.textContent = val;
+
+	socket.emit('designator_from_client', { "user": activeCharTab, "id": sysid, "system": document.getElementById("hiddenSyst").innerHTML, "designator": val });	
+
 }
 function kill_rightclick(nodeselected, core, nodekills, graph) {	
 Label = document.getElementsByClassName("edgeSig1_vis");

@@ -258,7 +258,7 @@ function init(json,localsjs,json2,task,custom_data){//,coord) {
         //emulate a click on the root node.
         st.onClick(st.root);
         st.graph.setHoleNames(st,custom_data.custom_sys_names);
-
+        st.graph.setHoleDesignators(st,custom_data.designators);
 
     }
     create_link("","","normal");

@@ -305,6 +305,22 @@ function connectToNode(cookie) {
 			}
 		};
 	});
+	socket.on('sending_designators', function (msg) {
+		// console.log(msg);
+		var d = msg.data;
+		if (d["user"] == activeCharTab || d["user"] == 'all') {
+			console.log("recieved designators for systems");
+			// console.log(msg.data.designators);
+			var designators = msg.data.designators;
+			for (var i = 0; i < designators.length; i++) {
+				if (document.getElementById(designators[i].id)) {
+					// console.log(document.getElementById(designators[i].id).children);
+					document.getElementById(designators[i].id).children["nodeDivID"].children["designator"].value = names[i].name;
+					document.getElementById(designators[i].id).children["nodeDivID"].children["designator"].innerHTML = names[i].name;
+				}
+			}
+		};
+	});
 	/******************
 	 * PILOT POS
 	 ******************/
