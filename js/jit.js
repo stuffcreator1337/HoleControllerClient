@@ -4469,7 +4469,7 @@ $jit.Graph = new Class({
 			if(designators){
 				for(var i=0;i<designators.length;i++){
 					if(designators[i].id == node.id){
-						node.data.designator = designators[i].designator;
+						node.data.$designator = designators[i].designator;
 					}
 				}
 			}

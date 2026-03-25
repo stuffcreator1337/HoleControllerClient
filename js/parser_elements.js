@@ -34,6 +34,7 @@ function nodeStyleDetails(nodeDiv,node,nodeInnerName){
 	}
 	elements.destSet = 			new Span('span','setDestClick', '', destPNG, node.name);	if ((node.name.indexOf("High") != -1)||(node.name.indexOf("Low") != -1)||(node.name.indexOf("Null") != -1)){		nodeDiv.appendChild(elements.destSet);	}
 	elements.systemClass.setAttribute('color_type',node.data.$class);
+	elements.systemClass.setAttribute('designator',node.data.$designator);
 	return elements;
 }
 function getSec(type,security){
