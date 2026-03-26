@@ -4611,7 +4611,7 @@ $jit.Graph = new Class({
                         // if (typeof map !== 'undefined'){
                         // console.log('GOING TO FIND ENTER TO HOME');
                         // console.log(clientInfo.map);
-                        findExits(clientInfo.map);
+                        // findExits(clientInfo.map);
                     }	// }
                 }
 

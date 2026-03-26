@@ -251,7 +251,7 @@ function connectToNode(cookie) {
 			var chardata = msg.data;
 		
 			for(var i=0;i<chardata.length;i++){
-			createTab(chardata[i]['CharacterName'],chardata[i]['CharacterID'],i,cookie);	
+				createTab(chardata[i]['CharacterName'],chardata[i]['CharacterID'],i,cookie);	
 			}
 			setactivetab();	
 
