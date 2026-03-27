@@ -1,15 +1,24 @@
 .shipImgSmall {
 	height: 14px;
 	width: 14px;
-	opacity: 0.5;
+	/* opacity: 0.5; */
 	position: relative;
     background-repeat: no-repeat;
     background-position: bottom right;
-    background-size: 8px 8px;
+    background-size: 14px 14px;
 }
 .shipImgSmall:hover{
 	cursor:hand;
 	border:1px solid yellow;
+}
+.shipImgSmall::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 8px;
+    height: 8px;
+    background: url(img/docked.png) no-repeat center/contain;
 }
 .systemName {
 	display: inline-block;
