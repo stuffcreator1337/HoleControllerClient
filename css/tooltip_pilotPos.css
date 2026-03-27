@@ -3,9 +3,6 @@
 	width: 14px;
 	/* opacity: 0.5; */
 	position: relative;
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    background-size: 14px 14px;
 }
 .shipImgSmall:hover{
 	cursor:hand;
@@ -18,7 +15,10 @@
     bottom: 0;
     width: 8px;
     height: 8px;
-    background: url(../img/docked.png) no-repeat center/contain;
+    background-image: url('../img/docked.png');
+    background-size: contain;
+    background-position: bottom right;
+    pointer-events: none; /* Чтобы не мешать кликам */
 }
 .systemName {
 	display: inline-block;
