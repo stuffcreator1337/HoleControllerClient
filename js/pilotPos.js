@@ -70,15 +70,21 @@ function createPilotTr(name,loc,ship,last_time,loc_time,charID,online){
 		var iconWrap = document.createElement('span');
 			iconWrap.className = 'icon-wrap';
 
-		var img1 = serverImage(ship+"_32", "shipImgSmall", 14, 14);
-		
+		var	img1 = new Image();
+			img1.className = "shipImgSmall";
+			img1.src = "img/docked.png";
+			img1.style.height = 14;
+			img1.height = 14;
+			img1.style.width = 14;
+			img1.width = 14;
 			img1.style.position = 'relative';
 			img1.style.backgroundImage = 'url(img/docked.png)';
+			img1.style.backgroundImage = 'url(https://image.eveonline.com/Type/'+ship+'_32.png)';
 			img1.style.backgroundRepeat = 'no-repeat';
 			img1.style.backgroundPosition = 'bottom right';
 			img1.style.backgroundSize = '8px 8px';
 
-			iconWrap.appendChild(img1);
+			// iconWrap.appendChild(img1);
 
 		var	overlay = new Image();
 		// console.log(cname);
