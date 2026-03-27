@@ -13,13 +13,15 @@ function updPilotPos(data){
 	for(let i=0; i < data.length; i++){
 		// console.log(data[i]);
 		if(data[i]['CharacterName']){
+			const docked = data[i]['station_id']>0 || data[i]['structure_id']>0;
 			var new_tr = createPilotTr(data[i]['CharacterName'],
 			data[i]['solar_system_id'],
 			data[i]['ship_type_id'],
 			data[i]['last_login'],
 			data[i]['last_logout'],
 			data[i]['CharacterID'],
-			data[i]['online']);
+			data[i]['online'],
+			docked);
 			// console.log(new_tr);
 			if(new_tr){pilotsTable.appendChild(new_tr);}
 		}
@@ -55,7 +57,7 @@ function docCreateElem(type,id,cl,inner,disp,appendTo,charID,online){
 		return el;
 	}
 }
-function createPilotTr(name,loc,ship,last_time,loc_time,charID,online){
+function createPilotTr(name,loc,ship,last_time,loc_time,charID,online, docked){
 	if(!loc)return;
 		var sys = fullmap[loc]["solarSystemName"];
 
@@ -66,13 +68,15 @@ function createPilotTr(name,loc,ship,last_time,loc_time,charID,online){
 		var td1= new docCreateElem('text',"pilotNameTd-"+name,'fullname',name,'none');
 			csst.appendChild(td1);
 			
-		// var	img1 = new Image();
-			// img1.className = "shipImgSmall";
-			// img1.src = "img/docked.png";
-			// img1.style.backgroundImage = 'url(https://image.eveonline.com/Type/'+ship+'_32.png)';
-			// csst.appendChild(img1);
-			
 			csst.appendChild(serverImage(ship+"_32","shipImgSmall",14,14));
+			
+		if(docked){
+			var	img1 = new Image();
+				img1.className = "shipImgSmall";
+				img1.src = "img/docked.png";
+				csst.appendChild(img1);
+		}
+			
 			
 		var td2 = new docCreateElem('span','','');
 			td2.style.color = '#000';
