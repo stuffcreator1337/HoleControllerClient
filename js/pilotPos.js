@@ -86,8 +86,12 @@ function createPilotTr(name,loc,ship,last_time,loc_time,charID,online){
 
 			// csst.appendChild(img1);
 			// csst.appendChild(overlay);
-			csst.appendChild(iconWrap);
+			// csst.appendChild(iconWrap);
 			
+		var testd = document.createElement('div');
+			testd.className = 'testdiv';
+			testd.appendChild(img1);
+			csst.appendChild(iconWrap);
 			
 			
 			// csst.appendChild(serverImage(ship+"_32","shipImgSmall",14,14));
