@@ -22,12 +22,12 @@ function kbparse(new_kills) {
 							//console.log("1 no new kills in system", system);
 							color = "orange";
 						} else {
-							console.log("%c new kills in system " + system, "background:orange;color:white");
+							// console.log("%c new kills in system " + system, "background:orange;color:white");
 							color = "red";
 						}
 					}
 					catch (e) {
-						console.log("%c new kills in system " + system, "background:orange;color:white");
+						// console.log("%c new kills in system " + system, "background:orange;color:white");
 						color = "red";
 					}
 				}
