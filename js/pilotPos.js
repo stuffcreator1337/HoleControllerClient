@@ -75,8 +75,8 @@ function createPilotTr(name,loc,ship,last_time,loc_time,charID,online){
 
 		var	overlay = new Image();
 		// console.log(cname);
-			overlay.className = cname;
-			overlay.src = "https://image.eveonline.com/Type/docked.png";
+			overlay.className = "overlay-docked";
+			overlay.src = "img/docked.png";
 			overlay.style.height = 14;
 			overlay.height = 14;
 			overlay.style.width = 14;
