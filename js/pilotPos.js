@@ -73,7 +73,7 @@ function createPilotTr(name,loc,ship,last_time,loc_time,charID,online){
 		var img1 = serverImage(ship+"_32", "shipImgSmall", 14, 14);
 		
 			img1.style.position = 'relative';
-			img1.style.backgroundImage = 'img/docked.png';
+			img1.style.backgroundImage = 'url(img/docked.png)';
 			img1.style.backgroundRepeat = 'no-repeat';
 			img1.style.backgroundPosition = 'bottom right';
 			img1.style.backgroundSize = '8px 8px';
