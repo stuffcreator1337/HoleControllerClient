@@ -56,72 +56,66 @@ function docCreateElem(type,id,cl,inner,disp,appendTo,charID,online){
 	}
 }
 function createPilotTr(name,loc,ship,last_time,loc_time,charID,online){
-	// var tr = document.createElement('tr');
-	// console.log(loc);
 	if(!loc)return;
 		var sys = fullmap[loc]["solarSystemName"];
-		// console.log(sys);
-		// var sys = "test1";
 
 		var div0 = new docCreateElem('tr',charID+"_tr",'charLocation');
-		// var div0 = document.createElement('tr');
-			// div0.className = 'charLocation';
-			
+		
 		var csst = new docCreateElem('span','','csstooltip');
-			// csst.className = 'csstooltip';		
-			// csst.className = 'csstooltip';		
-			
-			
+
 		var td1= new docCreateElem('text',"pilotNameTd-"+name,'fullname',name,'none');
-		// console.log(name);
-		// var td1= document.createElement('text');
-			// td1.id = "pilotNameTd-"+name;
-			// td1.className = "fullname";
-			// td1.innerHTML = name;
-			// td1.style.display = 'none';
 			csst.appendChild(td1);
 			
-			csst.appendChild(serverImage(ship+"_32","shipImgSmall",14,14));
 			
-		var td2= new docCreateElem('span','','');
-		// var td2= document.createElement('span');	
+		var iconWrap = document.createElement('span');
+			iconWrap.className = 'icon-wrap';
+
+		var img1 = serverImage(ship+"_32", "shipImgSmall", 14, 14);
+			iconWrap.appendChild(img1);
+
+		var	overlay = new Image();
+		// console.log(cname);
+			overlay.className = cname;
+			overlay.src = "https://image.eveonline.com/Type/docked.png";
+			overlay.style.height = 14;
+			overlay.height = 14;
+			overlay.style.width = 14;
+			overlay.width = 14;
+			
+			iconWrap.appendChild(overlay);
+
+			csst.appendChild(iconWrap);
+			
+			
+			
+			// csst.appendChild(serverImage(ship+"_32","shipImgSmall",14,14));
+			
+		var td2 = new docCreateElem('span','','');
 			td2.style.color = '#000';
-			
 			td2.appendChild(serverImage(ship+"_64","shipImgLarge",64,64));
 			csst.appendChild(td2);
 			
 			div0.appendChild(csst);
 			
-		var td3= new docCreateElem('text','',''," "+name.substring(0, 15));
-		// var td3= document.createElement('text');
-			// td3.innerHTML = " "+name.substring(0, 15);
+		var td3 = new docCreateElem('text','',''," "+name.substring(0, 15));
 			div0.appendChild(td3);
 			
-		var td4= new docCreateElem('text','','pilotName',name,'none');
+		var td4 = new docCreateElem('text','','pilotName',name,'none');
 			div0.appendChild(td4);
 		
 		var tdL = new docCreateElem('span','','sysLoc');
 			tdL.setAttribute('color_type','back');
 		
-		var t1= new docCreateElem('text','','',"(");
-		// var t1= document.createElement('text');
-			// t1.innerHTML = "(";
-			
-		var aid= new docCreateElem('a',"pilotSys-"+name,'systemName',sys);
-		// var aid= document.createElement('a');
-			// aid.id = "pilotSys-"+sys;
+		var t1 = new docCreateElem('text','','',"(");
+		
+		var aid = new docCreateElem('a',"pilotSys-"+name,'systemName',sys);
 			aid.setAttribute('sysID',loc);
-			// console.log(fullmap[loc]["sysclass"]);
 			aid.style.color = getColor(fullmap[loc]["sysclass"]);
-			// aid.className = "systemName";
 			aid.setAttribute("onmouseover", "highlight('"+loc+"');");
 			aid.setAttribute("onmouseout", "unhighlight('"+loc+"');");
-			// aid.innerHTML = sys;	
-
-		var t2= new docCreateElem('text','','',")  ");
-			// t2.innerHTML = ")  ";
 			
-		// var t3= document.createElement('text');
+		var t2 = new docCreateElem('text','','',")  ");
+			
 		var charStatus = document.createElement('text');
 			charStatus.className = 'lastTime';
 		if(online){
