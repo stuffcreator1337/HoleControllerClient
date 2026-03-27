@@ -66,43 +66,21 @@ function createPilotTr(name,loc,ship,last_time,loc_time,charID,online){
 		var td1= new docCreateElem('text',"pilotNameTd-"+name,'fullname',name,'none');
 			csst.appendChild(td1);
 			
-			
-		var iconWrap = document.createElement('span');
-			iconWrap.className = 'icon-wrap';
-
 		var	img1 = new Image();
 			img1.className = "shipImgSmall";
 			img1.src = "img/docked.png";
-			img1.style.height = 14;
-			img1.height = 14;
-			img1.style.width = 14;
-			img1.width = 14;
-			img1.style.position = 'relative';
-			img1.style.backgroundImage = 'url(img/docked.png)';
+			// img1.style.height = 14;
+			// img1.height = 14;
+			// img1.style.width = 14;
+			// img1.width = 14;
+			// img1.style.position = 'relative';
 			img1.style.backgroundImage = 'url(https://image.eveonline.com/Type/'+ship+'_32.png)';
-			img1.style.backgroundRepeat = 'no-repeat';
-			img1.style.backgroundPosition = 'bottom right';
-			img1.style.backgroundSize = '8px 8px';
+			// img1.style.backgroundRepeat = 'no-repeat';
+			// img1.style.backgroundPosition = 'bottom right';
+			// img1.style.backgroundSize = '8px 8px';
 
-			// iconWrap.appendChild(img1);
-
-		var	overlay = new Image();
-		// console.log(cname);
-			overlay.className = "overlay-docked";
-			overlay.src = "img/docked.png";
-			overlay.style.height = 14;
-			overlay.height = 14;
-			overlay.style.width = 14;
-			overlay.width = 14;
-			
-			iconWrap.appendChild(overlay);
 
 			csst.appendChild(img1);
-			// csst.appendChild(overlay);
-			// csst.appendChild(iconWrap);
-			
-			
-			
 			// csst.appendChild(serverImage(ship+"_32","shipImgSmall",14,14));
 			
 		var td2 = new docCreateElem('span','','');

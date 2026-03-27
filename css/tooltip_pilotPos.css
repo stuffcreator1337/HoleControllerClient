@@ -1,17 +1,11 @@
-.icon-wrap {
-    position: relative;
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-}
-
-.icon-wrap img {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
 .shipImgSmall {
-    z-index: 1;
+	height: 14px;
+	width: 14px;
+	opacity: 0.5;
+	position: relative;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 8px 8px;
 }
 .shipImgSmall:hover{
 	cursor:hand;
