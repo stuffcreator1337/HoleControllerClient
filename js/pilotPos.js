@@ -6,7 +6,7 @@ function updPilotPos(data){
 	for(let i=0; i < data.length; i++){
 		var old_loctime = new Date(data[i]['last_logout']).getTime();
 		// console.log(new_loctime > old_loctime+180000);
-		if((data[i]['online'] == false)&&(new_loctime > old_loctime+1800000)){
+		if((data[i]['online'] == false)&&(new_loctime > old_loctime+CHAR_SHOW_TIMEOUT)){
 			if(document.getElementById(data[i]['CharacterID']+'_tr'))document.getElementById(data[i]['CharacterID']+'_tr').remove();
 		}
 	}
@@ -129,11 +129,11 @@ function createPilotTr(name,loc,ship,last_time,loc_time,charID,online){
 			charStatus.innerHTML	= "Online";			
 		}else{
 			var new_time = new Date().getTime();
-			var pers_outtime = new Date(loc_time).getTime() + 1800000;		//время после которого показывать перса не надо, это 30 минут
+			var pers_outtime = new Date(loc_time).getTime() + CHAR_SHOW_TIMEOUT;		//время после которого показывать перса не надо, это 30 минут
 			var location_outtime = new Date(loc_time).getTime() + 120000;	//время которое учитывается при движении перса, это 2 минуты
 			var timeLeft = pers_outtime - new_time;
 			var loctLeft = location_outtime - new_time;
-			var seconds = 1800000 - timeLeft;	
+			var seconds = CHAR_SHOW_TIMEOUT - timeLeft;	
 			var seconds2 = 120000 - loctLeft;	
 				if(seconds < 120000){
 						charStatus.style.color 	= "green"; 
