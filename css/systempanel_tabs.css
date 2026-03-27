@@ -194,9 +194,6 @@ p.link a {
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-.shipImgSmall{
-	
-}
 p.link a:hover {
   background-color: #474747;
 }
