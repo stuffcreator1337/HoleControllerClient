@@ -71,6 +71,13 @@ function createPilotTr(name,loc,ship,last_time,loc_time,charID,online){
 			iconWrap.className = 'icon-wrap';
 
 		var img1 = serverImage(ship+"_32", "shipImgSmall", 14, 14);
+		
+			img1.style.position = 'relative';
+			img1.style.backgroundImage = 'img/docked.png';
+			img1.style.backgroundRepeat = 'no-repeat';
+			img1.style.backgroundPosition = 'bottom right';
+			img1.style.backgroundSize = '8px 8px';
+
 			iconWrap.appendChild(img1);
 
 		var	overlay = new Image();
@@ -84,14 +91,10 @@ function createPilotTr(name,loc,ship,last_time,loc_time,charID,online){
 			
 			iconWrap.appendChild(overlay);
 
-			// csst.appendChild(img1);
+			csst.appendChild(img1);
 			// csst.appendChild(overlay);
 			// csst.appendChild(iconWrap);
 			
-		var testd = document.createElement('div');
-			testd.className = 'testdiv';
-			testd.appendChild(img1);
-			csst.appendChild(iconWrap);
 			
 			
 			// csst.appendChild(serverImage(ship+"_32","shipImgSmall",14,14));
