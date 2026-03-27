@@ -94,7 +94,7 @@ function updateLocTab(id,charID){
 		setWspaceInfo(id,charID);
 	}
 	else{
-	switchVisibility('kspace');
+		switchVisibility('kspace');
 		
 	}
 }

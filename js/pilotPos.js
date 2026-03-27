@@ -6,7 +6,7 @@ function updPilotPos(data){
 	for(let i=0; i < data.length; i++){
 		var old_loctime = new Date(data[i]['last_logout']).getTime();
 		// console.log(new_loctime > old_loctime+180000);
-		if((data[i]['online'] == false)&&(new_loctime > old_loctime+180000)){
+		if((data[i]['online'] == false)&&(new_loctime > old_loctime+1800000)){
 			if(document.getElementById(data[i]['CharacterID']+'_tr'))document.getElementById(data[i]['CharacterID']+'_tr').remove();
 		}
 	}
