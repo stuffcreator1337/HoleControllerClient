@@ -72,7 +72,7 @@ function createPilotTr(name,loc,ship,last_time,loc_time,charID,online, docked){
 			
 		if(docked){
 			var	img1 = new Image();
-				img1.className = "shipImgSmall";
+				img1.className = "DockedSmall";
 				img1.src = "img/docked.png";
 				csst.appendChild(img1);
 		}

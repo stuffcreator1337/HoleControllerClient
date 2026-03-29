@@ -4,6 +4,12 @@
 	/* opacity: 0.5; */
 	position: relative;
 }
+.DockedSmall {
+	height: 14px;
+	width: 14px;
+	/* opacity: 0.5; */
+	position: relative;
+}
 .shipImgSmall:hover{
 	cursor:hand;
 	border:1px solid yellow;
