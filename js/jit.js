@@ -10169,18 +10169,20 @@ $jit.ST.Label.DOM = new Class({
     */
     placeLabel: function (tag, node, controller) {
         var d_id = document.getElementById(node.id);
-        console.log("placeLabel:", d_id);
+        if (d_id == undefined) {
+            console.log("%c undefined element:" + node.id, "background:red;color:black");
+            return;
+        }
         var pos = node.pos.getc(true), 
             config = this.viz.config, 
             dim = config.Node, 
             canvas = this.viz.canvas,
             w = node.getData('width'),
             // h = node.getData('height'),
-            h = document.getElementById(node.id).offsetHeight,
+            h = d_id.offsetHeight,
             radius = canvas.getSize(),
             labelPos, orn;
         // console.log(pos,radius);
-        // console.log(document.getElementById(node.id).offsetHeight);
         var ox = canvas.translateOffsetX,
             oy = canvas.translateOffsetY,
             sx = canvas.scaleOffsetX,
