@@ -10168,13 +10168,15 @@ $jit.ST.Label.DOM = new Class({
      
     */
     placeLabel: function(tag, node, controller) {
-        var pos = node.pos.getc(true), 
-            config = this.viz.config, 
-            dim = config.Node, 
+        var pos = node.pos.getc(true),
+            config = this.viz.config,
+            dim = config.Node,
             canvas = this.viz.canvas,
             w = node.getData('width'),
             // h = node.getData('height'),
-            h = document.getElementById(node.id).offsetHeight,
+            d_id = document.getElementById(node.id);
+            console.log("placeLabel:", d_id);
+            h = d_id.offsetHeight,
             radius = canvas.getSize(),
             labelPos, orn;
         // console.log(pos,radius);
