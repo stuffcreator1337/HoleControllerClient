@@ -315,8 +315,8 @@ function connectToNode(cookie) {
 			for (var i = 0; i < designators.length; i++) {
 				if (document.getElementById(designators[i].id)) {
 					// console.log(document.getElementById(designators[i].id).children);
-					document.getElementById(designators[i].id).children["nodeDivID"].children["designator"].value = names[i].name;
-					document.getElementById(designators[i].id).children["nodeDivID"].children["designator"].innerHTML = names[i].name;
+					document.getElementById(designators[i].id).children["nodeDivID"].children["designator"].value = designators[i].designator;
+					document.getElementById(designators[i].id).children["nodeDivID"].children["designator"].innerHTML = designators[i].designator;
 				}
 			}
 		};
