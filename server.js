@@ -308,7 +308,7 @@ function connectToNode(cookie) {
 	socket.on('sending_designators', function (msg) {
 		// console.log(msg);
 		var d = msg.data;
-		if (d["user"] == activeCharTab || d["user"] == 'all') {
+		if (msg["user"] == activeCharTab || msg["user"] == 'all') {
 			console.log("recieved designators for systems");
 			// console.log(msg.data.designators);
 			var designators = msg.data.designators;
