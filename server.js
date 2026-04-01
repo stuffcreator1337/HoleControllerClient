@@ -43,12 +43,9 @@ function connectToNode(cookie) {
 			// console.log('sending data');
 			socket.emit('user_auth', cookie);
 			showLogin("loading");
-			// showLogin("login");	
 			startingMap('initiate');
 		} else {
 			clearAllCookies();
-			// showLogin("loading");	
-			// startingMap('initiate');
 			showLogin("login");
 		}
 	});
@@ -71,10 +68,7 @@ function connectToNode(cookie) {
 	// console.log(data);
 		if (msg.user == unique_code){
 			console.log(msg);
-			//clientInfo.map = msg.data.map;
-			//homesystemID = msg.data.home;
 			showLogin("loading");	
-			// showLogin("login");	
 			startingMap('initiate');
 			var codedata = msg.data[0];
 			var mapdata = msg.data[1].map;
@@ -84,7 +78,6 @@ function connectToNode(cookie) {
 			setCookie('map_access',codedata);//добавляем инфу в куки
 			clientInfo.updData(msg.data[2]);
 			for(var i=0;i<chardata.length;i++){
-				// console.log(chardata[i]['CharacterName'],chardata[i]['CharacterID'],i,cookie);
 				createTab(chardata[i]['CharacterName'],chardata[i]['CharacterID'],i,cookie);	
 			}
 			setTimeout(function(){
@@ -119,19 +112,12 @@ function connectToNode(cookie) {
 		var chardata = msg.data[2];
 		// console.log(locdata);
 		if (msg.user == cookie){//сверяем пароль, чтоб лишние персы не залогинились
-			// console.log("%c AUTH SUCCESS","background:green; color: white");
-			// console.log(msg,[msg.data]);
-			// addCookie('map_access',chardata);//добавляем инфу в куки
 			console.log("%c ADDING CHARACTER:"+chardata['CharacterID'],"background:green; color: white");
-			// showLogin("loading");	
-			// showLogin("login");	
-			// startingMap('initiate');
 			clientInfo.updData(msg.data[2]);
 			for(var i=0;i<chardata.length;i++){
 				createTab(chardata[i]['CharacterName'],chardata[i]['CharacterID'],i,cookie);	
 			}
-			setactivetab();
-		
+			setactivetab();		
 		
 			for(let s=0;s<chardata.length;s++){
 				if(chardata[s]['CharacterID'] == activeCharTab){

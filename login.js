@@ -130,8 +130,8 @@ function showLogin(status){
 	}
 	else if (status == "login") {
 		console.log("status == login");
-		document.getElementById("loading_txt").style.visibility = 'visible';
-		document.getElementById("login_but").style.visibility = 'hidden';
+		document.getElementById("loading_txt").style.visibility = 'hidden';
+		document.getElementById("login_but").style.visibility = 'visible';
 	}
 	else {
 		console.log("status == none");
