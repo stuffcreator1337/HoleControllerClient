@@ -10,9 +10,15 @@ function setLoginButton(data){
 	
 	var button = document.getElementById("login_but");
 	var loading = document.getElementById("loading_txt");
-    loginURL_p2 = data.addr;
-    loginURL_p3 = ':' + data.port + '&client_id=' + data.client + '&scope=' + esi_scopes + '&state=';
-    loginURL = loginURL_p1 + loginURL_p2 + loginURL_p3;
+	if(data.server_backurl){
+		loginURL_p2 = data.server_backurl;
+		loginURL_p3 = '&client_id=' + data.client + '&scope=' + esi_scopes + '&state=';
+		loginURL = loginURL_p1 + loginURL_p2 + loginURL_p3;
+	}else{
+		loginURL_p2 = data.addr;
+		loginURL_p3 = ':' + data.port + '&client_id=' + data.client + '&scope=' + esi_scopes + '&state=';
+		loginURL = loginURL_p1 + loginURL_p2 + loginURL_p3;
+	}
 	getCookieJS("map_access", false, function (cok) {
 		//console.log(cok);
 		if (cok.length >= 7) { unique_code = cok; }
