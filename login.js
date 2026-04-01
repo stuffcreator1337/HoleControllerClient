@@ -10,8 +10,8 @@ function setLoginButton(data){
 	
 	var button = document.getElementById("login_but");
 	var loading = document.getElementById("loading_txt");
-	if(data.server_backurl){
-		loginURL_p2 = data.server_backurl;
+	if(data.backurl){
+		loginURL_p2 = data.backurl;
 		loginURL_p3 = '&client_id=' + data.client + '&scope=' + esi_scopes + '&state=';
 		loginURL = loginURL_p1 + loginURL_p2 + loginURL_p3;
 	}else{
