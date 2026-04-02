@@ -67,12 +67,12 @@ function connectToNode(cookie) {
 	socket.on('auth_success_firstlogin', function(msg){//получаем подтверждение перса data[0] - инфа, data[1] - пароль идентификации
 	// console.log(data);
 		if (msg.user == unique_code){
-			console.log(msg);
+			// console.log(msg);
 			showLogin("loading");	
 			startingMap('initiate');
 			var codedata = msg.data[0];
-			var mapdata = msg.data[1].map;
-			homesystemID = msg.data[1].home;
+			var map_data = msg.data[1];
+			homesystemID = map_data.home;
 			var chardata = msg.data[2];
 			console.log(codedata);
 			setCookie('map_access',codedata);//добавляем инфу в куки
@@ -82,8 +82,7 @@ function connectToNode(cookie) {
 			}
 			setTimeout(function(){
 				setactivetab();
-			},1000);
-		
+			},1000);		
 		
 			setTimeout(function(){
 				for(let s=0;s<chardata.length;s++){
@@ -94,14 +93,8 @@ function connectToNode(cookie) {
 				}
 			},2000);
 		
-		
-			// getCookieJS('canvasoffsetX', false, function(dataX){
-			// 	getCookieJS('canvasoffsetY', false, function(dataY){
-			init(mapdata,[],"","initiate");
-				// var dataX = 0, dataY = 0;
-				// init(mapdata,[],"","initiate","",{dataX,dataY});
-			// 	},this);
-			// },this);
+			init(map_data.map,[],"","initiate",map_data);
+
 		}		
 	
 	});
