@@ -65,8 +65,16 @@ function connectToNode(cookie) {
 	});
 	socket.on('connection', (socket) => console.log('New connection:', socket.id));
 	socket.on('auth_success_firstlogin', function(msg){//получаем подтверждение перса data[0] - инфа, data[1] - пароль идентификации
-	// console.log(data);
-		if (msg.user == unique_code){
+		// console.log(data);
+		var code1 = msg.user;
+		var code2 = unique_code;
+		if (typeof code1 === 'string') {
+			code1 = Number(code1.replace(/\D/g, ''));
+		}
+		if (typeof code2 === 'string') {
+			code2 = Number(code2.replace(/\D/g, ''));
+		}
+		if (code1 == code2){
 			// console.log(msg);
 			showLogin("loading");	
 			startingMap('initiate');
