@@ -252,12 +252,19 @@ function connectToNode(cookie) {
 	});
 	socket.on('map_connections', function (msg){
 		// console.log(data[0].custom_sys_names);
-		cookie = cookie.replace(/"/g,'');
+		cookie = cookie.replace(/"/g, '');
+		if (typeof cookie === 'string') {
+			cookie = Number(cookie.replace(/\D/g, ''));
+		}
+		var code = msg.user;
+		if (typeof code === 'string') {
+			code = Number(code.replace(/\D/g, ''));
+		}
 		// console.log(cookie);
-			if (msg.user.replace(/"/g,'') == cookie){
-				clientInfo.map = msg.data.map;
-				homesystemID = msg.data.home;
-				init(msg.data.map, [], "", "initiate", msg.data);
+		if (code == cookie){
+			clientInfo.map = msg.data.map;
+			homesystemID = msg.data.home;
+			init(msg.data.map, [], "", "initiate", msg.data);
 		}
 	});
 	/******************

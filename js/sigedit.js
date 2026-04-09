@@ -69,15 +69,18 @@ function defineSigType(sig){
 	if (sig == "G")	{		return "Gas Site";		}
 	if (sig == "Relic Site")	{		return "Relic Site";	}
 	if (sig == "R")	{		return "Relic Site";	}
+	if (sig == "Rampant Drone Fabricator")	{		return "Rampant Drone Fabricator";	}
+	if (sig == "F")	{		return "Rampant Drone Fabricator";	}
 	if (sig == "C")	{		return "";				}
 	if (sig == "")	{		return "";				}
 }
 function defineShortType(sig){
-	if (sig == "Wormhole")	{		return "W";		}
-	if (sig == "Data Site")	{		return "D";		}
-	if (sig == "Gas Site")	{		return "G";		}
-	if (sig == "Relic Site"){		return "R";	}
-	if (sig == "")			{		return "C";				}
+	if (sig == "Wormhole")					{		return "W";	}
+	if (sig == "Data Site")					{		return "D";	}
+	if (sig == "Gas Site")					{		return "G";	}
+	if (sig == "Relic Site")				{		return "R";	}
+	if (sig == "Rampant Drone Fabricator")	{		return "F";	}
+	if (sig == "")							{		return "C";	}
 }
 function addSig(sig,data,table,color){
 	// console.log(data);
@@ -177,6 +180,11 @@ function updateButton(){
 	var output = output.replace(/\s+Cosmic Signature\s+Relic Site.+m/g, "Rs1");	//удаляем gas m & km
 	var output = output.replace(/\s+Источники сигналов\s+АРТЕФАКТЫ.+а.е./g, "Rs1");	//удаляем газ ае
 	var output = output.replace(/\s+Источники сигналов\s+АРТЕФАКТЫ.+м/g, "Rs1");	//удаляем газ м и км
+	
+	var output = output.replace(/\s+Cosmic Signature\s+Rampant Drone Fabricator.+AU/g, "Fs1");	//
+	var output = output.replace(/\s+Cosmic Signature\s+Rampant Drone Fabricator.+m/g, "Fs1");	//
+	// var output = output.replace(/\s+Источники сигналов\s+АРТЕФАКТЫ.+а.е./g, "Rs1");	//удаляем газ ае
+	// var output = output.replace(/\s+Источники сигналов\s+АРТЕФАКТЫ.+м/g, "Rs1");	//удаляем газ м и км
 
 	var output = output.replace(/\s+Cosmic Signature\s+.+AU/g, "Cs1");	//удаляем gas au
 	var output = output.replace(/\s+Cosmic Signature\s+.+m/g, "Cs1");	//удаляем gas m & km
