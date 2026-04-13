@@ -351,45 +351,17 @@ function sendSysName(that){
 	clear_area_content();
 }
 function resUpdateButton(){
+	var sysid = document.getElementById("hiddenSyID").innerHTML;
 	// var body = parent.linkedit.contentDocument.body;
-	// var corpInput = document.querySelector("#resCorpInput");
+	var corpInput = document.querySelector("#resCorpInput");
+	var output = corpInput.value;
 	// var posInput = document.querySelector("#resPosInput");
 	// var commInput = document.querySelector("#resCommInput");
 	// var syst = document.querySelector("#hiddenSyst").innerHTML;
 	// var syID = document.querySelector("#hiddenSyID").innerHTML;
 	// var corpID = document.querySelector("#hiddenCoID").innerHTML;
-	// var checkbox = document.querySelector("#checkbox_ali");
-	// if(checkbox.checked){
-		// var res_type = 'ali';
-	// }
-	// else{
-		// var res_type = 'corp';
-	// }
-	// var allposes = '';
-
-	// //console.log(posInput.value);
-	// var poses = posInput.value.match(/[0-9]{1,2}-[0-9]{1,2}/g);
-	// //console.log(poses);
-
-	
-	// if(poses){
-		// console.log("poses = yes");
-		// var allposes = poses.join('p');
-	// }
-	// if(corpInput.value){
-		// /* parent.sigEdit.src = "action/sigedit.php?system="+syst+'&common='+encodeURIComponent(commInput.value)+'&poses='+allposes+'&corpName='+encodeURIComponent(corpInput.value)+'&corpID='+corpID+'&resType='+res_type+'&task=resUpdate&sysid='+syID;
-		// console.log(parent.sigEdit.src);	 */
-		// //console.log(corpID);
-		// if((corpID == 0)||(corpID == '')){
-			// //console.log(corpID);			
-			// corpID = getCorpID(corpInput.value, syst, res_type);
-		// }			
-	// }else{
-		// if(!commInput.value){
-		// /* parent.sigEdit.src = "action/sigedit.php?system="+syst+'&task=deleteRes';
-		// console.log("deleting info: "+parent.sigEdit.src); */
-		// }
-	// }
+	// var checkbox = document.querySelector("#checkbox_ali");	
+	socket.emit('local_corp_from_client', {"user":activeCharTab, "id": 	sysid, "corpID": output});	
 }
 function residentsDisplay(){
 	// var body = parent.linkedit.contentDocument.body;

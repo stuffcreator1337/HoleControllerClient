@@ -1,4 +1,7 @@
 function searchCorp(that){
+	return;
+	//currently disabled
+	
 	// console.log(that);
 	// console.log(that.value);
 	var corpList = document.getElementById('corpList');
