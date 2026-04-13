@@ -265,6 +265,8 @@ if(!Label.length)
 				setCookie('lastKill', val);
 			});	
 			console.log(nodeselected);
+			
+			socket.emit('kill_checked', { "user": activeCharTab, "id": nodeselected.data.$sysid});	
 			var starthtml = '<ul class="kills-menu__items">';
 			var endhtml = '</ul>';
 			menu.innerHTML = starthtml;
