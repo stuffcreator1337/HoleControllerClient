@@ -262,8 +262,9 @@ function connectToNode(cookie) {
 		}
 		// console.log(cookie);
 		if (code == cookie){
-			clientInfo.map = msg.data.map;
-			homesystemID = msg.data.home;
+			clientInfo.map 				= msg.data.map;
+			clientInfo.systems_data 	= msg.data.systems_data;
+			homesystemID 				= msg.data.home;
 			init(msg.data.map, [], "", "initiate", msg.data);
 		}
 	});

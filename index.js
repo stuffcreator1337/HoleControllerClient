@@ -2,6 +2,7 @@ class serverInfo{
 	constructor(){
 		this.charData = [];
 		this.map = [];
+		this.systems_data = [];
 	}
 	charInfo(charID){
 		var charData = this.charData;

@@ -14,9 +14,13 @@
 	document.getElementById("sigs_systemname").style.color = "#"+color;
 	document.getElementById("annotations_systemname").style.color = "#"+color;
 	
-	var syscont = document.getElementById(id);
-	var text = syscont.children["nodeDivID"].children["sys_custom_name"].textContent;
-	document.getElementById('system_name').value = text;
+	var systems = clientInfo.systems_data;
+	for (var sys in systems) {
+		if (systems[sys].solarSystemID == id) {
+			document.getElementById('system_annotation').value = systems[sys].annotation;
+			return;
+		}
+	}
 }
 function insertSigs(sigs){
 
@@ -333,14 +337,14 @@ function clear_area_content(){
 	// console.log(document.getElementById('hiddenSyID').textContent);
 	var syscont = document.getElementById(document.getElementById('hiddenSyID').textContent);
 	var text = syscont.children["nodeDivID"].children["sys_custom_name"].textContent;
-	document.getElementById('system_name').value = text;
+	document.getElementById('system_annotation').value = text;
 }
 function sendSysName(that){
 	// console.log(that);
 	// console.log(document.getElementById("hiddenSyID").innerHTML);
-	// console.log(document.getElementById('system_name'));
-	// console.log(document.getElementById('system_name').value);
-	var sysname = document.getElementById('system_name').value;
+	// console.log(document.getElementById('system_annotation'));
+	// console.log(document.getElementById('system_annotation').value);
+	var sysname = document.getElementById('system_annotation').value;
 	// if(sysname != ''){
 	var sysid = document.getElementById("hiddenSyID").innerHTML;
 	// console.log(document.getElementById(sysid).children);
