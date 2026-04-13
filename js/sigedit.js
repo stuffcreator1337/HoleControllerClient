@@ -353,7 +353,7 @@ function sendSysName(that){
 function resUpdateButton(){
 	var sysid = document.getElementById("hiddenSyID").innerHTML;
 	// var body = parent.linkedit.contentDocument.body;
-	var corpInput = document.querySelector("#resCorpInput");
+	var corpInput = document.querySelector("#CorpInput");
 	var output = corpInput.value;
 	// var posInput = document.querySelector("#resPosInput");
 	// var commInput = document.querySelector("#resCommInput");
