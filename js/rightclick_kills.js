@@ -228,7 +228,7 @@ if(!Label.length)
 			// console.log(graph);
 			//menu.classList.add( killsmenuActive );
 			document.getElementById("kills-menu").className = "kills-menu kills-menu--active";
-
+			console.log(clientInfo.systems_data);
 			getCookieJS("lastKill", false, function (cok) {
 
 				var a1 = 's_' + nodeselected.data.$sysid;
