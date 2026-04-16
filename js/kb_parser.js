@@ -1,5 +1,5 @@
 function kbparse() {
-	console.log(unique_code);
+	console.log(clientInfo);
 	for (var i = 0; i<clientInfo.systems_data.length; i++) {
 		var system_info = clientInfo.systems_data[i];
 		var color = "white";
@@ -25,7 +25,6 @@ function kbparse() {
 			}
 			j++;
 		}
-		console.log(system_info.last_zkb);
 		if (namecont)namecont.children["nodeDivID"].children["nameContId"].style.color = color;		
 	}
 	return;
