@@ -6,6 +6,7 @@ function kbparse() {
 		var namecont = document.getElementById(system_info.solarSystemID);
 		var j = 0;
 		for (var user in system_info.last_zkb.user_data) {
+			color = "white";
 			user = system_info.last_zkb.user_data[j];
 			var code1 = user.code;
 			var code2 = unique_code;
