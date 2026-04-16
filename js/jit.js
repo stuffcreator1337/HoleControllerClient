@@ -4593,7 +4593,9 @@ $jit.Graph = new Class({
 
             }
         });
-		socket.on('new_chars_position', function(data_chars){
+		socket.on('actualize_data', function(data){
+			var data_chars = data.chardata;
+			clientInfo.systems_data = data.systemdata
 			// console.log("%c New char location recieved","background:pink;color:black");
             if (data_chars.user == 'all'){				
 				var old_charLoc = clone(clientInfo.charData);
@@ -4616,6 +4618,7 @@ $jit.Graph = new Class({
                 }
 
             }
+            kbparse();
 		});
 	},
 	checkNewEdges: function(g,viz,j2){

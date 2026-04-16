@@ -1,4 +1,24 @@
-function kbparse(new_kills) {
+function kbparse() {
+	console.log(unique_code);
+	for (var system_info in clientInfo.systems_data) {
+		var color = "white";
+		var namecont = document.getElementById(system_info.sysid.substring(2, 10));
+		for (var user in system_info.last_zkb.user_data){
+			if(user.code == unique_code)
+			{
+				if(isRecentKill(system_info.last_zkb.timestamp))color = "orange";
+				if(user.viewed_zkb < system_info.last_zkb.killmail_id)
+				{
+					color = "red";
+				}					
+			}
+		}
+		console.log(system_info.last_zkb);
+		if (namecont)namecont.children["nodeDivID"].children["nameContId"].style.color = color;		
+	}
+	return;
+	
+	
 	getCookieJS("lastKill", false, function(saved_cokie){
 		var old_kills = {};
 		if (saved_cokie) {

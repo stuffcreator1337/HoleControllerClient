@@ -228,45 +228,17 @@ if(!Label.length)
 			// console.log(graph);
 			//menu.classList.add( killsmenuActive );
 			document.getElementById("kills-menu").className = "kills-menu kills-menu--active";
-			console.log(clientInfo.systems_data);
-			getCookieJS("lastKill", false, function (cok) {
-
-				var a1 = 's_' + nodeselected.data.$sysid;
-				//console.log(actual_kills);
-                if (actual_kills == {}) return;
-				var a2 = actual_kills[a1];	
-
-				//console.log("Полученная кука:", cok);
-				//console.log("Данные для сохранения:", a1, a2);
-
-				// Инициализируем объект
-				var val = {};
-				if (cok) val = JSON.parse(cok);
-				for (var sys in val) {
-					if (val[sys] == null || val[sys] === undefined || val[sys] == "" || sys.length == 12) {
-						delete val[sys];
-					}
-				}
-				//console.log("До добавления - val[a1]:", val[a1]);
-				if (a1 in val) {
-					val[a1] = a2;
-					//console.log("Обновлён существующий ключ:", a1);
-				} else {
-					val[a1] = a2;
-					//console.log("Ключ не существует, добавляем:", a1);
-				}
-				//console.log("После добавления - val[a1]:", val[a1]);
-
-				// Сохраняем
-				//console.log('stringify lastKill перед сохранением:', JSON.stringify(val));
-				//console.log('JSON lastKill перед сохранением:', val);
-				//console.log('Количество ключей:', Object.keys(val).length);
-
-				setCookie('lastKill', val);
-			});	
 			console.log(nodeselected);
+			//console.log(clientInfo.systems_data);
+			for (var system_info in clientInfo.systems_data) {
+				if (system_info.sysid == nodeselected.data.$sysid) {
+					console.log(system_info.last_zkb);
+					return;
+				}
+			}
 			
-			socket.emit('kill_checked', { "user": activeCharTab, "id": nodeselected.data.$sysid});	
+			socket.emit('kill_checked', { "user": activeCharTab, "id": nodeselected.data.$sysid });	
+
 			var starthtml = '<ul class="kills-menu__items">';
 			var endhtml = '</ul>';
 			menu.innerHTML = starthtml;
