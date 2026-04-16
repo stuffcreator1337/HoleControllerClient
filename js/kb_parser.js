@@ -4,8 +4,9 @@ function kbparse() {
 		var system_info = clientInfo.systems_data[i];
 		var color = "white";
 		var namecont = document.getElementById(system_info.solarSystemID);
-		for (var j = 0; j< system_info.last_zkb.user_data.length; j++){
-			var user = system_info.last_zkb.user_data[j];
+		var j = 0;
+		for (var user in system_info.last_zkb.user_data) {
+            user = system_info.last_zkb.user_data[j];
 			var code1 = Number(user.code.replace(/\D/g, ''));
 			var code2 = Number(unique_code.replace(/\D/g, ''));
 			if (code1 == code2)
@@ -16,6 +17,7 @@ function kbparse() {
 					color = "red";
 				}					
 			}
+			j++;
 		}
 		console.log(system_info.last_zkb);
 		if (namecont)namecont.children["nodeDivID"].children["nameContId"].style.color = color;		
