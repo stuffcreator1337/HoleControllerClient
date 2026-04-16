@@ -4593,23 +4593,23 @@ $jit.Graph = new Class({
 
             }
         });
-		socket.on('actualize_data', function(data){
-			var data_chars = data.chardata;
-			clientInfo.systems_data = data.systemdata
+		socket.on('actualize_data', function(alldata){
+			var char_data = alldata.data.chardata;
+			clientInfo.systems_data = alldata.data.systemdata;
 			// console.log("%c New char location recieved","background:pink;color:black");
-            if (data_chars.user == 'all'){				
+            if (alldata.user == 'all'){				
 				var old_charLoc = clone(clientInfo.charData);
-                clientInfo.updData(data_chars.data);
-                updPilotPos(data_chars.data);
-                ligthLocation(g, data_chars.data);
+                clientInfo.updData(char_data);
+                updPilotPos(char_data);
+                ligthLocation(g, char_data);
             }
-            for (let i = 0; i < data_chars.data.length; i++) {
-                if (data_chars.data[i]['CharacterID'] == activeCharTab) {
-                    console.log("%c name:" + data_chars.data[i]['CharacterName'] + ', id:' + activeCharTab, "background:green;color:black");
+            for (let i = 0; i < char_data.length; i++) {
+                if (char_data[i]['CharacterID'] == activeCharTab) {
+                    console.log("%c name:" + char_data[i]['CharacterName'] + ', id:' + activeCharTab, "background:green;color:black");
                     //socket.emit('routes_request',{'user':activeCharTab});//<<---раблочить позже
-                    updateLocTab(data_chars.data[i]['solar_system_id'], data_chars.data[i]['CharacterID']);
-                    if (!isWh(data_chars.data[i]['solar_system_id'])) {
-                        //console.log(data_chars.data[i]['solar_system_id'] + ' - NEED TO FIND ENTER TO HOME');
+                    updateLocTab(char_data[i]['solar_system_id'], char_data[i]['CharacterID']);
+                    if (!isWh(char_data[i]['solar_system_id'])) {
+                        //console.log(char_data[i]['solar_system_id'] + ' - NEED TO FIND ENTER TO HOME');
                         // if (typeof map !== 'undefined'){
                         // console.log('GOING TO FIND ENTER TO HOME');
                         // console.log(clientInfo.map);
@@ -4618,7 +4618,6 @@ $jit.Graph = new Class({
                 }
 
             }
-            kbparse();
 		});
 	},
 	checkNewEdges: function(g,viz,j2){
