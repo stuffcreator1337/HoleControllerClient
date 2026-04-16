@@ -3,7 +3,7 @@ function kbparse() {
 	for (var i = 0; i<clientInfo.systems_data.length; i++) {
 		var system_info = clientInfo.systems_data[i];
 		var color = "white";
-		var namecont = document.getElementById(system_info.sysid.substring(2, 10));
+		var namecont = document.getElementById(system_info.solarSystemID);
 		for (var user in system_info.last_zkb.user_data){
 			if(user.code == unique_code)
 			{
