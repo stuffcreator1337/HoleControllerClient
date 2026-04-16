@@ -6,9 +6,15 @@ function kbparse() {
 		var namecont = document.getElementById(system_info.solarSystemID);
 		var j = 0;
 		for (var user in system_info.last_zkb.user_data) {
-            user = system_info.last_zkb.user_data[j];
-			var code1 = Number(user.code.replace(/\D/g, ''));
-			var code2 = Number(unique_code.replace(/\D/g, ''));
+			user = system_info.last_zkb.user_data[j];
+			var code1 = user.code;
+			var code2 = unique_code;
+			if (typeof code1 === 'string') {
+				code1 = Number(code1.replace(/\D/g, ''));
+			}
+			if (typeof code2 === 'string') {
+				code2 = Number(code2.replace(/\D/g, ''));
+			}
 			if (code1 == code2)
 			{
 				if(isRecentKill(system_info.last_zkb.timestamp))color = "orange";
