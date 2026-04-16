@@ -4,8 +4,11 @@ function kbparse() {
 		var system_info = clientInfo.systems_data[i];
 		var color = "white";
 		var namecont = document.getElementById(system_info.solarSystemID);
-		for (var user in system_info.last_zkb.user_data){
-			if(user.code == unique_code)
+		for (var j = 0; j< system_info.last_zkb.user_data.length; j++){
+			var user = system_info.last_zkb.user_data[j];
+			var code1 = Number(user.code.replace(/\D/g, ''));
+			var code2 = Number(unique_code.replace(/\D/g, ''));
+			if (code1 == code2)
 			{
 				if(isRecentKill(system_info.last_zkb.timestamp))color = "orange";
 				if(user.viewed_zkb < system_info.last_zkb.killmail_id)
