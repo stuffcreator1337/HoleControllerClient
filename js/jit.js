@@ -4270,13 +4270,7 @@ $jit.Graph = new Class({
 		var style = nameContainer.style;
 		var effshort = node.data.$effect.substring(0, 3);
 		if(effshort){nameContainer.setAttribute('wh_effect','effect');	}
-		callAjaxfunc(node.data.$sysid,function(data,col) {
-			if (data.length == 0){
-				style.color = col;
-			}else{
-				style.color = col;
-			}
-		});
+		
 		g.fx.animate();
 		if (node.data.$class == "Null"){effect.innerHTML = node.data.$statics;}
 		else if ((node.data.$class == "High")||(node.data.$class == "Low")){effect.innerHTML = getKsHubs(node.data.$statics);}
