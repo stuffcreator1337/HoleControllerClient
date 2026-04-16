@@ -4618,6 +4618,7 @@ $jit.Graph = new Class({
                 }
 
             }
+			kbparse();
 		});
 	},
 	checkNewEdges: function(g,viz,j2){
