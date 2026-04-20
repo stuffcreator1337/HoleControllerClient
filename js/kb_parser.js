@@ -22,11 +22,12 @@ function kbparse() {
 				if(user.viewed_zkb < system_info.last_zkb.killmail_id)
 				{
 					color = "red";
-				}					
+				}
+				if (namecont) namecont.children["nodeDivID"].children["nameContId"].style.color = color;	
+				break;
 			}
 			j++;
-		}
-		if (namecont)namecont.children["nodeDivID"].children["nameContId"].style.color = color;		
+		}	
 	}
 }		
 function isRecentKill(killmail_time, hours = 12) {
