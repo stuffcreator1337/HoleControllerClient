@@ -4286,20 +4286,24 @@ $jit.Graph = new Class({
 		}
     
 	},
-	localsEvt: function(g,node,inside_elements,localsjs){
+	localsEvt: function(g,node,inside_elements,data){
 		var localsInfo			= inside_elements.localsInfo;
 		var locals				= inside_elements.locals;
 		var systemId			= inside_elements.systemId;
-		locals.style.display = "none";
-		var resInfo = localsjs[node.data.$sysid];
-		if (resInfo){
-			// console.log(resInfo);
-			locals.style.display = "";
-			var corpIMG = "<img src='http://image.eveonline.com/corporation/"+resInfo.corpid+"_64.png' height='16' width='16' />";
-			var aliIMG = "";
-			if(resInfo.aliid){var aliIMG = "<img src='http://image.eveonline.com/alliance/"+resInfo.aliid+"_64.png' height='16' width='16' />";}
-			localsInfo.innerHTML = corpIMG+aliIMG+resInfo.name+"<br>"+resInfo.misc+"<br>Sign: "+b64DecodeUnicode(resInfo.sign);	
-		}
+        locals.style.display = "none";
+        if (data.corp_ID != -1) {
+            var corpIMG = "<img src='http://image.eveonline.com/corporation/" + data.corp_ID + "_64.png' height='16' width='16' />";
+            localsInfo.getElementById("locals_corpLogo").innerHTML = corpIMG;
+        }
+		//var resInfo = localsjs[node.data.$sysid];
+		//if (resInfo){
+		//	// console.log(resInfo);
+		//	locals.style.display = "";
+		//	var corpIMG = "<img src='http://image.eveonline.com/corporation/"+resInfo.corpid+"_64.png' height='16' width='16' />";
+		//	var aliIMG = "";
+		//	if(resInfo.aliid){var aliIMG = "<img src='http://image.eveonline.com/alliance/"+resInfo.aliid+"_64.png' height='16' width='16' />";}
+		//	inside_elements.localsInfo.innerHTML = corpIMG+aliIMG+resInfo.name+"<br>"+resInfo.misc+"<br>Sign: "+b64DecodeUnicode(resInfo.sign);
+		//}
 		systemId.style.display = "none";
 		locals.onmouseover = 		function() {
 			//console.log(locals.style);

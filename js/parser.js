@@ -174,8 +174,15 @@ function init(json,localsjs,json2,task,custom_data){//,coord) {
             //Use this method to add event handlers and styles to
             //your node.
             
-            onCreateLabel: function(domElement, node){
-                st.graph.createNodeStyle(st,domElement, node,localsjs,socket);
+            onCreateLabel: function (domElement, node) {
+                var locals_data = {};
+                for (var i = 0; i < custom_data.systems_data.length; i++) {
+                    if (custom_data.systems_data[i].solarSystemID == node.data.$sysid) {
+                        locals_data = custom_data.systems_data[i].locals;
+                        break; // Exit the loop once a match is found
+                    }
+                }
+                st.graph.createNodeStyle(st, domElement, node, locals_data,socket);
             },
             
             onPlaceLabel: function(domElement, node){
