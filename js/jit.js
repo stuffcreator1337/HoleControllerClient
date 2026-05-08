@@ -4292,7 +4292,7 @@ $jit.Graph = new Class({
 		var systemId			= inside_elements.systemId;
         locals.style.display = "none";
         if (data.corp_ID != -1) {
-            var corpIMG = "<img src='http://image.eveonline.com/corporation/" + data.corp_ID + "_64.png' height='16' width='16' />";
+            var corpIMG = "<img src='https://images.evetech.net/corporations/" + data.corp_ID + "/logo?size=64' height='16' width='16' />";
             //inside_elements.localsInfo.children[0].children[0].children[0].innerHTML = corpIMG;
             inside_elements.localsInfo.querySelector('.locals_corpLogo').innerHTML = corpIMG;
             //console.log(document.getElementById("locals_corpLogo"));
