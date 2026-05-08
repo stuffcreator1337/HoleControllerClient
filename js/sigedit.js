@@ -350,6 +350,7 @@ function sendSysName(that){
 	// console.log(document.getElementById(sysid).children);
 	document.getElementById(sysid).children["nodeDivID"].children["sys_custom_name"].value = sysname;
 	document.getElementById(sysid).children["nodeDivID"].children["sys_custom_name"].innerHTML = sysname;
+	document.getElementById(sysid).children["nodeDivID"].children["sys_custom_name"].style.display = "";
 	socket.emit('sysname_from_client', {"user":activeCharTab, "id": 	sysid, "system":	document.getElementById("hiddenSyst").innerHTML, "name":sysname});		
 	// }
 	clear_area_content();

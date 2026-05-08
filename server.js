@@ -296,6 +296,7 @@ function connectToNode(cookie) {
 					// console.log(document.getElementById(names[i].id).children);
 					document.getElementById(names[i].id).children["nodeDivID"].children["sys_custom_name"].value = names[i].name;
 					document.getElementById(names[i].id).children["nodeDivID"].children["sys_custom_name"].innerHTML = names[i].name;
+					document.getElementById(names[i].id).children["nodeDivID"].children["sys_custom_name"].style.display = "";
 				}
 			}
 		};

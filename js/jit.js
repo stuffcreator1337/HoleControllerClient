@@ -4433,6 +4433,7 @@ $jit.Graph = new Class({
                     if(dom_item){
                         dom_item.children[0].children["sys_custom_name"].value = names[i].name;
                         dom_item.children[0].children["sys_custom_name"].innerHTML = names[i].name;
+                        dom_item.children[0].children["sys_custom_name"].style.display = "";
                     }
                 }
             }

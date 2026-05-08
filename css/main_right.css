@@ -204,6 +204,9 @@ div.nodeDiv_false span#char:hover ~ span.pilots_Info {
 }
 /***************************************************** locals *****************************************************/
 
+table.localsTable {
+	padding:0px;
+}
 span.locals_Info {
 	white-space: normal;
 }
