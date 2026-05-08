@@ -12,6 +12,7 @@ function nodeStyleDetails(nodeDiv,node,nodeInnerName){
 	let charPNG = "<img src='img/Character.png' height='12' width='12'</img>";
 	let infoPNG = "<img src='img/icon_info.png'</img>";
 	let destPNG = "<img src='img/destSet.png' height='12' width='12'</img>";
+	let localsTable = "<tbody><tr><td id='locals_corpLogo'></td><td id='locals_aliLogo'></td></tr><tr><td id='locals_text'></td><td></td></tr></tbody>";
 	elements.pilots 			= 	new Span('span','', 'char', charPNG);							//nodeDiv.appendChild(elements.pilots);
 	elements.locals 			=	new Span('span','', 'locals', infoPNG);							//nodeDiv.appendChild(elements.locals);		
 	elements.nameContainer 		= 	new Span('span','system_label', 'nameContId', node.name);					//nodeDiv.appendChild(elements.nameContainer);
@@ -21,7 +22,7 @@ function nodeStyleDetails(nodeDiv,node,nodeInnerName){
 	elements.closeButton 		=	new Span('span','', 'closeBtnID', 'x');							//nodeDiv.appendChild(elements.closeButton);
 	elements.systemId 			= 	new Span('span','', 'sys_id', node.data.$sysid);				//	nodeDiv.appendChild(elements.systemId);
 	elements.effect 			= 	new Span('span','', 'eff', '');									//nodeDiv.appendChild(elements.effect);
-	elements.localsInfo 		= 	new Span('span','', 'locals', '');								//nodeDiv.appendChild(elements.localsInfo);
+	elements.localsInfo 		= 	new Span('table','', 'localsTable', localsTable);								//nodeDiv.appendChild(elements.localsInfo);
 	elements.pilotsInfo 		= 	new Span('span','pilots_Info', 'pilotsInfo','');				//nodeDiv.appendChild(elements.pilotsInfo);		
 	elements.pilotsInfo_short 	= 	new Span('span','pilots_Info_short', 'pilotsInfo_short','');//	nodeDiv.appendChild(elements.pilotsInfo_short);
 	elements.sys_custom_name 	= 	new Span('span','sys_custom_name', 'sys_custom_name',node.data.custom_name);//	nodeDiv.appendChild(elements.sys_custom_name);
