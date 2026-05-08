@@ -4293,8 +4293,9 @@ $jit.Graph = new Class({
         locals.style.display = "none";
         if (data.corp_ID != -1) {
             var corpIMG = "<img src='http://image.eveonline.com/corporation/" + data.corp_ID + "_64.png' height='16' width='16' />";
-            //document.getElementById("locals_corpLogo").innerHTML = corpIMG;
-            console.log(document.getElementById("locals_corpLogo"));
+            //inside_elements.localsInfo.children[0].children[0].children[0].innerHTML = corpIMG;
+            inside_elements.localsInfo.querySelector('.locals_corpLogo').innerHTML = corpIMG;
+            //console.log(document.getElementById("locals_corpLogo"));
         }
 		//var resInfo = localsjs[node.data.$sysid];
 		//if (resInfo){

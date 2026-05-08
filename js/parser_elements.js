@@ -12,7 +12,7 @@ function nodeStyleDetails(nodeDiv,node,nodeInnerName){
 	let charPNG = "<img src='img/Character.png' height='12' width='12'</img>";
 	let infoPNG = "<img src='img/icon_info.png'</img>";
 	let destPNG = "<img src='img/destSet.png' height='12' width='12'</img>";
-	let localsTable = "<tbody><tr><td id='locals_corpLogo'></td><td id='locals_aliLogo'></td></tr><tr><td id='locals_text'></td><td></td></tr></tbody>";
+	let localsTable = "<tbody><tr><td class='locals_corpLogo'></td><td class='locals_aliLogo'></td></tr><tr><td class='locals_text'></td><td></td></tr></tbody>";
 	elements.pilots 			= 	new Span('span','', 'char', charPNG);							//nodeDiv.appendChild(elements.pilots);
 	elements.locals 			=	new Span('span','', 'locals', infoPNG);							//nodeDiv.appendChild(elements.locals);		
 	elements.nameContainer 		= 	new Span('span','system_label', 'nameContId', node.name);					//nodeDiv.appendChild(elements.nameContainer);
